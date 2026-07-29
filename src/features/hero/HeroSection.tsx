@@ -44,23 +44,23 @@ export const HeroSection: React.FC = () => {
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
             
             {/* Status Pill */}
-            <motion.div variants={fadeIn('up', 0.1)} className="inline-flex items-center gap-2">
-              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 shadow-sm">
-                <span className="relative flex h-2 w-2">
+            <motion.div variants={fadeIn('up', 0.1)} className="inline-flex items-center gap-2 max-w-full">
+              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 shadow-sm whitespace-nowrap">
+                <span className="relative flex h-2 w-2 shrink-0">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                 </span>
-                {t('hero.status')}
+                <span>{t('hero.status')}</span>
               </span>
             </motion.div>
 
             {/* Main Headline */}
             <motion.h1 
               variants={fadeIn('up', 0.2)}
-              className="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-[1.1]"
+              className="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-[1.25]"
             >
               {t('hero.greeting')}{' '}
-              <span className="gradient-text-primary">
+              <span className="gradient-text-primary whitespace-nowrap">
                 {DEVELOPER_PROFILE.name}
               </span>
             </motion.h1>
@@ -68,7 +68,7 @@ export const HeroSection: React.FC = () => {
             {/* Animated Typing Subhead */}
             <motion.div 
               variants={fadeIn('up', 0.3)}
-              className="text-lg sm:text-2xl font-semibold text-slate-700 dark:text-slate-300 min-h-[3.5rem] flex items-center justify-center lg:justify-start gap-2"
+              className="text-base sm:text-2xl font-semibold text-slate-700 dark:text-slate-300 min-h-[4rem] sm:min-h-[3.5rem] flex items-center justify-center lg:justify-start gap-2"
             >
               <Sparkles className="w-5 h-5 text-violet-500 shrink-0 hidden sm:inline" />
               <TypeAnimation
@@ -104,18 +104,18 @@ export const HeroSection: React.FC = () => {
             >
               <button
                 onClick={() => scrollToSection('projects')}
-                className="px-6 py-3.5 text-base font-semibold text-white bg-gradient-to-r from-blue-600 via-violet-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 rounded-2xl shadow-xl shadow-blue-500/25 flex items-center gap-2 group transition-all hover:scale-[1.02] active:scale-[0.98]"
+                className="px-6 py-3.5 text-base font-semibold text-white bg-gradient-to-r from-blue-600 via-violet-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 rounded-2xl shadow-xl shadow-blue-500/25 flex items-center gap-2 group transition-all hover:scale-[1.02] active:scale-[0.98] whitespace-nowrap"
               >
-                {t('common:buttons.viewProjects', 'View Projects')}
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <span>{t('common:buttons.viewProjects', 'View Projects')}</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform shrink-0" />
               </button>
 
               <button
                 onClick={() => scrollToSection('contact')}
-                className="px-6 py-3.5 text-base font-semibold text-slate-800 dark:text-slate-200 bg-white/90 dark:bg-slate-900/80 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-800 backdrop-blur-md shadow-md flex items-center gap-2 transition-all hover:scale-[1.02]"
+                className="px-6 py-3.5 text-base font-semibold text-slate-800 dark:text-slate-200 bg-white/90 dark:bg-slate-900/80 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-800 backdrop-blur-md shadow-md flex items-center gap-2 transition-all hover:scale-[1.02] whitespace-nowrap"
               >
-                <Download className="w-5 h-5 text-blue-600 dark:text-violet-400" />
-                {t('common:buttons.contactMe', 'Contact Me')}
+                <Download className="w-5 h-5 text-blue-600 dark:text-violet-400 shrink-0" />
+                <span>{t('common:buttons.contactMe', 'Contact Me')}</span>
               </button>
             </motion.div>
 
@@ -124,7 +124,7 @@ export const HeroSection: React.FC = () => {
               variants={fadeIn('up', 0.6)}
               className="flex items-center justify-center lg:justify-start gap-4 pt-4 text-slate-600 dark:text-slate-400"
             >
-              <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">{t('hero.connect')}</span>
+              <span className="text-xs font-semibold uppercase tracking-wider text-slate-400 whitespace-nowrap">{t('hero.connect')}</span>
               <a
                 href={DEVELOPER_PROFILE.github}
                 target="_blank"
@@ -183,14 +183,14 @@ export const HeroSection: React.FC = () => {
                 {/* Bottom Overlay Label */}
                 <div className="absolute bottom-6 inset-x-8 p-3 rounded-xl glass-card bg-white/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-700/50 backdrop-blur-md flex items-center justify-between shadow-lg">
                   <div>
-                    <h3 className="font-heading font-bold text-sm text-slate-900 dark:text-white">
+                    <h3 className="font-heading font-bold text-sm text-slate-900 dark:text-white whitespace-nowrap">
                       {t('hero.location')}
                     </h3>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">
+                    <p className="text-xs text-slate-500 dark:text-slate-400 whitespace-nowrap">
                       {t('hero.timeZone')}
                     </p>
                   </div>
-                  <CheckCircle2 className="w-5 h-5 text-emerald-500" />
+                  <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 ml-2" />
                 </div>
               </div>
 
@@ -200,14 +200,14 @@ export const HeroSection: React.FC = () => {
                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
                 className="absolute -top-6 -left-6 glass-card bg-white/90 dark:bg-slate-900/90 p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl flex items-center gap-3"
               >
-                <div className="w-10 h-10 rounded-xl bg-blue-600/10 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold">
+                <div className="w-10 h-10 rounded-xl bg-blue-600/10 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold shrink-0">
                   <Award className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="block font-heading font-bold text-base text-slate-900 dark:text-white">
+                  <span className="block font-heading font-bold text-sm sm:text-base text-slate-900 dark:text-white whitespace-nowrap">
                     {DEVELOPER_PROFILE.yearsExperience}+ {t('hero.yearsExp')}
                   </span>
-                  <span className="text-xs text-slate-600 dark:text-slate-400 font-medium">
+                  <span className="text-xs text-slate-600 dark:text-slate-400 font-medium whitespace-nowrap">
                     {t('hero.seniorExp')}
                   </span>
                 </div>
@@ -219,14 +219,14 @@ export const HeroSection: React.FC = () => {
                 transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
                 className="absolute -bottom-6 -right-6 glass-card bg-white/90 dark:bg-slate-900/90 p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl flex items-center gap-3"
               >
-                <div className="w-10 h-10 rounded-xl bg-violet-600/10 text-violet-600 dark:text-violet-400 flex items-center justify-center font-bold">
+                <div className="w-10 h-10 rounded-xl bg-violet-600/10 text-violet-600 dark:text-violet-400 flex items-center justify-center font-bold shrink-0">
                   <Sparkles className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="block font-heading font-bold text-base text-slate-900 dark:text-white">
+                  <span className="block font-heading font-bold text-sm sm:text-base text-slate-900 dark:text-white whitespace-nowrap">
                     {DEVELOPER_PROFILE.completedProjects}+ {t('hero.completedProjects')}
                   </span>
-                  <span className="text-xs text-slate-600 dark:text-slate-400 font-medium">
+                  <span className="text-xs text-slate-600 dark:text-slate-400 font-medium whitespace-nowrap">
                     {t('hero.shippedProduction')}
                   </span>
                 </div>
@@ -241,7 +241,7 @@ export const HeroSection: React.FC = () => {
         <div className="mt-16 flex justify-center">
           <button
             onClick={() => scrollToSection('about')}
-            className="flex flex-col items-center gap-2 text-xs font-semibold text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-violet-400 transition-colors group"
+            className="flex flex-col items-center gap-2 text-xs font-semibold text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-violet-400 transition-colors group whitespace-nowrap"
           >
             <span>{t('hero.scrollDown')}</span>
             <ChevronDown className="w-4 h-4 animate-bounce group-hover:translate-y-1 transition-transform" />

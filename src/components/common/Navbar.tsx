@@ -65,12 +65,12 @@ export const Navbar: React.FC = () => {
           {/* Logo */}
           <button 
             onClick={() => scrollToSection('hero')}
-            className="flex items-center gap-3 group text-left"
+            className="flex items-center gap-3 group text-left shrink-0"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-violet-600 flex items-center justify-center text-white font-bold font-heading text-lg shadow-lg shadow-blue-500/25 group-hover:scale-105 transition-transform">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-violet-600 flex items-center justify-center text-white font-bold font-heading text-lg shadow-lg shadow-blue-500/25 group-hover:scale-105 transition-transform shrink-0">
               SO
             </div>
-            <div>
+            <div className="whitespace-nowrap">
               <span className="font-heading font-bold text-lg text-slate-900 dark:text-white tracking-tight group-hover:text-blue-600 dark:group-hover:text-violet-400 transition-colors">
                 Sak Ousa
               </span>
@@ -88,7 +88,7 @@ export const Navbar: React.FC = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                  className={`relative px-3.5 py-2 rounded-full text-xs xl:text-sm font-semibold transition-all duration-200 whitespace-nowrap ${
                     isActive
                       ? 'text-white'
                       : 'text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
@@ -108,11 +108,11 @@ export const Navbar: React.FC = () => {
           </nav>
 
           {/* Right Action Icons & Controls */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             {/* Cmd + K Command Palette Trigger */}
             <button
               onClick={toggleCommandPalette}
-              className="flex items-center gap-2 px-3 py-2 text-xs font-medium text-slate-700 dark:text-slate-400 bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700/80 rounded-xl border border-slate-200 dark:border-slate-700 transition-colors shadow-sm"
+              className="flex items-center gap-2 px-3 py-2 text-xs font-medium text-slate-700 dark:text-slate-400 bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700/80 rounded-xl border border-slate-200 dark:border-slate-700 transition-colors shadow-sm whitespace-nowrap"
               title="Open Command Palette (Cmd + K)"
             >
               <Command className="w-3.5 h-3.5" />
@@ -135,7 +135,7 @@ export const Navbar: React.FC = () => {
                 e.preventDefault();
                 scrollToSection('contact');
               }}
-              className="hidden sm:inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-500 hover:to-violet-500 rounded-xl shadow-lg shadow-blue-500/25 transition-all hover:scale-[1.02] active:scale-[0.98]"
+              className="hidden sm:inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-500 hover:to-violet-500 rounded-xl shadow-lg shadow-blue-500/25 transition-all hover:scale-[1.02] active:scale-[0.98] whitespace-nowrap"
             >
               {t('nav.hireMe', 'Hire Me')}
             </a>
@@ -170,14 +170,14 @@ export const Navbar: React.FC = () => {
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className={`flex items-center gap-3 p-3 rounded-xl text-left text-sm font-medium transition-all ${
+                    className={`flex items-center gap-3 p-3 rounded-xl text-left text-sm font-medium transition-all whitespace-nowrap ${
                       isActive
                         ? 'bg-blue-600 text-white shadow-md shadow-blue-500/20'
                         : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/70'
                     }`}
                   >
-                    <Icon className="w-4 h-4" />
-                    {item.label}
+                    <Icon className="w-4 h-4 shrink-0" />
+                    <span>{item.label}</span>
                   </button>
                 );
               })}
@@ -204,7 +204,7 @@ export const Navbar: React.FC = () => {
               </div>
               <button
                 onClick={() => scrollToSection('contact')}
-                className="w-full py-2.5 text-center text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-violet-600 rounded-xl shadow-md"
+                className="w-full py-2.5 text-center text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-violet-600 rounded-xl shadow-md whitespace-nowrap"
               >
                 {t('nav.hireMe', 'Hire Me')}
               </button>
