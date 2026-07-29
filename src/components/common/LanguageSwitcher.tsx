@@ -6,13 +6,15 @@ import { useTranslation } from 'react-i18next';
 const LANGUAGES = [
   { 
     code: 'en', 
-    label: 'English', 
+    label: 'English',
+    shortLabel: 'English', 
     flagUrl: 'https://flagcdn.com/w40/us.png',
     alt: 'US Flag'
   },
   { 
     code: 'kh', 
     label: 'ភាសាខ្មែរ', 
+    shortLabel: 'ភាសាខ្មែរ',
     flagUrl: 'https://flagcdn.com/w40/kh.png',
     alt: 'Cambodia Flag'
   },
@@ -46,7 +48,7 @@ export const LanguageSwitcher: React.FC = () => {
       {/* Trigger Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-2 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-200/80 dark:hover:bg-slate-800/80 rounded-xl border border-slate-200 dark:border-slate-800 transition-colors shadow-sm"
+        className="flex items-center gap-2 px-3 py-2 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-200/80 dark:hover:bg-slate-800/80 rounded-xl border border-slate-200 dark:border-slate-800 transition-colors shadow-sm whitespace-nowrap"
         title="Switch Language"
       >
         <img 
@@ -54,7 +56,7 @@ export const LanguageSwitcher: React.FC = () => {
           alt={currentLang.alt} 
           className="w-5 h-3.5 rounded-[2px] object-cover shadow-sm shrink-0 border border-slate-300/50 dark:border-slate-700/50" 
         />
-        <span className="uppercase font-mono font-bold text-[11px]">{currentLang.code}</span>
+        <span className="font-semibold text-xs text-slate-800 dark:text-slate-200 whitespace-nowrap">{currentLang.shortLabel}</span>
       </button>
 
       {/* Dropdown Menu */}

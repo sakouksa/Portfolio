@@ -8,7 +8,8 @@ import {
   Sparkles, 
   CheckCircle2, 
   Award,
-  ChevronDown
+  ChevronDown,
+  FileText
 } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaXTwitter } from 'react-icons/fa6';
 import { useTranslation } from 'react-i18next';
@@ -16,7 +17,7 @@ import { DEVELOPER_PROFILE } from '../../lib/constants';
 import { fadeIn, staggerContainer } from '../../lib/framer-variants';
 
 export const HeroSection: React.FC = () => {
-  const { t } = useTranslation(['portfolio', 'common']);
+  const { t, i18n } = useTranslation(['portfolio', 'common']);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -57,11 +58,11 @@ export const HeroSection: React.FC = () => {
             {/* Main Headline */}
             <motion.h1 
               variants={fadeIn('up', 0.2)}
-              className="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-[1.25]"
+              className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-[1.2]"
             >
               {t('hero.greeting')}{' '}
-              <span className="gradient-text-primary whitespace-nowrap">
-                {DEVELOPER_PROFILE.name}
+              <span className="gradient-text-primary">
+                {t('common:devName', DEVELOPER_PROFILE.name)}
               </span>
             </motion.h1>
 
@@ -72,6 +73,7 @@ export const HeroSection: React.FC = () => {
             >
               <Sparkles className="w-5 h-5 text-violet-500 shrink-0 hidden sm:inline" />
               <TypeAnimation
+                key={i18n.language}
                 sequence={[
                   t('hero.role1'),
                   2000,
@@ -110,11 +112,21 @@ export const HeroSection: React.FC = () => {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform shrink-0" />
               </button>
 
+              <a
+                href={DEVELOPER_PROFILE.resumeUrl !== '#' ? DEVELOPER_PROFILE.resumeUrl : '/Mr._SAKOUSA_CV.pdf'}
+                target="_blank"
+                rel="noreferrer"
+                className="px-6 py-3.5 text-base font-semibold text-slate-800 dark:text-slate-200 bg-white/90 dark:bg-slate-900/80 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-800 backdrop-blur-md shadow-md flex items-center gap-2 transition-all hover:scale-[1.02] whitespace-nowrap"
+              >
+                <FileText className="w-5 h-5 text-blue-600 dark:text-violet-400 shrink-0" />
+                <span>{t('common:buttons.viewCv', 'View CV (PDF)')}</span>
+              </a>
+
               <button
                 onClick={() => scrollToSection('contact')}
                 className="px-6 py-3.5 text-base font-semibold text-slate-800 dark:text-slate-200 bg-white/90 dark:bg-slate-900/80 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-800 backdrop-blur-md shadow-md flex items-center gap-2 transition-all hover:scale-[1.02] whitespace-nowrap"
               >
-                <Download className="w-5 h-5 text-blue-600 dark:text-violet-400 shrink-0" />
+                <Download className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0" />
                 <span>{t('common:buttons.contactMe', 'Contact Me')}</span>
               </button>
             </motion.div>

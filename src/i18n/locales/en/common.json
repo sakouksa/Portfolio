@@ -1,4 +1,5 @@
 {
+  "devName": "Mr. Sak Ousa",
   "nav": {
     "home": "Home",
     "about": "About",
@@ -22,6 +23,7 @@
   },
   "buttons": {
     "viewProjects": "View Projects",
+    "viewCv": "View CV (PDF)",
     "contactMe": "Contact Me",
     "hireMe": "Hire Me",
     "readArticle": "Read Article",

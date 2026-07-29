@@ -1,4 +1,5 @@
 {
+  "devName": "សាក់ ឧស្សាហ៍",
   "nav": {
     "home": "ទំព័រដើម",
     "about": "អំពីខ្ញុំ",
@@ -9,12 +10,12 @@
     "openSource": "កូដចំហ",
     "contact": "ទំនាក់ទំនង",
     "search": "ស្វែងរក",
-    "hireMe": "ជួលខ្ញុំ"
+    "hireMe": "ជ្រើសរើសយើង"
   },
   "theme": {
-    "light": "ភ្លឺ (Light)",
-    "dark": "ងងឹត (Dark)",
-    "system": "តាមប្រព័ន្ធ (System)"
+    "light": "ភ្លឺ",
+    "dark": "ងងឹត",
+    "system": "តាមប្រព័ន្ធ"
   },
   "language": {
     "en": "English",
@@ -22,8 +23,9 @@
   },
   "buttons": {
     "viewProjects": "មើលគម្រោង",
+    "viewCv": "មើល CV (PDF)",
     "contactMe": "ទាក់ទងខ្ញុំ",
-    "hireMe": "ជួលខ្ញុំ",
+    "hireMe": "ជ្រើសរើសយើង",
     "readArticle": "អានអត្ថបទ",
     "viewCaseStudy": "មើលការវិភាគស្ថាបត្យកម្ម",
     "sendMessage": "ផ្ញើសារ",

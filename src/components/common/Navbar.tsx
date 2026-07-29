@@ -60,7 +60,7 @@ export const Navbar: React.FC = () => {
 
       {/* Main Glass Navbar */}
       <header className="fixed top-0 left-0 right-0 z-40 glass-navbar bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-b border-slate-200/80 dark:border-slate-800 transition-all duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4 xl:gap-8">
           
           {/* Logo */}
           <button 
@@ -71,24 +71,24 @@ export const Navbar: React.FC = () => {
               SO
             </div>
             <div className="whitespace-nowrap">
-              <span className="font-heading font-bold text-lg text-slate-900 dark:text-white tracking-tight group-hover:text-blue-600 dark:group-hover:text-violet-400 transition-colors">
-                Sak Ousa
+              <span className="font-heading font-bold text-base sm:text-lg text-slate-900 dark:text-white tracking-tight group-hover:text-blue-600 dark:group-hover:text-violet-400 transition-colors">
+                {t('devName', 'Mr. Sak Ousa')}
               </span>
-              <span className="block text-xs text-slate-500 dark:text-slate-400 font-medium">
+              <span className="block text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 font-medium">
                 Software Architect
               </span>
             </div>
           </button>
 
           {/* Desktop Nav Items */}
-          <nav className="hidden lg:flex items-center gap-1 bg-white/90 dark:bg-slate-900/80 p-1.5 rounded-full border border-slate-200 dark:border-slate-800 backdrop-blur-md shadow-sm">
+          <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1 bg-white/90 dark:bg-slate-900/80 p-1 xl:p-1.5 rounded-full border border-slate-200 dark:border-slate-800 backdrop-blur-md shadow-sm">
             {NAV_ITEMS.map((item) => {
               const isActive = activeSection === item.id;
               return (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`relative px-3.5 py-2 rounded-full text-xs xl:text-sm font-semibold transition-all duration-200 whitespace-nowrap ${
+                  className={`relative px-2.5 xl:px-3.5 py-1.5 xl:py-2 rounded-full text-xs xl:text-sm font-semibold transition-all duration-200 whitespace-nowrap ${
                     isActive
                       ? 'text-white'
                       : 'text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
@@ -135,7 +135,7 @@ export const Navbar: React.FC = () => {
                 e.preventDefault();
                 scrollToSection('contact');
               }}
-              className="hidden sm:inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-500 hover:to-violet-500 rounded-xl shadow-lg shadow-blue-500/25 transition-all hover:scale-[1.02] active:scale-[0.98] whitespace-nowrap"
+              className="hidden sm:inline-flex items-center justify-center px-4 sm:px-5 py-2 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-500 hover:to-violet-500 rounded-xl shadow-lg shadow-blue-500/25 transition-all hover:scale-[1.02] active:scale-[0.98] whitespace-nowrap shrink-0 min-w-fit"
             >
               {t('nav.hireMe', 'Hire Me')}
             </a>

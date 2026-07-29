@@ -23,7 +23,7 @@ export const DEVELOPER_PROFILE: DeveloperProfile = {
   twitter: "https://twitter.com/sakousa",
   medium: "https://medium.com/@sakousa",
   leetcode: "https://leetcode.com/sakousa",
-  resumeUrl: "#",
+  resumeUrl: "/cv/Mr._SAKOUSA_CV.pdf",
   avatarUrl: "/profile.jpg",
   yearsExperience: 3,
   completedProjects: 35,
