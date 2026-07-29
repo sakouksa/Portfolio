@@ -15,7 +15,7 @@ export const DEVELOPER_PROFILE: DeveloperProfile = {
   role: "Senior Full Stack Architect & UI/UX Engineer",
   tagline: "Crafting world-class digital experiences, scalable cloud systems, and intuitive interfaces with modern technologies.",
   bio: "Passionate Senior Software Architect with 3+ years of expertise in building enterprise web applications, high-performance distributed systems, and sleek interactive frontends. Specialized in React 19, Next.js, Node.js, TypeScript, Cloud Architecture, and AI integration. Dedicated to clean code, WCAG accessibility, and seamless user experiences.",
-  location: "Kampong Thom, Cambodia",
+  location: "Phnom Penh, Cambodia",
   email: "sakousa.dev@gmail.com",
   phone: "+855 (0) 96 123 4567",
   github: "https://github.com/sakouksa",
