@@ -175,7 +175,7 @@ export const PROJECT_ITEMS: ProjectItem[] = [
       "/images/ecommerce-contact.png"
     ],
     demoUrl: "https://e-commerce-shoping-five.vercel.app/index.html",
-    githubUrl: "https://github.com/sakouksa/Portfolio",
+    githubUrl: "https://github.com/sakouksa/E-commerceShoping",
     featured: true,
     date: "2024",
     architecture: "Multi-page static website architecture with HTML5 semantic structure, responsive CSS Grid & Flexbox layouts, and vanilla JavaScript for cart logic, form validation, and interactive UI components. Hosted on Vercel with automatic HTTPS and global CDN.",
