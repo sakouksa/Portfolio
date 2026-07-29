@@ -52,6 +52,8 @@
     "coreStack": "បច្ចេកវិទ្យាផលិតកម្មស្នូល",
     "mastery": "ជំនាញកម្រិតអ្នកជំនាញ",
     "allSkills": "ជំនាញទាំងអស់",
+    "showing": "បង្ហាញ {{from}}–{{to}} ក្នុងចំណោម {{total}}",
+    "page": "ទំព័រ {{current}} / {{total}}",
     "cats": {
       "frontend": "ចំណុចប្រទាក់ & UI",
       "backend": "ប្រព័ន្ធ Backend",

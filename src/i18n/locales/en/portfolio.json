@@ -52,6 +52,8 @@
     "coreStack": "Core Production Stack",
     "mastery": "Expert Mastery",
     "allSkills": "All Skills",
+    "showing": "Showing {{from}}–{{to}} of {{total}}",
+    "page": "Page {{current}} / {{total}}",
     "cats": {
       "frontend": "Frontend & UI",
       "backend": "Backend & Systems",

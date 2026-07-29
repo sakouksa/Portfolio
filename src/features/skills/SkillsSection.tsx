@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Wrench, 
@@ -8,7 +8,9 @@ import {
   Laptop, 
   Database, 
   Sparkles,
-  Code2
+  Code2,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 import {
   SiJavascript,
@@ -49,6 +51,8 @@ import { TbDatabase } from 'react-icons/tb';
 import { useTranslation } from 'react-i18next';
 import { SKILL_ITEMS } from '../../lib/constants';
 import { SkillCategory } from '../../types/portfolio.types';
+
+const ITEMS_PER_PAGE = 6;
 
 // Map Tech Name to Brand Icon
 const TECH_ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -102,13 +106,37 @@ const CATEGORIES_CONFIG: {
   { id: 'DevTools & Platforms', titleKey: 'skills.cats.devtools', icon: Wrench },
 ];
 
+// Page transition variants — simple fade + slight Y shift, no scale
+const pageVariants = {
+  enter: { opacity: 0, y: 16 },
+  center: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -10 },
+};
+
 export const SkillsSection: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<SkillCategory | 'All'>('All');
+  const [currentPage, setCurrentPage] = useState(1);
+  const [direction, setDirection] = useState<'next' | 'prev'>('next');
   const { t } = useTranslation(['portfolio', 'common']);
 
   const filteredSkills = activeFilter === 'All'
     ? SKILL_ITEMS
     : SKILL_ITEMS.filter((item) => item.category === activeFilter);
+
+  const totalPages = Math.ceil(filteredSkills.length / ITEMS_PER_PAGE);
+  const startIdx = (currentPage - 1) * ITEMS_PER_PAGE;
+  const pageSkills = filteredSkills.slice(startIdx, startIdx + ITEMS_PER_PAGE);
+
+  // Reset page when filter changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [activeFilter]);
+
+  const goToPage = (page: number, dir: 'next' | 'prev' = 'next') => {
+    if (page < 1 || page > totalPages) return;
+    setDirection(dir);
+    setCurrentPage(page);
+  };
 
   return (
     <section id="skills" className="py-24 relative bg-grid-pattern bg-slate-50/50 dark:bg-slate-950/80 text-slate-900 dark:text-white transition-colors duration-300 overflow-hidden">
@@ -137,7 +165,8 @@ export const SkillsSection: React.FC = () => {
         </div>
 
         {/* Category Filter Pills */}
-        <div className="flex flex-wrap items-center justify-center gap-2.5 mb-14">
+        <div className="flex flex-wrap items-center justify-center gap-2.5 mb-10">
+          {/* All button */}
           <button
             onClick={() => setActiveFilter('All')}
             className={`relative px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap ${
@@ -183,88 +212,155 @@ export const SkillsSection: React.FC = () => {
           })}
         </div>
 
-        {/* Proficiency Bars Grid */}
-        <motion.div 
-          layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
-          <AnimatePresence mode="popLayout">
-            {filteredSkills.map((skill, idx) => {
-              const BrandIcon = TECH_ICON_MAP[skill.name] || Code2;
-              return (
-                <motion.div
-                  layout
-                  initial={{ opacity: 0, y: 18 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -12, transition: { duration: 0.15 } }}
-                  transition={{ duration: 0.28, delay: Math.min(idx * 0.04, 0.4), ease: [0.22, 1, 0.36, 1] }}
-                  key={skill.name}
-                  className="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 glow-card relative overflow-hidden flex flex-col justify-between group"
-                >
-                  <div className="space-y-4">
-                    {/* Header Row */}
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <div 
-                          className="w-10 h-10 rounded-xl flex items-center justify-center text-xl shadow-md transition-transform group-hover:scale-110 shrink-0"
-                          style={{ 
-                            backgroundColor: `${skill.bgColor}20`,
-                            color: skill.bgColor === '#000000' ? '#3B82F6' : skill.bgColor
-                          }}
-                        >
-                          <BrandIcon className="w-5 h-5 shrink-0" />
+        {/* Page count label */}
+        <div className="flex items-center justify-between mb-6 px-1">
+          <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+            {t('skills.showing', {
+              from: startIdx + 1,
+              to: Math.min(startIdx + ITEMS_PER_PAGE, filteredSkills.length),
+              total: filteredSkills.length,
+            })}
+          </p>
+          <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+            {t('skills.page', { current: currentPage, total: totalPages })}
+          </p>
+        </div>
+
+        {/* Skills Grid — smooth crossfade between pages */}
+        <div className="relative min-h-[420px]">
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.div
+              key={`${activeFilter}-page-${currentPage}`}
+              variants={pageVariants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            >
+              {pageSkills.map((skill, idx) => {
+                const BrandIcon = TECH_ICON_MAP[skill.name] || Code2;
+                return (
+                  <motion.div
+                    key={skill.name}
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.3,
+                      delay: idx * 0.05,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
+                    className="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 glow-card relative overflow-hidden flex flex-col justify-between group"
+                  >
+                    <div className="space-y-4">
+                      {/* Header Row */}
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                          <div 
+                            className="w-10 h-10 rounded-xl flex items-center justify-center text-xl shadow-md transition-transform group-hover:scale-110 shrink-0"
+                            style={{ 
+                              backgroundColor: `${skill.bgColor}20`,
+                              color: skill.bgColor === '#000000' ? '#3B82F6' : skill.bgColor
+                            }}
+                          >
+                            <BrandIcon className="w-5 h-5 shrink-0" />
+                          </div>
+                          <div>
+                            <h3 className="font-heading font-bold text-base text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-violet-400 transition-colors whitespace-nowrap">
+                              {skill.name}
+                            </h3>
+                            <span className="text-[11px] text-slate-500 dark:text-slate-400 font-medium whitespace-nowrap">
+                              {skill.category}
+                            </span>
+                          </div>
                         </div>
-                        <div>
-                          <h3 className="font-heading font-bold text-base text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-violet-400 transition-colors whitespace-nowrap">
-                            {skill.name}
-                          </h3>
-                          <span className="text-[11px] text-slate-500 dark:text-slate-400 font-medium whitespace-nowrap">
-                            {skill.category}
+
+                        {skill.featured && (
+                          <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 flex items-center gap-1 shrink-0 whitespace-nowrap">
+                            <Sparkles className="w-3 h-3" />
+                            Core
+                          </span>
+                        )}
+                      </div>
+
+                      {/* Progress Bar */}
+                      <div className="space-y-2 pt-2">
+                        <div className="flex justify-between items-center text-xs font-semibold">
+                          <span className="text-slate-600 dark:text-slate-400 whitespace-nowrap">{t('skills.level')}</span>
+                          <span className="font-bold font-mono text-blue-600 dark:text-violet-400 text-sm whitespace-nowrap">
+                            {skill.level}%
                           </span>
                         </div>
-                      </div>
 
-                      {skill.featured && (
-                        <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 flex items-center gap-1 shrink-0 whitespace-nowrap">
-                          <Sparkles className="w-3 h-3" />
-                          Core
-                        </span>
-                      )}
-                    </div>
-
-                    {/* Progress Bar Score */}
-                    <div className="space-y-2 pt-2">
-                      <div className="flex justify-between items-center text-xs font-semibold">
-                        <span className="text-slate-600 dark:text-slate-400 whitespace-nowrap">{t('skills.level')}</span>
-                        <span className="font-bold font-mono text-blue-600 dark:text-violet-400 text-sm whitespace-nowrap">
-                          {skill.level}%
-                        </span>
-                      </div>
-
-                      <div className="w-full h-2.5 bg-slate-200 dark:bg-slate-900 rounded-full overflow-hidden p-0.5 border border-slate-300 dark:border-slate-800">
-                        <motion.div
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${skill.level}%` }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 1, ease: 'easeOut' }}
-                          className="h-full rounded-full bg-gradient-to-r from-blue-600 via-violet-600 to-cyan-400"
-                        />
+                        <div className="w-full h-2.5 bg-slate-200 dark:bg-slate-900 rounded-full overflow-hidden p-0.5 border border-slate-300 dark:border-slate-800">
+                          <motion.div
+                            initial={{ width: 0 }}
+                            animate={{ width: `${skill.level}%` }}
+                            transition={{ duration: 0.9, ease: 'easeOut', delay: idx * 0.05 }}
+                            className="h-full rounded-full bg-gradient-to-r from-blue-600 via-violet-600 to-cyan-400"
+                          />
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Footer Stats Row */}
-                  <div className="pt-4 mt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 font-medium">
-                    <span className="whitespace-nowrap">{skill.years}+ {t('skills.yrsExp')}</span>
-                    <span className="font-semibold text-slate-700 dark:text-slate-300 whitespace-nowrap">
-                      {skill.level >= 90 ? t('skills.mastery') : t('skills.coreStack')}
-                    </span>
-                  </div>
-                </motion.div>
-              );
-            })}
+                    {/* Footer */}
+                    <div className="pt-4 mt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 font-medium">
+                      <span className="whitespace-nowrap">{skill.years}+ {t('skills.yrsExp')}</span>
+                      <span className="font-semibold text-slate-700 dark:text-slate-300 whitespace-nowrap">
+                        {skill.level >= 90 ? t('skills.mastery') : t('skills.coreStack')}
+                      </span>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
           </AnimatePresence>
-        </motion.div>
+        </div>
+
+        {/* Pagination Controls */}
+        {totalPages > 1 && (
+          <div className="flex items-center justify-center gap-3 mt-10">
+            {/* Prev */}
+            <button
+              onClick={() => goToPage(currentPage - 1, 'prev')}
+              disabled={currentPage === 1}
+              className="w-9 h-9 rounded-xl flex items-center justify-center border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900/80 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-200"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+
+            {/* Page dots / numbers */}
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <button
+                key={page}
+                onClick={() => goToPage(page, page > currentPage ? 'next' : 'prev')}
+                className={`relative w-9 h-9 rounded-xl text-xs font-bold transition-all duration-200 ${
+                  page === currentPage
+                    ? 'text-white shadow-lg shadow-blue-500/25 scale-110'
+                    : 'border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900/80 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
+                }`}
+              >
+                {page === currentPage && (
+                  <motion.span
+                    layoutId="page-active"
+                    className="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 -z-10"
+                    transition={{ type: 'spring', stiffness: 380, damping: 32 }}
+                  />
+                )}
+                <span className="relative z-10">{page}</span>
+              </button>
+            ))}
+
+            {/* Next */}
+            <button
+              onClick={() => goToPage(currentPage + 1, 'next')}
+              disabled={currentPage === totalPages}
+              className="w-9 h-9 rounded-xl flex items-center justify-center border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900/80 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-200"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
+        )}
 
       </div>
     </section>
