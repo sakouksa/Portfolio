@@ -5,7 +5,9 @@ import {
   ExternalLink, 
   Layers, 
   CheckCircle2, 
-  AlertCircle
+  AlertCircle,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa6';
 import { useTranslation } from 'react-i18next';
@@ -21,6 +23,7 @@ export const ProjectDetailModal: React.FC = () => {
   useEffect(() => {
     if (selectedProject) {
       document.body.style.overflow = 'hidden';
+      setActiveImageIndex(0);
     } else {
       document.body.style.overflow = '';
     }
@@ -34,6 +37,16 @@ export const ProjectDetailModal: React.FC = () => {
   const galleryImages = selectedProject.gallery && selectedProject.gallery.length > 0
     ? selectedProject.gallery
     : [selectedProject.image];
+
+  const handlePrevImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setActiveImageIndex((prev) => (prev === 0 ? galleryImages.length - 1 : prev - 1));
+  };
+
+  const handleNextImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setActiveImageIndex((prev) => (prev === galleryImages.length - 1 ? 0 : prev + 1));
+  };
 
   // Localized fields
   const title = t(`projects.items.${selectedProject.id}.title`, { defaultValue: selectedProject.title });
@@ -87,12 +100,46 @@ export const ProjectDetailModal: React.FC = () => {
             
             {/* Gallery Image Display */}
             <div className="space-y-3">
-              <div className="relative h-64 sm:h-96 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-md">
-                <img
-                  src={galleryImages[activeImageIndex]}
-                  alt={title}
-                  className="w-full h-full object-cover"
-                />
+              <div className="relative h-64 sm:h-96 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-md group bg-slate-950/20">
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={activeImageIndex}
+                    src={galleryImages[activeImageIndex]}
+                    alt={title}
+                    initial={{ opacity: 0, scale: 0.98 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.22 }}
+                    className="w-full h-full object-cover"
+                  />
+                </AnimatePresence>
+
+                {galleryImages.length > 1 && (
+                  <>
+                    {/* Left Arrow Button */}
+                    <button
+                      onClick={handlePrevImage}
+                      className="absolute left-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-slate-950/60 hover:bg-blue-600 text-white backdrop-blur-md transition-all opacity-80 group-hover:opacity-100 hover:scale-110 shadow-lg border border-white/10 z-10"
+                      aria-label="Previous Image"
+                    >
+                      <ChevronLeft className="w-5 h-5" />
+                    </button>
+
+                    {/* Right Arrow Button */}
+                    <button
+                      onClick={handleNextImage}
+                      className="absolute right-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-slate-950/60 hover:bg-blue-600 text-white backdrop-blur-md transition-all opacity-80 group-hover:opacity-100 hover:scale-110 shadow-lg border border-white/10 z-10"
+                      aria-label="Next Image"
+                    >
+                      <ChevronRight className="w-5 h-5" />
+                    </button>
+
+                    {/* Counter Badge */}
+                    <div className="absolute bottom-3 right-3 px-3 py-1 rounded-full text-xs font-mono font-bold bg-slate-950/70 text-white backdrop-blur-md border border-white/10 z-10">
+                      {activeImageIndex + 1} / {galleryImages.length}
+                    </div>
+                  </>
+                )}
               </div>
 
               {galleryImages.length > 1 && (

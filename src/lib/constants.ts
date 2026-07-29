@@ -128,7 +128,8 @@ export const PROJECT_ITEMS: ProjectItem[] = [
       "/images/ecommerce-shop.png",
       "/images/ecommerce-blog.png",
       "/images/ecommerce-about.png",
-      "/images/ecommerce-contact.png"
+      "/images/ecommerce-contact.png",
+      "/images/ecommerce-card.png",
     ],
     demoUrl: "https://e-commerce-shoping-five.vercel.app/index.html",
     githubUrl: "https://github.com/sakouksa/E-commerceShoping",
