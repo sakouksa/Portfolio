@@ -8,18 +8,31 @@ import {
   AlertCircle
 } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa6';
+import { useTranslation } from 'react-i18next';
 import { usePortfolioStore } from '../../store/usePortfolioStore';
 import { modalVariants } from '../../lib/framer-variants';
 
 export const ProjectDetailModal: React.FC = () => {
   const { selectedProject, setSelectedProject } = usePortfolioStore();
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const { t } = useTranslation(['portfolio', 'common']);
 
   if (!selectedProject) return null;
 
   const galleryImages = selectedProject.gallery && selectedProject.gallery.length > 0
     ? selectedProject.gallery
     : [selectedProject.image];
+
+  // Localized fields
+  const title = t(`projects.items.${selectedProject.id}.title`, { defaultValue: selectedProject.title });
+  const description = t(`projects.items.${selectedProject.id}.description`, { defaultValue: selectedProject.description });
+  const architecture = t(`projects.items.${selectedProject.id}.architecture`, { defaultValue: selectedProject.architecture });
+
+  const rawChallenges = t(`projects.items.${selectedProject.id}.challenges`, { returnObjects: true, defaultValue: selectedProject.challenges });
+  const challenges: string[] = Array.isArray(rawChallenges) ? rawChallenges : (selectedProject.challenges || []);
+
+  const rawSolutions = t(`projects.items.${selectedProject.id}.solutions`, { returnObjects: true, defaultValue: selectedProject.solutions });
+  const solutions: string[] = Array.isArray(rawSolutions) ? rawSolutions : (selectedProject.solutions || []);
 
   return (
     <AnimatePresence>
@@ -45,7 +58,7 @@ export const ProjectDetailModal: React.FC = () => {
                 {selectedProject.category}
               </span>
               <h2 className="text-2xl sm:text-3xl font-bold font-heading text-slate-900 dark:text-white mt-1">
-                {selectedProject.title}
+                {title}
               </h2>
             </div>
 
@@ -65,7 +78,7 @@ export const ProjectDetailModal: React.FC = () => {
               <div className="relative h-64 sm:h-96 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-md">
                 <img
                   src={galleryImages[activeImageIndex]}
-                  alt={selectedProject.title}
+                  alt={title}
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -92,10 +105,10 @@ export const ProjectDetailModal: React.FC = () => {
             {/* Description & Action Links */}
             <div className="space-y-4">
               <h3 className="text-lg font-heading font-bold text-slate-900 dark:text-white">
-                Overview & Value Proposition
+                {t('projects.overviewTitle')}
               </h3>
               <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-base">
-                {selectedProject.description}
+                {description}
               </p>
 
               {/* Action Buttons */}
@@ -108,7 +121,7 @@ export const ProjectDetailModal: React.FC = () => {
                     className="px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-violet-600 rounded-xl shadow-lg shadow-blue-500/25 flex items-center gap-2 hover:scale-[1.02] transition-transform"
                   >
                     <ExternalLink className="w-4 h-4" />
-                    Live Demo
+                    {t('projects.liveDemo')}
                   </a>
                 )}
                 {selectedProject.githubUrl && (
@@ -119,7 +132,7 @@ export const ProjectDetailModal: React.FC = () => {
                     className="px-5 py-2.5 text-sm font-semibold text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-xl flex items-center gap-2 transition-colors"
                   >
                     <FaGithub className="w-4 h-4" />
-                    Source Code
+                    {t('projects.sourceCode')}
                   </a>
                 )}
               </div>
@@ -134,7 +147,7 @@ export const ProjectDetailModal: React.FC = () => {
                       {metric.value}
                     </span>
                     <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">
-                      {metric.label}
+                      {t(`projects.items.${selectedProject.id}.metrics.${metric.label}`, { defaultValue: metric.label })}
                     </span>
                   </div>
                 ))}
@@ -142,28 +155,28 @@ export const ProjectDetailModal: React.FC = () => {
             )}
 
             {/* Architecture Details */}
-            {selectedProject.architecture && (
+            {architecture && (
               <div className="p-5 rounded-2xl bg-blue-50/50 dark:bg-slate-800/40 border border-blue-200/50 dark:border-slate-800 space-y-2">
                 <div className="flex items-center gap-2 text-blue-600 dark:text-violet-400 font-heading font-bold text-base">
                   <Layers className="w-5 h-5" />
-                  <span>Technical Architecture</span>
+                  <span>{t('projects.architectureTitle')}</span>
                 </div>
                 <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-                  {selectedProject.architecture}
+                  {architecture}
                 </p>
               </div>
             )}
 
             {/* Engineering Challenges & Solutions */}
-            {selectedProject.challenges && selectedProject.solutions && (
+            {challenges.length > 0 && solutions.length > 0 && (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="p-5 rounded-2xl bg-rose-50/50 dark:bg-rose-950/20 border border-rose-200/50 dark:border-rose-900/30 space-y-2">
                   <div className="flex items-center gap-2 text-rose-600 dark:text-rose-400 font-heading font-bold text-sm">
                     <AlertCircle className="w-4 h-4" />
-                    <span>Key Engineering Challenges</span>
+                    <span>{t('projects.challengesTitle')}</span>
                   </div>
                   <ul className="space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300 list-disc list-inside">
-                    {selectedProject.challenges.map((c, i) => (
+                    {challenges.map((c, i) => (
                       <li key={i}>{c}</li>
                     ))}
                   </ul>
@@ -172,10 +185,10 @@ export const ProjectDetailModal: React.FC = () => {
                 <div className="p-5 rounded-2xl bg-emerald-50/50 dark:bg-emerald-950/20 border border-emerald-200/50 dark:border-emerald-900/30 space-y-2">
                   <div className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-heading font-bold text-sm">
                     <CheckCircle2 className="w-4 h-4" />
-                    <span>Architectural Solutions</span>
+                    <span>{t('projects.solutionsTitle')}</span>
                   </div>
                   <ul className="space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300 list-disc list-inside">
-                    {selectedProject.solutions.map((s, i) => (
+                    {solutions.map((s, i) => (
                       <li key={i}>{s}</li>
                     ))}
                   </ul>
@@ -186,7 +199,7 @@ export const ProjectDetailModal: React.FC = () => {
             {/* Tech Stack Tags */}
             <div className="space-y-3 pt-2">
               <span className="block text-xs font-semibold uppercase tracking-wider text-slate-400">
-                Technologies & Tools Used:
+                {t('projects.techUsed')}
               </span>
               <div className="flex flex-wrap gap-2">
                 {selectedProject.tags.map((tag) => (

@@ -149,16 +149,16 @@ export const ProjectsSection: React.FC = () => {
                     {/* Card Content Body */}
                     <div className="p-6 space-y-3">
                       <h3 className="font-heading font-bold text-xl text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-violet-400 transition-colors flex items-center justify-between">
-                        <span>{project.title}</span>
+                        <span>{t(`projects.items.${project.id}.title`, { defaultValue: project.title })}</span>
                         <ArrowUpRight className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </h3>
 
                       <p className="text-xs text-blue-600 dark:text-violet-400 font-medium">
-                        {project.subtitle}
+                        {t(`projects.items.${project.id}.subtitle`, { defaultValue: project.subtitle })}
                       </p>
 
                       <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 line-clamp-3 leading-relaxed">
-                        {project.description}
+                        {t(`projects.items.${project.id}.description`, { defaultValue: project.description })}
                       </p>
                     </div>
                   </div>

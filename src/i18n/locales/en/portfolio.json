@@ -78,7 +78,23 @@
     "architectureTitle": "Technical Architecture",
     "challengesTitle": "Key Engineering Challenges",
     "solutionsTitle": "Architectural Solutions",
-    "techUsed": "Technologies & Tools Used:"
+    "techUsed": "Technologies & Tools Used:",
+    "items": {
+      "project-4": {
+        "title": "Betheme Shop (Cara E-Commerce)",
+        "subtitle": "Full-Featured E-Commerce Fashion Store",
+        "description": "A complete multi-page e-commerce web application for a fashion retail store built with pure HTML5, CSS3, and JavaScript. Features a product catalogue, shopping cart, user authentication, contact form, and promotional landing pages — deployed live on Vercel.",
+        "architecture": "Multi-page static website architecture with HTML5 semantic structure, responsive CSS Grid & Flexbox layouts, and vanilla JavaScript for cart logic, form validation, and interactive UI components. Hosted on Vercel with automatic HTTPS and global CDN.",
+        "challenges": [
+          "Building a fully functional shopping cart using only vanilla JavaScript without any framework or state management library.",
+          "Ensuring consistent responsive layout across all pages from mobile (320px) to 4K desktop."
+        ],
+        "solutions": [
+          "Implemented a localStorage-based cart system for persistent session data across page navigation.",
+          "Used CSS custom properties and a mobile-first approach with media queries for seamless multi-device support."
+        ]
+      }
+    }
   },
   "services": {
     "badge": "Services & Solutions",

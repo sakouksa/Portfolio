@@ -78,7 +78,23 @@
     "architectureTitle": "ស្ថាបត្យកម្មបច្ចេកទេស",
     "challengesTitle": "បញ្ហាប្រឈមវិស្វកម្មសំខាន់ៗ",
     "solutionsTitle": "ដំណោះស្រាយស្ថាបត្យកម្ម",
-    "techUsed": "បច្ចេកវិទ្យា និងឧបករណ៍ដែលបានប្រើ៖"
+    "techUsed": "បច្ចេកវិទ្យា និងឧបករណ៍ដែលបានប្រើ៖",
+    "items": {
+      "project-4": {
+        "title": "Betheme Shop (ហាងទំនិញ Cara)",
+        "subtitle": "កម្មវិធីហាងទំនិញសម្លៀកបំពាក់ E-Commerce ពេញលេញ",
+        "description": "កម្មវិធីវេបសាយ E-Commerce ច្រើនទំព័រពេញលេញ សម្រាប់ហាងលក់សម្លៀកបំពាក់ដែលបង្កើតឡើងដោយប្រើ HTML5, CSS3, និង JavaScript សុទ្ធ។ មានមុខងារដូចជា កាតាឡុកផលិតផល, រទេះទិញទំនិញ (Cart), ការផ្ទៀងផ្ទាត់អ្នកប្រើប្រាស់, ទម្រង់ទំនាក់ទំនង, និងទំព័រផ្សព្វផ្សាយ — ដាក់ឱ្យដំណើរការផ្ទាល់លើ Vercel។",
+        "architecture": "រចនាសម្ព័ន្ធវេបសាយ Static ច្រើនទំព័រ ជាមួយរចនាសម្ព័ន្ធ HTML5 Semantic, ការរៀបចំទម្រង់ Responsive ដោយ CSS Grid & Flexbox, និង Vanilla JavaScript សម្រាប់ Logic រទេះទិញទំនិញ, ការផ្ទៀងផ្ទាត់ Form, និងសមាសភាគ UI អន្តរកម្ម។ ផ្ទុកលើ Vercel ជាមួយ HTTPS អូតូ និង Global CDN។",
+        "challenges": [
+          "ការបង្កើតរទេះទិញទំនិញ (Cart) ដំណើរការពេញលេញ ដោយប្រើត្រឹម Vanilla JavaScript ដោយមិនប្រើ Framework ឬ State Management Library ណាមួយឡើយ។",
+          "ការធានាថា Layout Responsive មានភាពស៊ីសង្វាក់គ្នានៅគ្រប់ទំព័រ ចាប់ពីទូរស័ព្ទ (320px) ដល់អេក្រង់ Desktop 4K។"
+        ],
+        "solutions": [
+          "បានអនុវត្តប្រព័ន្ធ Cart ផ្អែកលើ localStorage សម្រាប់រក្សាទុកទិន្នន័យ Session នៅពេលផ្លាស់ប្តូរទំព័រ។",
+          "បានប្រើប្រាស់ CSS Custom Properties និងវិធីសាស្ត្រ Mobile-first ជាមួយ Media Queries សម្រាប់គាំទ្រឧបករណ៍ចម្រុះយ៉ាងរលូន។"
+        ]
+      }
+    }
   },
   "services": {
     "badge": "សេវាកម្ម & ដំណោះស្រាយ",
