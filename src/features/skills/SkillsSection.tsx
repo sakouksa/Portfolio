@@ -91,15 +91,15 @@ const TECH_ICON_MAP: Record<string, React.ComponentType<{ className?: string }>>
 
 const CATEGORIES_CONFIG: { 
   id: SkillCategory; 
-  title: string; 
+  titleKey: string; 
   icon: React.ComponentType<{ className?: string }> 
 }[] = [
-  { id: 'Frontend & UI Ecosystem', title: 'Frontend & UI', icon: Globe },
-  { id: 'Backend Frameworks & Systems', title: 'Backend & Systems', icon: Settings },
-  { id: 'Mobile Development', title: 'Mobile Dev', icon: Smartphone },
-  { id: 'Programming Languages & Desktop', title: 'Languages & Desktop', icon: Laptop },
-  { id: 'Databases', title: 'Databases', icon: Database },
-  { id: 'DevTools & Platforms', title: 'DevTools & Platforms', icon: Wrench },
+  { id: 'Frontend & UI Ecosystem', titleKey: 'skills.cats.frontend', icon: Globe },
+  { id: 'Backend Frameworks & Systems', titleKey: 'skills.cats.backend', icon: Settings },
+  { id: 'Mobile Development', titleKey: 'skills.cats.mobile', icon: Smartphone },
+  { id: 'Programming Languages & Desktop', titleKey: 'skills.cats.languages', icon: Laptop },
+  { id: 'Databases', titleKey: 'skills.cats.databases', icon: Database },
+  { id: 'DevTools & Platforms', titleKey: 'skills.cats.devtools', icon: Wrench },
 ];
 
 export const SkillsSection: React.FC = () => {
@@ -140,13 +140,20 @@ export const SkillsSection: React.FC = () => {
         <div className="flex flex-wrap items-center justify-center gap-2.5 mb-14">
           <button
             onClick={() => setActiveFilter('All')}
-            className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap ${
+            className={`relative px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap ${
               activeFilter === 'All'
-                ? 'bg-gradient-to-r from-blue-600 to-violet-600 text-white shadow-lg shadow-blue-500/25 scale-105'
+                ? 'text-white shadow-lg shadow-blue-500/25 scale-105'
                 : 'bg-white dark:bg-slate-900/80 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
             }`}
           >
-            {t('common:buttons.allSkills', 'All Skills')} ({SKILL_ITEMS.length})
+            {activeFilter === 'All' && (
+              <motion.span
+                layoutId="active-pill"
+                className="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 -z-10"
+                transition={{ type: 'spring', stiffness: 380, damping: 32 }}
+              />
+            )}
+            {t('skills.allSkills')} ({SKILL_ITEMS.length})
           </button>
 
           {CATEGORIES_CONFIG.map((cat) => {
@@ -156,14 +163,21 @@ export const SkillsSection: React.FC = () => {
               <button
                 key={cat.id}
                 onClick={() => setActiveFilter(cat.id)}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap ${
+                className={`relative flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap ${
                   isSelected
-                    ? 'bg-gradient-to-r from-blue-600 to-violet-600 text-white shadow-lg shadow-blue-500/25 scale-105'
+                    ? 'text-white shadow-lg shadow-blue-500/25 scale-105'
                     : 'bg-white dark:bg-slate-900/80 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
                 }`}
               >
-                <Icon className="w-4 h-4 shrink-0" />
-                <span>{cat.title}</span>
+                {isSelected && (
+                  <motion.span
+                    layoutId="active-pill"
+                    className="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 -z-10"
+                    transition={{ type: 'spring', stiffness: 380, damping: 32 }}
+                  />
+                )}
+                <Icon className="w-4 h-4 shrink-0 relative z-10" />
+                <span className="relative z-10">{t(cat.titleKey)}</span>
               </button>
             );
           })}
@@ -174,16 +188,16 @@ export const SkillsSection: React.FC = () => {
           layout
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          <AnimatePresence>
-            {filteredSkills.map((skill) => {
+          <AnimatePresence mode="popLayout">
+            {filteredSkills.map((skill, idx) => {
               const BrandIcon = TECH_ICON_MAP[skill.name] || Code2;
               return (
                 <motion.div
                   layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.25 }}
+                  initial={{ opacity: 0, y: 18 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -12, transition: { duration: 0.15 } }}
+                  transition={{ duration: 0.28, delay: Math.min(idx * 0.04, 0.4), ease: [0.22, 1, 0.36, 1] }}
                   key={skill.name}
                   className="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 glow-card relative overflow-hidden flex flex-col justify-between group"
                 >

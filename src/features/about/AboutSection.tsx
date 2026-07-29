@@ -97,44 +97,52 @@ export const AboutSection: React.FC = () => {
 
           {/* Right Statistics Counter Card */}
           <motion.div variants={fadeIn('left', 0.3)} className="lg:col-span-5">
-            <div className="glass-card p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl space-y-6 gradient-border">
-              <h4 className="font-heading font-bold text-xl text-slate-900 dark:text-white pb-4 border-b border-slate-200 dark:border-slate-800">
-                {t('about.metricsTitle')}
-              </h4>
+            <div className="glass-card rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl gradient-border overflow-hidden">
+              {/* Card Header */}
+              <div className="px-8 py-5 border-b border-slate-200 dark:border-slate-700/60 bg-slate-100/50 dark:bg-slate-800/30">
+                <h4 className="font-heading font-bold text-base tracking-wide text-slate-900 dark:text-white">
+                  {t('about.metricsTitle')}
+                </h4>
+              </div>
 
-              <div className="grid grid-cols-2 gap-6">
-                <div>
-                  <span className="text-3xl sm:text-4xl font-extrabold font-heading text-blue-600 dark:text-violet-400">
+              {/* Metrics Grid */}
+              <div className="grid grid-cols-2 divide-x divide-y divide-slate-200 dark:divide-slate-700/60">
+                {/* Metric 1 */}
+                <div className="flex flex-col gap-2 p-7">
+                  <span className="text-4xl font-extrabold font-heading text-blue-600 dark:text-violet-400 leading-none">
                     {DEVELOPER_PROFILE.yearsExperience}+
                   </span>
-                  <span className="block text-xs text-slate-500 dark:text-slate-400 mt-1 font-semibold">
+                  <span className="text-sm text-slate-500 dark:text-slate-400 font-medium leading-snug">
                     {t('about.metricYears')}
                   </span>
                 </div>
 
-                <div>
-                  <span className="text-3xl sm:text-4xl font-extrabold font-heading text-violet-600 dark:text-cyan-400">
+                {/* Metric 2 */}
+                <div className="flex flex-col gap-2 p-7">
+                  <span className="text-4xl font-extrabold font-heading text-violet-600 dark:text-cyan-400 leading-none">
                     {DEVELOPER_PROFILE.completedProjects}+
                   </span>
-                  <span className="block text-xs text-slate-500 dark:text-slate-400 mt-1 font-semibold">
+                  <span className="text-sm text-slate-500 dark:text-slate-400 font-medium leading-snug">
                     {t('about.metricProjects')}
                   </span>
                 </div>
 
-                <div>
-                  <span className="text-3xl sm:text-4xl font-extrabold font-heading text-cyan-500 dark:text-emerald-400">
+                {/* Metric 3 */}
+                <div className="flex flex-col gap-2 p-7">
+                  <span className="text-4xl font-extrabold font-heading text-cyan-500 dark:text-emerald-400 leading-none">
                     {DEVELOPER_PROFILE.happyClients}+
                   </span>
-                  <span className="block text-xs text-slate-500 dark:text-slate-400 mt-1 font-semibold">
+                  <span className="text-sm text-slate-500 dark:text-slate-400 font-medium leading-snug">
                     {t('about.metricClients')}
                   </span>
                 </div>
 
-                <div>
-                  <span className="text-3xl sm:text-4xl font-extrabold font-heading text-emerald-500 dark:text-blue-400">
+                {/* Metric 4 */}
+                <div className="flex flex-col gap-2 p-7">
+                  <span className="text-4xl font-extrabold font-heading text-emerald-500 dark:text-blue-400 leading-none">
                     {DEVELOPER_PROFILE.githubStars}+
                   </span>
-                  <span className="block text-xs text-slate-500 dark:text-slate-400 mt-1 font-semibold">
+                  <span className="text-sm text-slate-500 dark:text-slate-400 font-medium leading-snug">
                     {t('about.metricStars')}
                   </span>
                 </div>

@@ -50,7 +50,16 @@
     "level": "កម្រិតជំនាញ",
     "yrsExp": "ឆ្នាំបទពិសោធន៍",
     "coreStack": "បច្ចេកវិទ្យាផលិតកម្មស្នូល",
-    "mastery": "ជំនាញកម្រិតអ្នកជំនាញ"
+    "mastery": "ជំនាញកម្រិតអ្នកជំនាញ",
+    "allSkills": "ជំនាញទាំងអស់",
+    "cats": {
+      "frontend": "Frontend & UI",
+      "backend": "Backend & Systems",
+      "mobile": "ការអភិវឌ្ឍន៍ Mobile",
+      "languages": "ភាសា & Desktop",
+      "databases": "មូលដ្ឋានទិន្នន័យ",
+      "devtools": "DevTools & Platforms"
+    }
   },
   "projects": {
     "badge": "ស្នាដៃគម្រោងលេចធ្លោ",

@@ -50,7 +50,16 @@
     "level": "Proficiency Level",
     "yrsExp": "Yrs Exp",
     "coreStack": "Core Production Stack",
-    "mastery": "Expert Mastery"
+    "mastery": "Expert Mastery",
+    "allSkills": "All Skills",
+    "cats": {
+      "frontend": "Frontend & UI",
+      "backend": "Backend & Systems",
+      "mobile": "Mobile Dev",
+      "languages": "Languages & Desktop",
+      "databases": "Databases",
+      "devtools": "DevTools & Platforms"
+    }
   },
   "projects": {
     "badge": "Featured Portfolio Work",
