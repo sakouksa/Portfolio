@@ -53,12 +53,12 @@
     "mastery": "ជំនាញកម្រិតអ្នកជំនាញ",
     "allSkills": "ជំនាញទាំងអស់",
     "cats": {
-      "frontend": "Frontend & UI",
-      "backend": "Backend & Systems",
+      "frontend": "ចំណុចប្រទាក់ & UI",
+      "backend": "ប្រព័ន្ធ Backend",
       "mobile": "ការអភិវឌ្ឍន៍ Mobile",
       "languages": "ភាសា & Desktop",
       "databases": "មូលដ្ឋានទិន្នន័យ",
-      "devtools": "DevTools & Platforms"
+      "devtools": "ឧបករណ៍ & Platforms"
     }
   },
   "projects": {
