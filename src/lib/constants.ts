@@ -166,11 +166,13 @@ export const PROJECT_ITEMS: ProjectItem[] = [
     description: "A complete multi-page e-commerce web application for a fashion retail store built with pure HTML5, CSS3, and JavaScript. Features a product catalogue, shopping cart, user authentication, contact form, and promotional landing pages — deployed live on Vercel.",
     category: "Frontend",
     tags: ["HTML5", "CSS3", "JavaScript", "Vercel", "Responsive Design", "FontAwesome"],
-    image: "/images/ecommerce-preview.png",
+    image: "/images/ecommerce-home.png",
     gallery: [
-      "/images/ecommerce-preview.png",
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&q=80&w=1200"
+      "/images/ecommerce-home.png",
+      "/images/ecommerce-shop.png",
+      "/images/ecommerce-blog.png",
+      "/images/ecommerce-about.png",
+      "/images/ecommerce-contact.png"
     ],
     demoUrl: "https://e-commerce-shoping-five.vercel.app/index.html",
     githubUrl: "https://github.com/sakouksa/Portfolio",

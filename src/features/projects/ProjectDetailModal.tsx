@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   X, 
@@ -16,6 +16,18 @@ export const ProjectDetailModal: React.FC = () => {
   const { selectedProject, setSelectedProject } = usePortfolioStore();
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const { t } = useTranslation(['portfolio', 'common']);
+
+  // Lock body scroll when modal is open to prevent double scrollbars
+  useEffect(() => {
+    if (selectedProject) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [selectedProject]);
 
   if (!selectedProject) return null;
 
