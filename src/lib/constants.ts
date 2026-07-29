@@ -289,7 +289,7 @@ export const TIMELINE_ITEMS: TimelineItem[] = [
     id: "edu-1",
     type: "education",
     title: "B.S. in Computer Science & Software Engineering",
-    organization: "Royal University of Phnom Penh (RUPP)",
+    organization: "Heng Samrin Thbongkhmum University (HSTU)",
     period: "2020 - 2024",
     location: "Phnom Penh, Cambodia",
     description: "Graduated with High Honors. Specialized in Distributed Systems, Software Engineering, and Web Development.",
