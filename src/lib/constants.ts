@@ -85,38 +85,6 @@ export const SKILL_ITEMS: SkillItem[] = [
 export const PROJECT_ITEMS: ProjectItem[] = [
   {
     id: "project-1",
-    title: "Nova AI Studio",
-    subtitle: "Generative AI Creative Workbench & Workspace",
-    description: "An enterprise-grade generative AI platform that enables creative teams to compose, edit, and orchestrate LLM prompts, multi-modal images, and automated code synthesis pipelines in real time.",
-    category: "AI / Data",
-    tags: ["React 19", "TypeScript", "Tailwind CSS", "OpenAI API", "Node.js", "Zustand", "Recharts"],
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1200",
-    gallery: [
-      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=1200"
-    ],
-    demoUrl: "https://github.com/sakouksa",
-    githubUrl: "https://github.com/sakouksa/Portfolio",
-    featured: true,
-    date: "2025 - Present",
-    architecture: "Event-driven microfrontends connected via WebSocket real-time streams to a Serverless Node.js backend with Redis caching and Pinecone vector indexing.",
-    challenges: [
-      "Handling real-time token streaming with ultra-low latency frontend state updates.",
-      "Optimizing heavy Canvas rendering for multi-layer generative AI image previewing."
-    ],
-    solutions: [
-      "Implemented web worker thread isolation for heavy JSON payload parsing.",
-      "Used Zustand slice architecture combined with dynamic DOM virtual lists."
-    ],
-    metrics: [
-      { label: "Active Users", value: "120K+" },
-      { label: "Requests/Day", value: "4.2M" },
-      { label: "Latency", value: "<45ms" }
-    ]
-  },
-  {
-    id: "project-2",
     title: "LinearFlow SaaS Analytics",
     subtitle: "High-Performance Cloud Monitoring Dashboard",
     description: "A sleek, linear-style observability platform giving developers deep metrics into cloud infrastructure, microservices latency, error tracebacks, and automated deployment pipelines.",
@@ -140,27 +108,7 @@ export const PROJECT_ITEMS: ProjectItem[] = [
     ]
   },
   {
-    id: "project-3",
-    title: "Apex Mobile FinTech",
-    subtitle: "Cross-Platform Crypto & Banking Mobile App",
-    description: "A secure, biometric-enabled mobile wallet and banking app built for iOS and Android, allowing users to send peer-to-peer payments, manage investment portfolios, and trade assets effortlessly.",
-    category: "Mobile",
-    tags: ["React Native", "TypeScript", "Expo", "Zustand", "Node.js", "Tailwind Native"],
-    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1200",
-    demoUrl: "https://github.com/sakouksa",
-    githubUrl: "https://github.com/sakouksa/Portfolio",
-    featured: true,
-    date: "2024",
-    architecture: "React Native with TurboModules, secure enclave biometrics, and GraphQL subscriptions for real-time asset pricing.",
-    challenges: ["Ensuring bank-grade encryption with offline transaction queuing."],
-    solutions: ["Integrated SQLite encrypted local store with automatic sync resolution."],
-    metrics: [
-      { label: "App Store Rating", value: "4.9/5" },
-      { label: "Downloads", value: "500K+" }
-    ]
-  },
-  {
-    id: "project-4",
+    id: "project-2",
     title: "Betheme Shop",
     subtitle: "Full-Featured E-Commerce Fashion Store",
     description: "A complete multi-page e-commerce web application for a fashion retail store built with pure HTML5, CSS3, and JavaScript. Features a product catalogue, shopping cart, user authentication, contact form, and promotional landing pages — deployed live on Vercel.",
@@ -194,37 +142,23 @@ export const PROJECT_ITEMS: ProjectItem[] = [
     ]
   },
   {
-    id: "project-5",
-    title: "Pulse Design System",
-    subtitle: "Accessible React & Tailwind UI Component Library",
-    description: "An open-source, WCAG AA compliant design system featuring 60+ customizable glassmorphism and modern brutalist components, dark mode primitives, and full keyboard navigation support.",
-    category: "Frontend",
-    tags: ["React 19", "Tailwind CSS v4", "TypeScript", "Storybook", "Radix UI"],
-    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=1200",
+    id: "project-3",
+    title: "Apex Mobile FinTech",
+    subtitle: "Cross-Platform Crypto & Banking Mobile App",
+    description: "A secure, biometric-enabled mobile wallet and banking app built for iOS and Android, allowing users to send peer-to-peer payments, manage investment portfolios, and trade assets effortlessly.",
+    category: "Mobile",
+    tags: ["React Native", "TypeScript", "Expo", "Zustand", "Node.js", "Tailwind Native"],
+    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1200",
     demoUrl: "https://github.com/sakouksa",
     githubUrl: "https://github.com/sakouksa/Portfolio",
-    featured: false,
-    date: "2023 - 2024",
+    featured: true,
+    date: "2024",
+    architecture: "React Native with TurboModules, secure enclave biometrics, and GraphQL subscriptions for real-time asset pricing.",
+    challenges: ["Ensuring bank-grade encryption with offline transaction queuing."],
+    solutions: ["Integrated SQLite encrypted local store with automatic sync resolution."],
     metrics: [
-      { label: "NPM Downloads", value: "45K/mo" },
-      { label: "GitHub Stars", value: "1.2K" }
-    ]
-  },
-
-  {
-    id: "project-6",
-    title: "Aura Cloud Mesh",
-    subtitle: "Kubernetes Orchestration & Infra Visualizer",
-    description: "Cloud-native web dashboard for visualizing distributed microservices nodes, traffic routing, pod health, and automated Canary deployment rollouts.",
-    category: "Cloud / Systems",
-    tags: ["React", "Go", "Docker", "Kubernetes", "Three.js", "Tailwind CSS"],
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200",
-    demoUrl: "https://github.com/sakouksa",
-    githubUrl: "https://github.com/sakouksa/Portfolio",
-    featured: false,
-    date: "2023",
-    metrics: [
-      { label: "Nodes Managed", value: "10,000+" }
+      { label: "App Store Rating", value: "4.9/5" },
+      { label: "Downloads", value: "500K+" }
     ]
   }
 ];

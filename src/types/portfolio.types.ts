@@ -42,7 +42,7 @@ export interface SkillItem {
   featured?: boolean;
 }
 
-export type ProjectCategory = 'All' | 'Full Stack' | 'Frontend' | 'Mobile' | 'AI / Data' | 'Cloud / Systems';
+export type ProjectCategory = 'All' | 'Full Stack' | 'Frontend' | 'Mobile';
 
 export interface ProjectItem {
   id: string;
