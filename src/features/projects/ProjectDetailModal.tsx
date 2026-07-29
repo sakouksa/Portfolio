@@ -81,7 +81,7 @@ export const ProjectDetailModal: React.FC = () => {
           <div className="p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between sticky top-0 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md z-20">
             <div>
               <span className="px-3 py-1 rounded-full text-xs font-semibold bg-blue-600/10 text-blue-600 dark:text-violet-400 border border-blue-600/20">
-                {selectedProject.category}
+                {t(`projects.categories.${selectedProject.category}`, { defaultValue: selectedProject.category })}
               </span>
               <h2 className="text-2xl sm:text-3xl font-bold font-heading text-slate-900 dark:text-white mt-1">
                 {title}

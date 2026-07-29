@@ -179,7 +179,8 @@ export const SERVICE_ITEMS: ServiceItem[] = [
       "Cross-Platform iOS & Android Codebase (Flutter / React Native)",
       "Smooth Framer / Reanimated Gestures & Motion",
       "Offline Storage & Real-Time Sync",
-      "App Store & Google Play Submission Ready"
+      "App Store & Google Play Submission Ready",
+      "Push Notifications, Biometrics & Deep Linking"
     ],
     deliverables: ["Flutter / React Native Codebase", "IPA & APK Builds", "App Store Guidance"]
   },
@@ -193,7 +194,8 @@ export const SERVICE_ITEMS: ServiceItem[] = [
       "OpenAI & Claude API Integration",
       "RAG (Retrieval-Augmented Generation) Systems",
       "Vector Database Setup (Pinecone, Qdrant)",
-      "Interactive AI Chat & Automation UIs"
+      "Interactive AI Chat & Automation UIs",
+      "Custom Prompt Engineering & LLM Workflows"
     ],
     deliverables: ["AI Service Layer", "Vector Index Pipeline", "Testing Suite"],
     popular: true
@@ -208,7 +210,8 @@ export const SERVICE_ITEMS: ServiceItem[] = [
       "Figma UI/UX Mockups & Interactive Prototypes",
       "Reusable Tailwind CSS & React Component Library",
       "WCAG AA Accessibility Compliance",
-      "Design Token System & Dark Mode Foundations"
+      "Design Token System & Dark Mode Foundations",
+      "Design System Documentation & Guidelines"
     ],
     deliverables: ["Figma Design Files", "Storybook Component Catalog", "Tailwind Config"]
   }

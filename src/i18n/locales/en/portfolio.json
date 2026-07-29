@@ -73,6 +73,12 @@
     "subtitle": "Explore my latest enterprise applications, open source libraries, and AI solutions.",
     "searchPlaceholder": "Search by tech or name...",
     "noResults": "No projects match your current search criteria.",
+    "categories": {
+      "All": "All Categories",
+      "Full Stack": "Full Stack",
+      "Mobile": "Mobile App",
+      "Frontend": "Frontend"
+    },
     "overviewTitle": "Overview & Value Proposition",
     "liveDemo": "Live Demo",
     "sourceCode": "Source Code",
@@ -139,7 +145,8 @@
           "Cross-Platform iOS & Android Codebase (Flutter / React Native)",
           "Smooth Framer / Reanimated Gestures & Motion",
           "Offline Storage & Real-Time Sync",
-          "App Store & Google Play Submission Ready"
+          "App Store & Google Play Submission Ready",
+          "Push Notifications, Biometrics & Deep Linking"
         ]
       },
       "service-3": {
@@ -149,7 +156,8 @@
           "OpenAI & Claude API Integration",
           "RAG (Retrieval-Augmented Generation) Systems",
           "Vector Database Setup (Pinecone, Qdrant)",
-          "Interactive AI Chat & Automation UIs"
+          "Interactive AI Chat & Automation UIs",
+          "Custom Prompt Engineering & LLM Workflows"
         ]
       },
       "service-4": {
@@ -159,7 +167,8 @@
           "Figma UI/UX Mockups & Interactive Prototypes",
           "Reusable Tailwind CSS & React Component Library",
           "WCAG AA Accessibility Compliance",
-          "Design Token System & Dark Mode Foundations"
+          "Design Token System & Dark Mode Foundations",
+          "Design System Documentation & Guidelines"
         ]
       }
     }

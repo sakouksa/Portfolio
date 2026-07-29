@@ -100,7 +100,7 @@ export const ProjectsSection: React.FC = () => {
                     />
                   )}
                   <span className="relative z-10">
-                    {cat === 'All' ? t('common:buttons.allCategories', 'All Categories') : cat}
+                    {t(`projects.categories.${cat}`, { defaultValue: cat })}
                   </span>
                 </button>
               );
@@ -137,119 +137,122 @@ export const ProjectsSection: React.FC = () => {
           </div>
         )}
 
-        {/* Projects Grid — smooth crossfade between pages */}
-        {filteredProjects.length === 0 ? (
-          <div className="text-center py-16 glass-card rounded-2xl border border-slate-200 dark:border-slate-800">
-            <p className="text-slate-500 dark:text-slate-400 text-sm">
-              {t('projects.noResults')}
-            </p>
-          </div>
-        ) : (
-          <div className="relative min-h-[440px]">
-            <AnimatePresence mode="wait" initial={false}>
-              <motion.div
-                key={`${activeCategory}-${searchQuery}-page-${currentPage}`}
-                variants={pageVariants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-              >
-                {pageProjects.map((project, idx) => (
-                  <motion.div
-                    key={project.id}
-                    initial={{ opacity: 0, y: 12 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{
-                      duration: 0.3,
-                      delay: idx * 0.05,
-                      ease: [0.22, 1, 0.36, 1],
-                    }}
-                    className="glass-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden glow-card group flex flex-col justify-between"
-                  >
-                    <div>
-                      {/* Project Image Header */}
-                      <div className="relative h-52 overflow-hidden">
-                        <img
-                          src={project.image}
-                          alt={project.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
-                        
-                        <div className="absolute top-4 left-4 flex items-center gap-2">
-                          <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-slate-900/90 text-white backdrop-blur-md border border-white/10">
-                            {project.category}
+        <AnimatePresence mode="wait">
+          {filteredProjects.length === 0 ? (
+            <motion.div
+              key="no-results"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="text-center py-16 glass-card rounded-2xl border border-slate-200 dark:border-slate-800"
+            >
+              <p className="text-slate-500 dark:text-slate-400 text-sm">
+                {t('projects.noResults')}
+              </p>
+            </motion.div>
+          ) : (
+            <motion.div
+              key={`${activeCategory}-${searchQuery}-page-${currentPage}`}
+              variants={pageVariants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 min-h-[440px]"
+            >
+              {pageProjects.map((project, idx) => (
+                <motion.div
+                  key={project.id}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.3,
+                    delay: idx * 0.05,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                  className="glass-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden glow-card group flex flex-col justify-between"
+                >
+                  <div>
+                    {/* Project Image Header */}
+                    <div className="relative h-52 overflow-hidden">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                      
+                      <div className="absolute top-4 left-4 flex items-center gap-2">
+                        <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-slate-900/90 text-white backdrop-blur-md border border-white/10">
+                          {t(`projects.categories.${project.category}`, { defaultValue: project.category })}
+                        </span>
+                        {project.featured && (
+                          <span className="px-2.5 py-1 rounded-full text-[11px] font-bold bg-amber-500/90 text-white backdrop-blur-md flex items-center gap-1">
+                            <Sparkles className="w-3 h-3" />
+                            Featured
                           </span>
-                          {project.featured && (
-                            <span className="px-2.5 py-1 rounded-full text-[11px] font-bold bg-amber-500/90 text-white backdrop-blur-md flex items-center gap-1">
-                              <Sparkles className="w-3 h-3" />
-                              Featured
-                            </span>
-                          )}
-                        </div>
-
-                        <div className="absolute top-4 right-4 flex items-center gap-2">
-                          <a
-                            href={project.githubUrl}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="p-2 rounded-xl bg-slate-900/80 text-white hover:bg-blue-600 transition-colors backdrop-blur-md"
-                            aria-label="GitHub Repository"
-                          >
-                            <FaGithub className="w-4 h-4" />
-                          </a>
-                          <a
-                            href={project.demoUrl}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="p-2 rounded-xl bg-slate-900/80 text-white hover:bg-blue-600 transition-colors backdrop-blur-md"
-                            aria-label="Live Demo"
-                          >
-                            <ExternalLink className="w-4 h-4" />
-                          </a>
-                        </div>
+                        )}
                       </div>
 
-                      {/* Card Content Body */}
-                      <div className="p-6 space-y-3">
-                        <h3 className="font-heading font-bold text-xl text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-violet-400 transition-colors flex items-center justify-between">
-                          <span>{t(`projects.items.${project.id}.title`, { defaultValue: project.title })}</span>
-                          <ArrowUpRight className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                        </h3>
-
-                        <p className="text-xs text-blue-600 dark:text-violet-400 font-medium">
-                          {t(`projects.items.${project.id}.subtitle`, { defaultValue: project.subtitle })}
-                        </p>
-
-                        <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 line-clamp-3 leading-relaxed">
-                          {t(`projects.items.${project.id}.description`, { defaultValue: project.description })}
-                        </p>
+                      <div className="absolute top-4 right-4 flex items-center gap-2">
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="p-2 rounded-xl bg-slate-900/80 text-white hover:bg-blue-600 transition-colors backdrop-blur-md"
+                          aria-label="GitHub Repository"
+                        >
+                          <FaGithub className="w-4 h-4" />
+                        </a>
+                        <a
+                          href={project.demoUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="p-2 rounded-xl bg-slate-900/80 text-white hover:bg-blue-600 transition-colors backdrop-blur-md"
+                          aria-label="Live Demo"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
                       </div>
                     </div>
 
-                      {/* Card Footer Tech Tags */}
-                      <div className="px-6 pb-6 pt-2 space-y-4">
-                        <div className="flex flex-wrap gap-1.5">
-                          {project.tags.map((tag) => (
-                            <TechTagBadge key={tag} tag={tag} size="sm" />
-                          ))}
-                        </div>
+                    {/* Card Content Body */}
+                    <div className="p-6 space-y-3">
+                      <h3 className="font-heading font-bold text-xl text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-violet-400 transition-colors flex items-center justify-between">
+                        <span>{t(`projects.items.${project.id}.title`, { defaultValue: project.title })}</span>
+                        <ArrowUpRight className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </h3>
 
-                      <button
-                        onClick={() => setSelectedProject(project)}
-                        className="w-full py-2.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800/80 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 text-slate-700 dark:text-slate-300 transition-colors"
-                      >
-                        {t('common:buttons.viewCaseStudy', 'View Case Study & Architecture')}
-                      </button>
+                      <p className="text-xs text-blue-600 dark:text-violet-400 font-medium">
+                        {t(`projects.items.${project.id}.subtitle`, { defaultValue: project.subtitle })}
+                      </p>
+
+                      <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 line-clamp-3 leading-relaxed">
+                        {t(`projects.items.${project.id}.description`, { defaultValue: project.description })}
+                      </p>
                     </div>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </AnimatePresence>
-          </div>
-        )}
+                  </div>
+
+                  {/* Card Footer Tech Tags */}
+                  <div className="px-6 pb-6 pt-2 space-y-4">
+                    <div className="flex flex-wrap gap-1.5">
+                      {project.tags.map((tag) => (
+                        <TechTagBadge key={tag} tag={tag} size="sm" />
+                      ))}
+                    </div>
+
+                    <button
+                      onClick={() => setSelectedProject(project)}
+                      className="w-full py-2.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800/80 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 text-slate-700 dark:text-slate-300 transition-colors"
+                    >
+                      {t('common:buttons.viewCaseStudy', 'View Case Study & Architecture')}
+                    </button>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Pagination Controls */}
         {totalPages > 1 && (

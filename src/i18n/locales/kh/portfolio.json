@@ -73,6 +73,12 @@
     "subtitle": "ស្វែងយល់ពីកម្មវិធីសហគ្រាស បណ្ណាល័យកូដចំហ និងដំណោះស្រាយ AI ចុងក្រោយបង្អស់របស់ខ្ញុំ។",
     "searchPlaceholder": "ស្វែងរកតាមបច្ចេកវិទ្យា ឬឈ្មោះ...",
     "noResults": "មិនមានគម្រោងដែលត្រូវនឹងការស្វែងរករបស់អ្នកទេ។",
+    "categories": {
+      "All": "គ្រប់ប្រភេទ",
+      "Full Stack": "កម្មវិធី Full Stack",
+      "Mobile": "កម្មវិធីទូរស័ព្ទ",
+      "Frontend": "ចំណុចប្រទាក់ Frontend"
+    },
     "overviewTitle": "ទិដ្ឋភាពទូទៅ & តម្លៃបន្ថែម",
     "liveDemo": "ការបង្ហាញផ្ទាល់",
     "sourceCode": "កូដប្រភព",
@@ -139,7 +145,8 @@
           "កូដរួមសម្រាប់ iOS & Android (Flutter / React Native)",
           "ចលនា Gesture & Motion រលូន",
           "ការរក្សាទុក Offline & ធ្វើបច្ចុប្បន្នភាពទិន្នន័យភ្លាមៗ",
-          "ត្រៀមរួចរាល់សម្រាប់ការដាក់លើ App Store & Google Play"
+          "ត្រៀមរួចរាល់សម្រាប់ការដាក់លើ App Store & Google Play",
+          "ប្រព័ន្ធជូនដំណឹង Push Notifications, សក្ការៈជីវមាត្រ & Deep Linking"
         ]
       },
       "service-3": {
@@ -149,7 +156,8 @@
           "ការតភ្ជាប់ OpenAI & Claude API",
           "ប្រព័ន្ធ RAG (Retrieval-Augmented Generation)",
           "ការរៀបចំ Vector Database (Pinecone, Qdrant)",
-          "ចំណុចប្រទាក់ AI Chat & ប្រព័ន្ធស្វ័យប្រវត្តិកម្ម"
+          "ចំណុចប្រទាក់ AI Chat & ប្រព័ន្ធស្វ័យប្រវត្តិកម្ម",
+          "ការរៀបចំ Prompt Engineering & LLM Workflows"
         ]
       },
       "service-4": {
@@ -159,7 +167,8 @@
           "ការរចនា Figma UI/UX & Interactive Prototypes",
           "បណ្ណាល័យ Component React & Tailwind CSS",
           "ការអនុវត្តតាមស្តង់ដារ WCAG AA Accessibility",
-          "ប្រព័ន្ធ Design Token & គ្រឹះ Dark Mode"
+          "ប្រព័ន្ធ Design Token & គ្រឹះ Dark Mode",
+          "ឯកសារ Design System & គោលការណ៍ណែនាំ Storybook"
         ]
       }
     }
