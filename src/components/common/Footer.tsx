@@ -17,11 +17,11 @@ export const Footer: React.FC = () => {
           {/* Col 1: Brand Info */}
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-violet-600 flex items-center justify-center text-white font-bold font-heading text-xl shadow-lg">
-                AR
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-violet-600 flex items-center justify-center text-white font-bold font-heading text-lg shadow-lg">
+                SO
               </div>
               <span className="font-heading font-bold text-xl tracking-tight text-slate-900 dark:text-white">
-                Alex Rivera
+                Sak Ousa
               </span>
             </div>
 
@@ -99,7 +99,7 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Rights Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-500">
-          <p>© {new Date().getFullYear()} Alex Rivera. Built with React 19, TypeScript & Tailwind CSS v4.</p>
+          <p>© {new Date().getFullYear()} Sak Ousa. Built with React 19, TypeScript & Tailwind CSS v4.</p>
           
           <button
             onClick={scrollToTop}

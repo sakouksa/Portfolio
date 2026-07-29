@@ -56,20 +56,20 @@ export const Navbar: React.FC = () => {
       </div>
 
       {/* Main Glass Navbar */}
-      <header className="fixed top-0 left-0 right-0 z-40 glass-navbar transition-all duration-300">
+      <header className="fixed top-0 left-0 right-0 z-40 glass-navbar bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-b border-slate-200/80 dark:border-slate-800 transition-all duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           
           {/* Logo */}
           <button 
             onClick={() => scrollToSection('hero')}
-            className="flex items-center gap-2 group text-left"
+            className="flex items-center gap-3 group text-left"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-violet-600 flex items-center justify-center text-white font-bold font-heading text-xl shadow-lg shadow-blue-500/25 group-hover:scale-105 transition-transform">
-              AR
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-violet-600 flex items-center justify-center text-white font-bold font-heading text-lg shadow-lg shadow-blue-500/25 group-hover:scale-105 transition-transform">
+              SO
             </div>
             <div>
               <span className="font-heading font-bold text-lg text-slate-900 dark:text-white tracking-tight group-hover:text-blue-600 dark:group-hover:text-violet-400 transition-colors">
-                Alex Rivera
+                Sak Ousa
               </span>
               <span className="block text-xs text-slate-500 dark:text-slate-400 font-medium">
                 Software Architect
@@ -78,7 +78,7 @@ export const Navbar: React.FC = () => {
           </button>
 
           {/* Desktop Nav Items */}
-          <nav className="hidden lg:flex items-center gap-1 bg-slate-100/60 dark:bg-slate-900/60 p-1.5 rounded-full border border-slate-200/50 dark:border-slate-800/50 backdrop-blur-md">
+          <nav className="hidden lg:flex items-center gap-1 bg-slate-100/80 dark:bg-slate-900/80 p-1.5 rounded-full border border-slate-200/80 dark:border-slate-800 backdrop-blur-md">
             {NAV_ITEMS.map((item) => {
               const isActive = activeSection === item.id;
               return (
@@ -88,7 +88,7 @@ export const Navbar: React.FC = () => {
                   className={`relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                     isActive
                       ? 'text-white'
-                      : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                      : 'text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
                   }`}
                 >
                   {isActive && (
@@ -109,7 +109,7 @@ export const Navbar: React.FC = () => {
             {/* Cmd + K Command Palette Trigger */}
             <button
               onClick={toggleCommandPalette}
-              className="flex items-center gap-2 px-3 py-2 text-xs font-medium text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700/80 rounded-xl border border-slate-200 dark:border-slate-700 transition-colors shadow-sm"
+              className="flex items-center gap-2 px-3 py-2 text-xs font-medium text-slate-700 dark:text-slate-400 bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700/80 rounded-xl border border-slate-200 dark:border-slate-700 transition-colors shadow-sm"
               title="Open Command Palette (Cmd + K)"
             >
               <Command className="w-3.5 h-3.5" />
@@ -164,7 +164,7 @@ export const Navbar: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-x-0 top-20 z-30 lg:hidden glass-card border-b border-slate-200 dark:border-slate-800 p-6 shadow-2xl"
+            className="fixed inset-x-0 top-20 z-30 lg:hidden glass-card border-b border-slate-200 dark:border-slate-800 p-6 shadow-2xl bg-white/95 dark:bg-slate-900/95"
           >
             <div className="grid grid-cols-2 gap-3">
               {NAV_ITEMS.map((item) => {
@@ -190,7 +190,7 @@ export const Navbar: React.FC = () => {
             <div className="mt-6 pt-6 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between gap-4">
               <div className="flex gap-3">
                 <a
-                  href="https://github.com"
+                  href="https://github.com/sakouksa"
                   target="_blank"
                   rel="noreferrer"
                   className="p-2.5 text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 rounded-xl hover:text-blue-600"
@@ -198,7 +198,7 @@ export const Navbar: React.FC = () => {
                   <FaGithub className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://linkedin.com/in/sakousa"
                   target="_blank"
                   rel="noreferrer"
                   className="p-2.5 text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 rounded-xl hover:text-blue-600"

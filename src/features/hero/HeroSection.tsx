@@ -181,10 +181,10 @@ export const HeroSection: React.FC = () => {
                 <div className="absolute bottom-6 inset-x-8 p-3 rounded-xl glass-card bg-white/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-700/50 backdrop-blur-md flex items-center justify-between shadow-lg">
                   <div>
                     <h3 className="font-heading font-bold text-sm text-slate-900 dark:text-white">
-                      San Francisco, CA
+                      Phnom Penh, Cambodia
                     </h3>
                     <p className="text-xs text-slate-500 dark:text-slate-400">
-                      UTC-7 (Pacific Standard)
+                      UTC+7 (Indochina Time)
                     </p>
                   </div>
                   <CheckCircle2 className="w-5 h-5 text-emerald-500" />

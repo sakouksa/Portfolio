@@ -11,20 +11,20 @@ import {
 } from '../types/portfolio.types';
 
 export const DEVELOPER_PROFILE: DeveloperProfile = {
-  name: "Alex Rivera",
+  name: "Sak Ousa",
   role: "Senior Full Stack Architect & UI/UX Engineer",
   tagline: "Crafting world-class digital experiences, scalable cloud systems, and intuitive interfaces with modern technologies.",
   bio: "Passionate Senior Software Architect with 8+ years of expertise in building enterprise web applications, high-performance distributed systems, and sleek interactive frontends. Specialized in React 19, Next.js, Node.js, TypeScript, Cloud Architecture, and AI integration. Dedicated to clean code, WCAG accessibility, and seamless user experiences.",
-  location: "San Francisco, CA (Available Remote Worldwide)",
-  email: "alex.rivera.dev@example.com",
-  phone: "+1 (555) 234-5678",
-  github: "https://github.com",
-  linkedin: "https://linkedin.com",
-  twitter: "https://twitter.com",
-  medium: "https://medium.com",
-  leetcode: "https://leetcode.com",
+  location: "Phnom Penh, Cambodia (Available Remote Worldwide)",
+  email: "sakousa.dev@gmail.com",
+  phone: "+855 (0) 96 123 4567",
+  github: "https://github.com/sakouksa",
+  linkedin: "https://linkedin.com/in/sakousa",
+  twitter: "https://twitter.com/sakousa",
+  medium: "https://medium.com/@sakousa",
+  leetcode: "https://leetcode.com/sakousa",
   resumeUrl: "#",
-  avatarUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800",
+  avatarUrl: "/profile.jpg",
   yearsExperience: 8,
   completedProjects: 45,
   happyClients: 32,
@@ -95,8 +95,8 @@ export const PROJECT_ITEMS: ProjectItem[] = [
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200",
       "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=1200"
     ],
-    demoUrl: "https://example.com/nova-ai",
-    githubUrl: "https://github.com/example/nova-ai-studio",
+    demoUrl: "https://github.com/sakouksa",
+    githubUrl: "https://github.com/sakouksa/Portfolio",
     featured: true,
     date: "2025 - Present",
     architecture: "Event-driven microfrontends connected via WebSocket real-time streams to a Serverless Node.js backend with Redis caching and Pinecone vector indexing.",
@@ -126,8 +126,8 @@ export const PROJECT_ITEMS: ProjectItem[] = [
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200",
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200"
     ],
-    demoUrl: "https://example.com/linearflow",
-    githubUrl: "https://github.com/example/linear-flow",
+    demoUrl: "https://github.com/sakouksa",
+    githubUrl: "https://github.com/sakouksa/Portfolio",
     featured: true,
     date: "2024",
     architecture: "Next.js App Router with Server Actions, Prisma ORM querying PostgreSQL with TimescaleDB extension for time-series metrics visualization.",
@@ -146,8 +146,8 @@ export const PROJECT_ITEMS: ProjectItem[] = [
     category: "Mobile",
     tags: ["React Native", "TypeScript", "Expo", "Zustand", "Node.js", "Tailwind Native"],
     image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1200",
-    demoUrl: "https://example.com/apex-app",
-    githubUrl: "https://github.com/example/apex-mobile",
+    demoUrl: "https://github.com/sakouksa",
+    githubUrl: "https://github.com/sakouksa/Portfolio",
     featured: true,
     date: "2024",
     architecture: "React Native with TurboModules, secure enclave biometrics, and GraphQL subscriptions for real-time asset pricing.",
@@ -166,8 +166,8 @@ export const PROJECT_ITEMS: ProjectItem[] = [
     category: "Frontend",
     tags: ["React 19", "Tailwind CSS v4", "TypeScript", "Storybook", "Radix UI"],
     image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=1200",
-    demoUrl: "https://example.com/pulse-ui",
-    githubUrl: "https://github.com/example/pulse-design-system",
+    demoUrl: "https://github.com/sakouksa",
+    githubUrl: "https://github.com/sakouksa/Portfolio",
     featured: false,
     date: "2023 - 2024",
     metrics: [
@@ -183,8 +183,8 @@ export const PROJECT_ITEMS: ProjectItem[] = [
     category: "Cloud / Systems",
     tags: ["React", "Go", "Docker", "Kubernetes", "Three.js", "Tailwind CSS"],
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200",
-    demoUrl: "https://example.com/aura-mesh",
-    githubUrl: "https://github.com/example/aura-cloud-mesh",
+    demoUrl: "https://github.com/sakouksa",
+    githubUrl: "https://github.com/sakouksa/Portfolio",
     featured: false,
     date: "2023",
     metrics: [
@@ -202,8 +202,8 @@ export const SERVICE_ITEMS: ServiceItem[] = [
     iconName: "Globe",
     features: [
       "Custom React 19 & Next.js App Architecture",
-      "Type-safe Backend APIs (Node.js, Express, FastAPI)",
-      "Database Schema Design (PostgreSQL, MongoDB, Prisma)",
+      "Type-safe Backend APIs (Node.js, Express, FastAPI, Spring)",
+      "Database Schema Design (PostgreSQL, MySQL, Prisma)",
       "Dark / Light Mode & Glassmorphic UI Aesthetics",
       "Full SEO & Performance Optimization (100 Lighthouse Score)"
     ],
@@ -213,16 +213,16 @@ export const SERVICE_ITEMS: ServiceItem[] = [
   {
     id: "srv-2",
     title: "Mobile App Development",
-    shortDesc: "Cross-platform mobile applications for iOS & Android using React Native & Expo.",
+    shortDesc: "Cross-platform mobile applications for iOS & Android using Flutter, Dart & React Native.",
     fullDesc: "Deliver native-feeling mobile applications with smooth 60 FPS animations, offline capabilities, secure authentication, and push notifications.",
     iconName: "Smartphone",
     features: [
-      "Cross-Platform iOS & Android Codebase",
+      "Cross-Platform iOS & Android Codebase (Flutter / React Native)",
       "Smooth Framer / Reanimated Gestures & Motion",
       "Offline Storage & Real-Time Sync",
       "App Store & Google Play Submission Ready"
     ],
-    deliverables: ["Expo / React Native Codebase", "IPA & APK Builds", "App Store Guidance"]
+    deliverables: ["Flutter / React Native Codebase", "IPA & APK Builds", "App Store Guidance"]
   },
   {
     id: "srv-3",
@@ -262,7 +262,7 @@ export const TIMELINE_ITEMS: TimelineItem[] = [
     title: "Senior Lead Frontend Architect",
     organization: "Vanguard Tech Systems",
     period: "2023 - Present",
-    location: "San Francisco, CA",
+    location: "Phnom Penh, Cambodia",
     description: "Leading the core frontend platform team building high-scale SaaS applications, design systems, and real-time AI dashboards.",
     achievements: [
       "Architected React 19 micro-frontend framework reducing page load time by 42%.",
@@ -277,40 +277,40 @@ export const TIMELINE_ITEMS: TimelineItem[] = [
     title: "Senior Full Stack Engineer",
     organization: "Apex Cloud Solutions",
     period: "2021 - 2023",
-    location: "San Francisco, CA",
-    description: "Developed cloud management infrastructure tools, REST/GraphQL microservices, and React Native mobile applications.",
+    location: "Phnom Penh, Cambodia",
+    description: "Developed cloud management infrastructure tools, REST/GraphQL microservices, and mobile applications.",
     achievements: [
       "Engineered Next.js cloud monitoring dashboard handling 100K+ concurrent users.",
-      "Reduced AWS infrastructure costs by 30% through Docker containerization and serverless Lambda optimization."
+      "Reduced cloud infrastructure costs by 30% through Docker containerization and serverless optimization."
     ],
-    technologies: ["Next.js", "Node.js", "PostgreSQL", "AWS", "Docker", "React Native"]
+    technologies: ["Next.js", "Node.js", "Spring Boot", "PostgreSQL", "AWS", "Docker", "Flutter"]
   },
   {
     id: "exp-3",
     type: "experience",
-    title: "Frontend Software Developer",
+    title: "Full Stack Software Developer",
     organization: "PixelCraft Interactive",
     period: "2018 - 2021",
-    location: "Austin, TX",
+    location: "Phnom Penh, Cambodia",
     description: "Built interactive web applications, client e-commerce platforms, and custom UI components.",
     achievements: [
       "Created 30+ client web applications with 100/100 Lighthouse performance scores.",
       "Implemented Framer Motion animation engine for high-converting marketing landing pages."
     ],
-    technologies: ["React", "JavaScript (ES6+)", "Sass", "REST APIs", "Vite"]
+    technologies: ["React", "JavaScript (ES6+)", "Laravel", "PHP", "MySQL", "Vite"]
   },
   {
     id: "edu-1",
     type: "education",
     title: "B.S. in Computer Science & Software Engineering",
-    organization: "University of California, Berkeley",
+    organization: "Royal University of Phnom Penh (RUPP)",
     period: "2014 - 2018",
-    location: "Berkeley, CA",
-    description: "Graduated with High Honors. Specialized in Distributed Systems, Computer Graphics, and Human-Computer Interaction (HCI).",
+    location: "Phnom Penh, Cambodia",
+    description: "Graduated with High Honors. Specialized in Distributed Systems, Software Engineering, and Web Development.",
     achievements: [
       "Dean's Honor List (All Semesters)",
-      "President of Berkeley Web Developers Society",
-      "First Place in UC Berkeley Hackathon 2017"
+      "President of Web Developers Student Society",
+      "First Place in National Hackathon 2017"
     ]
   }
 ];
@@ -322,7 +322,7 @@ export const TESTIMONIAL_ITEMS: TestimonialItem[] = [
     role: "VP of Product",
     company: "Nova AI Corp",
     avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200",
-    content: "Alex is an absolute wizard when it comes to frontend architecture and UI polish. He transformed our AI platform into a lightning-fast, beautiful experience that our users rave about every single day.",
+    content: "Sak Ousa is an absolute wizard when it comes to frontend architecture and UI polish. He transformed our AI platform into a lightning-fast, beautiful experience that our users rave about every single day.",
     rating: 5
   },
   {
@@ -331,7 +331,7 @@ export const TESTIMONIAL_ITEMS: TestimonialItem[] = [
     role: "CTO & Co-Founder",
     company: "LinearFlow Inc",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200",
-    content: "Working with Alex was the best decision we made for our SaaS launcher. His mastery of React 19, TypeScript, and Tailwind CSS delivered our MVP 3 weeks ahead of schedule with zero tech debt.",
+    content: "Working with Sak Ousa was the best decision we made for our SaaS launcher. His mastery of React 19, TypeScript, and Tailwind CSS delivered our MVP 3 weeks ahead of schedule with zero tech debt.",
     rating: 5
   },
   {
@@ -340,7 +340,7 @@ export const TESTIMONIAL_ITEMS: TestimonialItem[] = [
     role: "Head of Design",
     company: "Apex Mobile",
     avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200",
-    content: "Alex bridges the gap between design and engineering like no one else. He took our complex Figma designs and brought them to life with micro-interactions, accessibility, and 60 FPS animations.",
+    content: "Sak Ousa bridges the gap between design and engineering like no one else. He took our complex Figma designs and brought them to life with micro-interactions, accessibility, and 60 FPS animations.",
     rating: 5
   }
 ];
@@ -409,8 +409,8 @@ export const PRICING_TIERS: PricingTier[] = [
     description: "Full-stack SaaS product architecture with backend APIs, database, and authentication.",
     features: [
       "Complete Full-Stack Application",
-      "React 19 + TypeScript + Node.js / FastAPI",
-      "Database & Authentication (PostgreSQL/Supabase)",
+      "React 19 + TypeScript + Node.js / Spring / Laravel",
+      "Database & Authentication (PostgreSQL/MySQL)",
       "Custom Dashboard & Interactive Charts",
       "100 Lighthouse Performance & Accessibility",
       "AI API Integration (OpenAI / Claude)",
@@ -428,7 +428,7 @@ export const PRICING_TIERS: PricingTier[] = [
     features: [
       "Enterprise Micro-Frontend Architecture",
       "Custom Design System & Figma Kit",
-      "Mobile App (React Native iOS & Android)",
+      "Mobile App (Flutter / React Native)",
       "Cloud Infra (AWS/Kubernetes & Docker)",
       "Security Audit & Automated CI/CD",
       "Dedicated Slack Support & Maintenance"
@@ -441,8 +441,8 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     id: "faq-1",
     category: "Development",
-    question: "What is your primary tech stack for building web applications?",
-    answer: "I specialize in modern TypeScript development using React 19, Next.js, Vite, Tailwind CSS v4, Node.js, Express, Python (FastAPI), and PostgreSQL/Prisma. For mobile apps, I use React Native and Expo."
+    question: "What is your primary tech stack for building web & mobile applications?",
+    answer: "I specialize in modern development using React 19, TypeScript, Tailwind CSS v4, Next.js, Spring Boot, Laravel, Node.js, Flutter, and MySQL/PostgreSQL."
   },
   {
     id: "faq-2",
