@@ -1,0 +1,168 @@
+{
+  "hero": {
+    "status": "ត្រៀមខ្លួនសម្រាប់គម្រោងថ្មី និងតួនាទីដឹកនាំ",
+    "greeting": "សួស្តី ខ្ញុំបាទ",
+    "role1": "ស្ថាបត្យករ Senior Full Stack",
+    "role2": "បង្កើតកម្មវិធី React 19 & Next.js",
+    "role3": "រចនាប្រព័ន្ធ UI Glassmorphism",
+    "role4": "ភ្ជាប់ទំនាក់ទំនង Generative AI & LLMs",
+    "tagline": "បង្កើតបទពិសោធន៍ឌីជីថលកម្រិតពិភពលោក ប្រព័ន្ធក្លោដ និង Interface ងាយស្រួលប្រើប្រាស់។",
+    "yearsExp": "ឆ្នាំបទពិសោធន៍",
+    "seniorExp": "បទពិសោធន៍ Senior",
+    "completedProjects": "គម្រោង",
+    "shippedProduction": "ដាក់ឱ្យប្រើប្រាស់ផ្លូវការ",
+    "location": "រាជធានីភ្នំពេញ កម្ពុជា",
+    "timeZone": "UTC+7 (ម៉ោងនៅកម្ពុជា)",
+    "connect": "ភ្ជាប់ទំនាក់ទំនង៖",
+    "scrollDown": "អូសចុះក្រោម"
+  },
+  "about": {
+    "sectionTitle": "អំពីខ្ញុំ",
+    "mainHeading": "ការកសាងអនាគតនៃ",
+    "highlight": "បទពិសោធន៍ឌីជីថល",
+    "subtitle": "វិស្វករដែលមានឆន្ទៈខ្ពស់ក្នុងការកសាងសូហ្វវែរទំនើប ដែលបូកបញ្ចូលស្ថាបត្យកម្ម Backend ដ៏រឹងមាំ ជាមួយនឹង UI ដ៏ស្រស់ស្អាត។",
+    "bioTitle": "ស្ថាបត្យករសូហ្វវែរដែលមានបទពិសោធន៍ជាង ៨ ឆ្នាំ",
+    "bioParagraph1": "ស្ថាបត្យករសូហ្វវែរ Senior ដែលមានជំនាញជាង ៨ ឆ្នាំក្នុងការបង្កើតកម្មវិធីវេបសហគ្រាស ប្រព័ន្ធ distributed និងប្រព័ន្ធ Frontend ដ៏ទាក់ទាញ។ មានជំនាញលើ React 19, Next.js, Node.js, TypeScript, Cloud Architecture, និង AI Integration។",
+    "bioParagraph2": "ក្នុងដំណើរការការងារ ខ្ញុំមានកិត្តិយសបានសហការជាមួយក្រុមហ៊ុន Startup និងសហគ្រាសធំៗទូទាំងពិភពលោក។ ចាប់ពីការបង្កើត Generative AI រហូតដល់ Microservices ដែលមានប្រសិទ្ធភាពខ្ពស់។",
+    "locationLabel": "ទីតាំង",
+    "degreeLabel": "សញ្ញាបត្រ",
+    "degreeValue": "បរិញ្ញាបត្រ វិទ្យាសាស្ត្រកុំព្យូទ័រ (សាកលវិទ្យាល័យភូមិន្ទភ្នំពេញ)",
+    "metricsTitle": "សូចនាករប្រតិបត្តិការសំខាន់ៗ",
+    "metricYears": "ឆ្នាំបទពិសោធន៍",
+    "metricProjects": "គម្រោងបានបញ្ចប់",
+    "metricClients": "អតិថិជនពេញចិត្ត",
+    "metricStars": "តារា GitHub",
+    "principlesTitle": "គោលការណ៍វិស្វកម្មស្នូល",
+    "val1Title": "កូដស្អាត និងអាចពង្រីកបាន",
+    "val1Desc": "អនុវត្តតាមគោលការណ៍ SOLID, DRY និង Modular Architecture ជាមួយ TypeScript Strict Types។",
+    "val2Title": "ប្រសិទ្ធភាព 100/100",
+    "val2Desc": "បង្កើនល្បឿន Asset pipelines, Code splitting, និង Dynamic Lazy Loading សម្រាប់ល្បឿនក្រោម ១វិនាទី។",
+    "val3Title": "សុវត្ថិភាពបច្ចេកវិទ្យា WCAG AA",
+    "val3Desc": "បង្កើត Interface ដែលអាចប្រើប្រាស់បានដោយលូន ជាមួយ ARIA Support និង Keyboard Navigation។",
+    "val4Title": "សោភ័ណភាព Apple & Vercel",
+    "val4Desc": "រចនា Layout យ៉ាងសម្រិតសម្រាំង ជាមួយ Framer Motion, Glassmorphism, និង Micro-interactions។"
+  },
+  "skills": {
+    "sectionBadge": "ជំនាញបច្ចេកទេស",
+    "title": "ជំនាញ & បច្ចេកវិទ្យា",
+    "highlight": "ស្ទាត់ជំនាញ",
+    "subtitle": "ពិន្ទុជំនាញលម្អិត និងឆ្នាំបទពិសោធន៍ផ្ទាល់ដៃលើ Frameworks, Databases, និង Core Tooling។",
+    "level": "កម្រិតជំនាញ",
+    "yrsExp": "ឆ្នាំបទពិសោធន៍",
+    "coreStack": "បច្ចេកវិទ្យាផលិតកម្មស្នូល",
+    "mastery": "ជំនាញកម្រិតអ្នកជំនាញ"
+  },
+  "projects": {
+    "badge": "ស្នាដៃគម្រោងលេចធ្លោ",
+    "title": "បង្កើតឡើងដោយភាពច្បាស់លាស់ &",
+    "highlight": "ប្រសិទ្ធភាព",
+    "subtitle": "ស្វែងយល់ពីកម្មវិធីសហគ្រាស បណ្ណាល័យកូដចំហ និងដំណោះស្រាយ AI ចុងក្រោយបង្អស់របស់ខ្ញុំ។",
+    "searchPlaceholder": "ស្វែងរកតាមបច្ចេកវិទ្យា ឬឈ្មោះ...",
+    "noResults": "មិនមានគម្រោងដែលត្រូវនឹងការស្វែងរករបស់អ្នកទេ។",
+    "overviewTitle": "ទិដ្ឋភាពទូទៅ & តម្លៃបន្ថែម",
+    "liveDemo": "ការបង្ហាញផ្ទាល់",
+    "sourceCode": "កូដប្រភព",
+    "architectureTitle": "ស្ថាបត្យកម្មបច្ចេកទេស",
+    "challengesTitle": "បញ្ហាប្រឈមវិស្វកម្មសំខាន់ៗ",
+    "solutionsTitle": "ដំណោះស្រាយស្ថាបត្យកម្ម",
+    "techUsed": "បច្ចេកវិទ្យា និងឧបករណ៍ដែលបានប្រើ៖"
+  },
+  "services": {
+    "badge": "សេវាកម្ម & ដំណោះស្រាយ",
+    "title": "សេវាកម្មវិស្វកម្ម",
+    "highlight": "មានប្រសិទ្ធភាពខ្ពស់",
+    "subtitle": "ចាប់ពីស្ថាបត្យកម្ម MVP ដំបូង រហូតដល់ Full-Stack Scaling, AI Integration, និង Design Systems។",
+    "mostRequested": "ទទួលបានការស្នើសុំច្រើនជាងគេ",
+    "capabilities": "សមត្ថភាព និងវិសាលភាពសំខាន់ៗ៖",
+    "inquire": "សាកសួរអំពីសេវាកម្ម"
+  },
+  "experience": {
+    "badge": "ប្រវត្តិការងារ & ការអប់រំ",
+    "title": "ប្រវត្តិរូបនៃ",
+    "highlight": "ការដឹកនាំ",
+    "subtitle": "តួនាទី Senior សមិទ្ធផលបច្ចេកទេស និងជំនាញឯកទេសអប់រំ។",
+    "accomplishments": "សមិទ្ធផលសំខាន់ៗ៖"
+  },
+  "github": {
+    "badge": "កូដចំហ & GitHub",
+    "title": "ការអភិវឌ្ឍន៍សាធារណៈ &",
+    "highlight": "កូដចំហ (Open Source)",
+    "subtitle": "ការចូលរួមចំណែកជួយដល់សហគមន៍អ្នកអភិវឌ្ឍន៍ជាមួយ Repositories និងឧបករណ៍សាធារណៈ។",
+    "breakdown": "ការបែងចែកភាសាកូដ",
+    "publicCodebase": "កូដសាធារណៈ",
+    "featuredRepos": "Repositories សាធារណៈលេចធ្លោ"
+  },
+  "dashboard": {
+    "badge": "ទិន្នន័យអភិវឌ្ឍន៍ផ្ទាល់",
+    "title": "វិភាគប្រព័ន្ធ &",
+    "highlight": "ផលប័ត្រផ្ទាល់",
+    "subtitle": "ទិន្នន័យផ្ទាល់បង្ហាញពីប្រសិទ្ធភាពវេបសាយ ការភ្ជាប់ទំនាក់ទំនង និងចំនួនអ្នកចូលមើល។",
+    "totalVisitors": "ចំនួនអ្នកចូលមើលសរុប",
+    "vsMonth": "+12% ប្រៀបធៀបនឹងខែមុន",
+    "activeNow": "កំពុងចូលមើលឥឡូវនេះ",
+    "liveSessions": "ការភ្ជាប់ទំនាក់ទំនងផ្ទាល់",
+    "systemUptime": "ថេរវេលាប្រព័ន្ធ (Uptime)",
+    "network": "បណ្តាញ Vercel Global Edge Network",
+    "edgeLatency": "ល្បឿនឆ្លើយតប (Latency)",
+    "sub50ms": "ល្បឿនឆ្លើយតបក្រោម 50ms"
+  },
+  "testimonials": {
+    "badge": "ការណែនាំពីអតិថិជន",
+    "title": "ទទួលបានការទុកចិត្តពី",
+    "highlight": "ថ្នាក់ដឹកនាំ & ស្ថាបនិក",
+    "subtitle": "អ្វីដែលប្រធានផលិតផល CTOs និងអ្នករចនាបាននិយាយអំពីប្រសិទ្ធភាពការងាររបស់ខ្ញុំ។"
+  },
+  "blog": {
+    "badge": "អត្ថបទ & ចំណេះដឹង",
+    "title": "អត្ថបទស្ថាបត្យកម្ម",
+    "highlight": "ថ្មីៗ",
+    "subtitle": "ការចែករំលែកអំពី React 19, ប្រសិទ្ធភាពវេប, សោភ័ណភាព UI, និង Generative AI។"
+  },
+  "pricing": {
+    "badge": "តម្លៃគម្រោងច្បាស់លាស់",
+    "title": "កញ្ចប់តម្លៃ Freelance &",
+    "highlight": "ការប្រឹក្សា",
+    "subtitle": "កញ្ចប់តម្លៃថេរដែលត្រូវបានបង្កើតឡើងសម្រាប់ល្បឿន ស្ថាបត្យកម្មស្អាត និងតម្លាភាព។",
+    "popularChoice": "ជម្រើសពេញនិយមបំផុត",
+    "included": "អ្វីដែលរួមបញ្ចូល៖"
+  },
+  "faq": {
+    "badge": "សំណួរដែលសួរញឹកញាប់",
+    "title": "មានសំណួរ?",
+    "highlight": "ចម្លើយ",
+    "titleEnd": "នៅទីនេះ",
+    "subtitle": "អ្វីគ្រប់យ៉ាងដែលអ្នកត្រូវដឹងអំពីការធ្វើការជាមួយខ្ញុំ។",
+    "searchPlaceholder": "ស្វែងរកសំណួរ..."
+  },
+  "contact": {
+    "badge": "ទាក់ទងមកខ្ញុំ",
+    "title": "តោះបង្កើតអ្វីដែល",
+    "highlight": "អស្ចារ្យជាមួយគ្នា",
+    "subtitle": "មានគម្រោងក្នុងចិត្ត ឱកាសការងារដឹកនាំ ឬសំណួរបច្ចេកទេស? ផ្ញើសារមកខ្ញុំខាងក្រោម។",
+    "infoTitle": "ព័ត៌មានទំនាក់ទំនង",
+    "emailLabel": "អ៊ីមែល",
+    "phoneLabel": "លេខទូរស័ព្ទ",
+    "locationLabel": "ទីតាំង",
+    "follow": "តាមដាន & ភ្ជាប់ទំនាក់ទំនង៖",
+    "form": {
+      "nameLabel": "ឈ្មោះរបស់អ្នក *",
+      "namePlaceholder": "សុខ ចាន់",
+      "emailLabel": "អ៊ីមែលរបស់អ្នក *",
+      "emailPlaceholder": "sokchan@example.com",
+      "subjectLabel": "ប្រធានបទ *",
+      "subjectPlaceholder": "សាកសួរគម្រោង / តួនាទីដឹកនាំ",
+      "budgetLabel": "ថវិកាប្រហាក់ប្រហែល",
+      "messageLabel": "ព័ត៌មានលម្អិតគម្រោង & សារ *",
+      "messagePlaceholder": "រៀបរាប់អំពីគោលដៅផលិតផល កាលបរិច្ឆេទ និងតម្រូវការរបស់អ្នក..."
+    }
+  },
+  "command": {
+    "placeholder": "វាយបញ្ជា ឬស្វែងរកផ្នែក...",
+    "noMatching": "មិនមានបញ្ជាដែលត្រូវនឹង",
+    "navigation": "ការរុករក",
+    "settings": "ការកំណត់",
+    "socials": "បណ្តាញសង្គម",
+    "escToClose": "ដើម្បីបិទ",
+    "paletteTitle": "ផ្ទាំងបញ្ជារហ័ស (Command Palette)"
+  }
+}

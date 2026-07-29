@@ -1,3 +1,4 @@
+export type ThemeMode = 'light' | 'dark' | 'system';
 export type Theme = 'dark' | 'light';
 
 export interface DeveloperProfile {

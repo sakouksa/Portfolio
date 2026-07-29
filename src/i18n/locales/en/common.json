@@ -1,0 +1,49 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "services": "Services",
+    "experience": "Experience",
+    "openSource": "Open Source",
+    "contact": "Contact",
+    "search": "Search",
+    "hireMe": "Hire Me"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "language": {
+    "en": "English",
+    "kh": "ភាសាខ្មែរ"
+  },
+  "buttons": {
+    "viewProjects": "View Projects",
+    "contactMe": "Contact Me",
+    "hireMe": "Hire Me",
+    "readArticle": "Read Article",
+    "viewCaseStudy": "View Case Study & Architecture",
+    "sendMessage": "Send Message",
+    "sending": "Sending Message...",
+    "backToTop": "Back to Top",
+    "close": "Close",
+    "allCategories": "All Categories",
+    "allSkills": "All Skills",
+    "allTimeline": "All Timeline",
+    "workExperience": "Work Experience",
+    "education": "Education"
+  },
+  "footer": {
+    "tagline": "Senior Full Stack Architect & UI/UX Engineer crafting high-performance, accessible, and beautiful web applications.",
+    "available": "Available for projects worldwide",
+    "quickNav": "Quick Navigation",
+    "stayConnected": "Stay Connected",
+    "subscribeText": "Subscribe for occasional engineering write-ups and open source updates.",
+    "emailPlaceholder": "enter your email...",
+    "join": "Join",
+    "rights": "Built with React 19, TypeScript & Tailwind CSS v4."
+  }
+}

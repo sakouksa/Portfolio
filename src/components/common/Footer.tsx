@@ -1,9 +1,13 @@
 import React from 'react';
 import { ArrowUp } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaXTwitter } from 'react-icons/fa6';
+import { useTranslation } from 'react-i18next';
 import { DEVELOPER_PROFILE } from '../../lib/constants';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 export const Footer: React.FC = () => {
+  const { t } = useTranslation(['common']);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -26,7 +30,7 @@ export const Footer: React.FC = () => {
             </div>
 
             <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed max-w-sm">
-              Senior Full Stack Architect & UI/UX Engineer crafting high-performance, accessible, and beautiful web applications.
+              {t('footer.tagline')}
             </p>
 
             <div className="flex items-center gap-2 text-xs text-emerald-600 dark:text-emerald-400 font-medium">
@@ -34,30 +38,30 @@ export const Footer: React.FC = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
-              <span>Available for projects worldwide</span>
+              <span>{t('footer.available')}</span>
             </div>
           </div>
 
           {/* Col 2: Quick Links */}
           <div className="md:col-span-3 space-y-3">
             <h4 className="font-heading font-bold text-base uppercase tracking-wider text-slate-900 dark:text-slate-200">
-              Quick Navigation
+              {t('footer.quickNav')}
             </h4>
             <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
               <li>
-                <a href="#about" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About Me</a>
+                <a href="#about" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">{t('nav.about')}</a>
               </li>
               <li>
-                <a href="#skills" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Skills Matrix</a>
+                <a href="#skills" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">{t('nav.skills')}</a>
               </li>
               <li>
-                <a href="#projects" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects Showcase</a>
+                <a href="#projects" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">{t('nav.projects')}</a>
               </li>
               <li>
-                <a href="#services" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Services & Pricing</a>
+                <a href="#services" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">{t('nav.services')}</a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact / Hire</a>
+                <a href="#contact" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">{t('nav.contact')}</a>
               </li>
             </ul>
           </div>
@@ -65,33 +69,36 @@ export const Footer: React.FC = () => {
           {/* Col 3: Newsletter & Socials */}
           <div className="md:col-span-4 space-y-4">
             <h4 className="font-heading font-bold text-base uppercase tracking-wider text-slate-900 dark:text-slate-200">
-              Stay Connected
+              {t('footer.stayConnected')}
             </h4>
             <p className="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">
-              Subscribe for occasional engineering write-ups and open source updates.
+              {t('footer.subscribeText')}
             </p>
 
             <div className="flex gap-2">
               <input
                 type="email"
-                placeholder="enter your email..."
+                placeholder={t('footer.emailPlaceholder')}
                 className="w-full px-3.5 py-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-xs text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
               <button className="px-4 py-2 rounded-xl text-xs font-semibold bg-blue-600 hover:bg-blue-500 text-white transition-colors shrink-0">
-                Join
+                {t('footer.join')}
               </button>
             </div>
 
-            <div className="flex gap-3 pt-2">
-              <a href={DEVELOPER_PROFILE.github} target="_blank" rel="noreferrer" className="p-2.5 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-400 hover:text-white hover:bg-blue-600 dark:hover:bg-blue-600 transition-colors">
-                <FaGithub className="w-4 h-4" />
-              </a>
-              <a href={DEVELOPER_PROFILE.linkedin} target="_blank" rel="noreferrer" className="p-2.5 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-400 hover:text-white hover:bg-blue-600 dark:hover:bg-blue-600 transition-colors">
-                <FaLinkedin className="w-4 h-4" />
-              </a>
-              <a href={DEVELOPER_PROFILE.twitter} target="_blank" rel="noreferrer" className="p-2.5 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-400 hover:text-white hover:bg-blue-600 dark:hover:bg-blue-600 transition-colors">
-                <FaXTwitter className="w-4 h-4" />
-              </a>
+            <div className="flex items-center justify-between pt-2">
+              <div className="flex gap-3">
+                <a href={DEVELOPER_PROFILE.github} target="_blank" rel="noreferrer" className="p-2.5 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-400 hover:text-white hover:bg-blue-600 dark:hover:bg-blue-600 transition-colors">
+                  <FaGithub className="w-4 h-4" />
+                </a>
+                <a href={DEVELOPER_PROFILE.linkedin} target="_blank" rel="noreferrer" className="p-2.5 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-400 hover:text-white hover:bg-blue-600 dark:hover:bg-blue-600 transition-colors">
+                  <FaLinkedin className="w-4 h-4" />
+                </a>
+                <a href={DEVELOPER_PROFILE.twitter} target="_blank" rel="noreferrer" className="p-2.5 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-400 hover:text-white hover:bg-blue-600 dark:hover:bg-blue-600 transition-colors">
+                  <FaXTwitter className="w-4 h-4" />
+                </a>
+              </div>
+              <LanguageSwitcher />
             </div>
           </div>
 
@@ -99,13 +106,13 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Rights Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-500">
-          <p>© {new Date().getFullYear()} Sak Ousa. Built with React 19, TypeScript & Tailwind CSS v4.</p>
+          <p>© {new Date().getFullYear()} Sak Ousa. {t('footer.rights')}</p>
           
           <button
             onClick={scrollToTop}
             className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors"
           >
-            <span>Back to Top</span>
+            <span>{t('buttons.backToTop')}</span>
             <ArrowUp className="w-4 h-4" />
           </button>
         </div>

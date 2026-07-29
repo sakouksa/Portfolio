@@ -1,0 +1,49 @@
+{
+  "nav": {
+    "home": "ទំព័រដើម",
+    "about": "អំពីខ្ញុំ",
+    "skills": "ជំនាញ",
+    "projects": "គម្រោង",
+    "services": "សេវាកម្ម",
+    "experience": "បទពិសោធន៍",
+    "openSource": "កូដចំហ",
+    "contact": "ទំនាក់ទំនង",
+    "search": "ស្វែងរក",
+    "hireMe": "ជួលខ្ញុំ"
+  },
+  "theme": {
+    "light": "ភ្លឺ (Light)",
+    "dark": "ងងឹត (Dark)",
+    "system": "តាមប្រព័ន្ធ (System)"
+  },
+  "language": {
+    "en": "English",
+    "kh": "ភាសាខ្មែរ"
+  },
+  "buttons": {
+    "viewProjects": "មើលគម្រោង",
+    "contactMe": "ទាក់ទងខ្ញុំ",
+    "hireMe": "ជួលខ្ញុំ",
+    "readArticle": "អានអត្ថបទ",
+    "viewCaseStudy": "មើលការវិភាគស្ថាបត្យកម្ម",
+    "sendMessage": "ផ្ញើសារ",
+    "sending": "កំពុងផ្ញើសារ...",
+    "backToTop": "ត្រឡប់ទៅលើ",
+    "close": "បិទ",
+    "allCategories": "គ្រប់ប្រភេទ",
+    "allSkills": "គ្រប់ជំនាញ",
+    "allTimeline": "ប្រវត្តិទាំងមូល",
+    "workExperience": "បទពិសោធន៍ការងារ",
+    "education": "ការអប់រំ"
+  },
+  "footer": {
+    "tagline": "ស្ថាបត្យករ Full Stack និងវិស្វករ UI/UX ដែលបង្កើតកម្មវិធីវេបប្រកបដោយប្រសិទ្ធភាពខ្ពស់ និងសោភ័ណភាពស្អាត។",
+    "available": "ត្រៀមខ្លួនទទួលគម្រោងទូទាំងពិភពលោក",
+    "quickNav": "តំណរហ័ស",
+    "stayConnected": "ភ្ជាប់ទំនាក់ទំនង",
+    "subscribeText": "ចុះឈ្មោះដើម្បីទទួលបានព័ត៌មានបច្ចេកវិទ្យា និងការអភិវឌ្ឍន៍កូដចំហ។",
+    "emailPlaceholder": "បញ្ចូលអ៊ីមែលរបស់អ្នក...",
+    "join": "ចូលរួម",
+    "rights": "បង្កើតឡើងដោយ React 19, TypeScript និង Tailwind CSS v4."
+  }
+}

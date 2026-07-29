@@ -1,0 +1,168 @@
+{
+  "hero": {
+    "status": "Available for New Projects & Lead Roles",
+    "greeting": "Hi, I'm",
+    "role1": "Senior Full Stack Architect",
+    "role2": "Building React 19 & Next.js Apps",
+    "role3": "Designing Glassmorphic UI Systems",
+    "role4": "Integrating Generative AI & LLMs",
+    "tagline": "Crafting world-class digital experiences, scalable cloud systems, and intuitive interfaces with modern technologies.",
+    "yearsExp": "Years Experience",
+    "seniorExp": "Senior Experience",
+    "completedProjects": "Projects",
+    "shippedProduction": "Shipped to Production",
+    "location": "Phnom Penh, Cambodia",
+    "timeZone": "UTC+7 (Indochina Time)",
+    "connect": "Connect:",
+    "scrollDown": "Scroll Down"
+  },
+  "about": {
+    "sectionTitle": "About Me",
+    "mainHeading": "Architecting the Future of",
+    "highlight": "Digital Experiences",
+    "subtitle": "A passionate engineer dedicated to building modern software that combines powerful backend architecture with beautiful, accessible interfaces.",
+    "bioTitle": "Passionate Software Architect with 8+ Years of Field Mastery",
+    "bioParagraph1": "Passionate Senior Software Architect with 8+ years of expertise in building enterprise web applications, high-performance distributed systems, and sleek interactive frontends. Specialized in React 19, Next.js, Node.js, TypeScript, Cloud Architecture, and AI integration. Dedicated to clean code, WCAG accessibility, and seamless user experiences.",
+    "bioParagraph2": "Throughout my career, I've had the privilege of collaborating with high-growth startups and global enterprises. From engineering real-time generative AI workbenches to building high-throughput microservices, my focus is always on delivering measurable business impact and user delight.",
+    "locationLabel": "Location",
+    "degreeLabel": "Degree",
+    "degreeValue": "B.S. CS & HCI (RUPP)",
+    "metricsTitle": "Key Performance Metrics",
+    "metricYears": "Years Experience",
+    "metricProjects": "Completed Projects",
+    "metricClients": "Satisfied Clients",
+    "metricStars": "GitHub Stars",
+    "principlesTitle": "Core Engineering Principles",
+    "val1Title": "Clean & Scalable Code",
+    "val1Desc": "Adhering strictly to SOLID, DRY, and modular architectural principles with strict TypeScript typings.",
+    "val2Title": "100/100 Performance",
+    "val2Desc": "Optimized asset pipelines, code splitting, memoization, and dynamic lazy loading for sub-second speeds.",
+    "val3Title": "WCAG AA Accessibility",
+    "val3Desc": "Building fully accessible interfaces with complete ARIA support and fluid keyboard navigation.",
+    "val4Title": "Apple & Vercel Aesthetics",
+    "val4Desc": "Crafting pixel-perfect layouts with smooth Framer Motion gestures, glassmorphism, and micro-interactions."
+  },
+  "skills": {
+    "sectionBadge": "Technical Proficiency",
+    "title": "Skill & Tech Stack",
+    "highlight": "Proficiency",
+    "subtitle": "Detailed proficiency scores and years of hands-on field experience across frameworks, databases, and core tooling.",
+    "level": "Proficiency Level",
+    "yrsExp": "Yrs Exp",
+    "coreStack": "Core Production Stack",
+    "mastery": "Expert Mastery"
+  },
+  "projects": {
+    "badge": "Featured Portfolio Work",
+    "title": "Crafted with Precision &",
+    "highlight": "Performance",
+    "subtitle": "Explore my latest enterprise applications, open source libraries, and AI solutions.",
+    "searchPlaceholder": "Search by tech or name...",
+    "noResults": "No projects match your current search criteria.",
+    "overviewTitle": "Overview & Value Proposition",
+    "liveDemo": "Live Demo",
+    "sourceCode": "Source Code",
+    "architectureTitle": "Technical Architecture",
+    "challengesTitle": "Key Engineering Challenges",
+    "solutionsTitle": "Architectural Solutions",
+    "techUsed": "Technologies & Tools Used:"
+  },
+  "services": {
+    "badge": "Services & Solutions",
+    "title": "High-Impact Engineering",
+    "highlight": "Services",
+    "subtitle": "From initial product MVP architecture to full-stack scaling, AI integration, and design systems.",
+    "mostRequested": "Most Requested",
+    "capabilities": "Key Scope & Capabilities:",
+    "inquire": "Inquire About"
+  },
+  "experience": {
+    "badge": "Career History & Education",
+    "title": "Track Record of",
+    "highlight": "Leadership",
+    "subtitle": "Senior roles, technical accomplishments, and academic specialization.",
+    "accomplishments": "Key Accomplishments:"
+  },
+  "github": {
+    "badge": "Open Source & GitHub",
+    "title": "Building in Public &",
+    "highlight": "Open Source",
+    "subtitle": "Contributing back to the developer ecosystem with public repositories and tools.",
+    "breakdown": "Language Breakdown",
+    "publicCodebase": "Public Codebase",
+    "featuredRepos": "Featured Public Repositories"
+  },
+  "dashboard": {
+    "badge": "Developer Telemetry",
+    "title": "Live System & Portfolio",
+    "highlight": "Analytics",
+    "subtitle": "Real-time telemetry showing site performance, active connections, and visitor metrics.",
+    "totalVisitors": "Total Visitors",
+    "vsMonth": "+12% vs last month",
+    "activeNow": "Active Now",
+    "liveSessions": "Live sessions connected",
+    "systemUptime": "System Uptime",
+    "network": "Vercel Global Edge Network",
+    "edgeLatency": "Edge Latency",
+    "sub50ms": "Sub-50ms Response Speed"
+  },
+  "testimonials": {
+    "badge": "Client Recommendations",
+    "title": "Trusted by Leaders &",
+    "highlight": "Founders",
+    "subtitle": "What product leaders, CTOs, and designers say about my engineering impact."
+  },
+  "blog": {
+    "badge": "Articles & Insights",
+    "title": "Latest Architectural",
+    "highlight": "Articles",
+    "subtitle": "Thoughts on React 19, web performance, UI aesthetics, and generative AI."
+  },
+  "pricing": {
+    "badge": "Transparent Project Pricing",
+    "title": "Flexible Freelance &",
+    "highlight": "Consultancy",
+    "subtitle": "Fixed-rate packages engineered for speed, clean architecture, and total transparency.",
+    "popularChoice": "Most Popular Choice",
+    "included": "What's Included:"
+  },
+  "faq": {
+    "badge": "Frequently Asked Questions",
+    "title": "Got Questions?",
+    "highlight": "Answers",
+    "titleEnd": "Here",
+    "subtitle": "Everything you need to know about working with me.",
+    "searchPlaceholder": "Search questions..."
+  },
+  "contact": {
+    "badge": "Get In Touch",
+    "title": "Let's Build Something",
+    "highlight": "Extraordinary",
+    "subtitle": "Have a project in mind, lead role opportunity, or technical question? Drop me a message below.",
+    "infoTitle": "Contact Information",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "locationLabel": "Location",
+    "follow": "Follow & Connect:",
+    "form": {
+      "nameLabel": "Your Name *",
+      "namePlaceholder": "Jane Doe",
+      "emailLabel": "Your Email *",
+      "emailPlaceholder": "jane@example.com",
+      "subjectLabel": "Subject *",
+      "subjectPlaceholder": "Project Inquiry / Lead Role",
+      "budgetLabel": "Estimated Budget",
+      "messageLabel": "Project Details & Message *",
+      "messagePlaceholder": "Tell me about your product goals, timeline, and requirements..."
+    }
+  },
+  "command": {
+    "placeholder": "Type a command or search section...",
+    "noMatching": "No matching command found for",
+    "navigation": "Navigation",
+    "settings": "Settings",
+    "socials": "Socials",
+    "escToClose": "to close",
+    "paletteTitle": "Command Palette"
+  }
+}

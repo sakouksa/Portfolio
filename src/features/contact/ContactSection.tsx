@@ -2,64 +2,62 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
+import { motion } from 'framer-motion';
 import { 
   Mail, 
-  Phone, 
-  MapPin, 
   Send, 
-  MessageSquare
+  MapPin, 
+  Phone, 
+  MessageSquare, 
+  CheckCircle2, 
+  Sparkles 
 } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaXTwitter } from 'react-icons/fa6';
 import { toast } from 'sonner';
 import confetti from 'canvas-confetti';
+import { useTranslation } from 'react-i18next';
 import { DEVELOPER_PROFILE } from '../../lib/constants';
 import { usePortfolioStore } from '../../store/usePortfolioStore';
 
-const contactSchema = z.object({
+const contactFormSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
   email: z.string().email('Please enter a valid email address'),
   subject: z.string().min(3, 'Subject must be at least 3 characters'),
-  service: z.string().optional(),
   budget: z.string().optional(),
-  message: z.string().min(10, 'Message must be at least 10 characters long'),
+  message: z.string().min(10, 'Message must be at least 10 characters'),
 });
 
-type ContactFormInputs = z.infer<typeof contactSchema>;
+type ContactFormData = z.infer<typeof contactFormSchema>;
 
 export const ContactSection: React.FC = () => {
-  const { selectedService, incrementMessageCount } = usePortfolioStore();
+  const { incrementMessageCount } = usePortfolioStore();
+  const { t } = useTranslation(['portfolio', 'common']);
 
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors, isSubmitting },
-  } = useForm<ContactFormInputs>({
-    resolver: zodResolver(contactSchema),
-    defaultValues: {
-      service: selectedService ? selectedService.title : '',
-      budget: '$5,000 - $10,000',
-    },
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormSchema),
   });
 
-  const onSubmit = async (data: ContactFormInputs) => {
-    // Simulate API delay
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    
-    incrementMessageCount();
+  const onSubmit = async (data: ContactFormData) => {
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 1200));
+      
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+      });
 
-    // Trigger celebratory confetti
-    confetti({
-      particleCount: 80,
-      spread: 70,
-      origin: { y: 0.6 },
-    });
-
-    toast.success('Message sent successfully!', {
-      description: `Thank you ${data.name}, I will respond to your inquiry within 24 hours.`,
-    });
-
-    reset();
+      incrementMessageCount();
+      toast.success(`Thank you ${data.name}! Your message has been sent successfully.`);
+      reset();
+    } catch (error) {
+      toast.error('Failed to send message. Please try again or email directly.');
+    }
   };
 
   return (
@@ -70,98 +68,74 @@ export const ContactSection: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-blue-600/10 text-blue-600 dark:text-violet-400 border border-blue-600/20">
             <MessageSquare className="w-3.5 h-3.5" />
-            <span>Get In Touch</span>
+            <span>{t('contact.badge')}</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight">
-            Let's Build Something <span className="gradient-text-primary">Extraordinary</span>
+            {t('contact.title')}{' '}
+            <span className="gradient-text-primary">{t('contact.highlight')}</span>
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg">
-            Have a project in mind, lead role opportunity, or technical question? Drop me a message below.
+            {t('contact.subtitle')}
           </p>
         </div>
 
-        {/* Grid Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
-          {/* Left Column: Direct Contact Info & Map */}
+          {/* Left Column Contact Details */}
           <div className="lg:col-span-5 space-y-8">
-            <div className="glass-card p-8 rounded-3xl border border-slate-200 dark:border-slate-800 space-y-6">
-              <h3 className="font-heading font-bold text-2xl text-slate-900 dark:text-white">
-                Contact Information
+            <div className="glass-card p-8 rounded-3xl border border-slate-200 dark:border-slate-800 space-y-6 shadow-xl">
+              <h3 className="font-heading font-bold text-2xl text-slate-900 dark:text-white pb-4 border-b border-slate-200 dark:border-slate-800">
+                {t('contact.infoTitle')}
               </h3>
 
-              <div className="space-y-4">
-                <a
-                  href={`mailto:${DEVELOPER_PROFILE.email}`}
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-slate-100/80 dark:bg-slate-800/50 hover:bg-blue-600 hover:text-white dark:hover:bg-violet-600 transition-all group"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-blue-600/10 text-blue-600 dark:text-violet-400 group-hover:bg-white group-hover:text-blue-600 flex items-center justify-center">
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-blue-600/10 text-blue-600 dark:text-violet-400 flex items-center justify-center shrink-0">
                     <Mail className="w-6 h-6" />
                   </div>
                   <div>
-                    <span className="block text-xs font-semibold text-slate-400 uppercase">Email</span>
-                    <span className="font-semibold text-sm text-slate-900 dark:text-white group-hover:text-white">
+                    <span className="block text-xs font-semibold uppercase text-slate-400">{t('contact.emailLabel')}</span>
+                    <a href={`mailto:${DEVELOPER_PROFILE.email}`} className="font-semibold text-slate-900 dark:text-white hover:text-blue-600 transition-colors text-sm sm:text-base">
                       {DEVELOPER_PROFILE.email}
-                    </span>
+                    </a>
                   </div>
-                </a>
+                </div>
 
-                <a
-                  href={`tel:${DEVELOPER_PROFILE.phone}`}
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-slate-100/80 dark:bg-slate-800/50 hover:bg-blue-600 hover:text-white dark:hover:bg-violet-600 transition-all group"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-violet-600/10 text-violet-600 dark:text-violet-400 group-hover:bg-white group-hover:text-violet-600 flex items-center justify-center">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-violet-600/10 text-violet-600 dark:text-cyan-400 flex items-center justify-center shrink-0">
                     <Phone className="w-6 h-6" />
                   </div>
                   <div>
-                    <span className="block text-xs font-semibold text-slate-400 uppercase">Phone</span>
-                    <span className="font-semibold text-sm text-slate-900 dark:text-white group-hover:text-white">
+                    <span className="block text-xs font-semibold uppercase text-slate-400">{t('contact.phoneLabel')}</span>
+                    <a href={`tel:${DEVELOPER_PROFILE.phone}`} className="font-semibold text-slate-900 dark:text-white hover:text-blue-600 transition-colors text-sm sm:text-base">
                       {DEVELOPER_PROFILE.phone}
-                    </span>
+                    </a>
                   </div>
-                </a>
+                </div>
 
-                <div className="flex items-center gap-4 p-4 rounded-2xl bg-slate-100/80 dark:bg-slate-800/50">
-                  <div className="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-500 flex items-center justify-center">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 text-cyan-500 dark:text-emerald-400 flex items-center justify-center shrink-0">
                     <MapPin className="w-6 h-6" />
                   </div>
                   <div>
-                    <span className="block text-xs font-semibold text-slate-400 uppercase">Location</span>
-                    <span className="font-semibold text-sm text-slate-900 dark:text-white">
-                      {DEVELOPER_PROFILE.location}
+                    <span className="block text-xs font-semibold uppercase text-slate-400">{t('contact.locationLabel')}</span>
+                    <span className="font-semibold text-slate-900 dark:text-white text-sm sm:text-base">
+                      {t('hero.location')}
                     </span>
                   </div>
                 </div>
               </div>
 
-              {/* Social Channels */}
-              <div className="pt-4 border-t border-slate-200 dark:border-slate-800">
-                <span className="block text-xs font-semibold text-slate-400 uppercase mb-3">
-                  Follow & Connect:
-                </span>
+              <div className="pt-6 border-t border-slate-200 dark:border-slate-800 space-y-3">
+                <span className="block text-xs font-semibold uppercase text-slate-400">{t('contact.follow')}</span>
                 <div className="flex gap-3">
-                  <a
-                    href={DEVELOPER_PROFILE.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="p-3 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-blue-600 hover:text-white transition-colors"
-                  >
+                  <a href={DEVELOPER_PROFILE.github} target="_blank" rel="noreferrer" className="p-3 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">
                     <FaGithub className="w-5 h-5" />
                   </a>
-                  <a
-                    href={DEVELOPER_PROFILE.linkedin}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="p-3 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-blue-600 hover:text-white transition-colors"
-                  >
+                  <a href={DEVELOPER_PROFILE.linkedin} target="_blank" rel="noreferrer" className="p-3 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">
                     <FaLinkedin className="w-5 h-5" />
                   </a>
-                  <a
-                    href={DEVELOPER_PROFILE.twitter}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="p-3 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-blue-600 hover:text-white transition-colors"
-                  >
+                  <a href={DEVELOPER_PROFILE.twitter} target="_blank" rel="noreferrer" className="p-3 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">
                     <FaXTwitter className="w-5 h-5" />
                   </a>
                 </div>
@@ -169,113 +143,112 @@ export const ContactSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Contact Form */}
+          {/* Right Column Form */}
           <div className="lg:col-span-7">
-            <div className="glass-card p-8 rounded-3xl border border-slate-200 dark:border-slate-800 gradient-border shadow-2xl">
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            <form 
+              onSubmit={handleSubmit(onSubmit)} 
+              className="glass-card p-8 rounded-3xl border border-slate-200 dark:border-slate-800 space-y-6 shadow-2xl"
+            >
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  {/* Name Input */}
-                  <div className="space-y-2">
-                    <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300">
-                      Your Name *
-                    </label>
-                    <input
-                      type="text"
-                      {...register('name')}
-                      placeholder="Jane Doe"
-                      className="w-full px-4 py-3 rounded-2xl bg-white/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 text-sm"
-                    />
-                    {errors.name && (
-                      <span className="text-xs text-rose-500">{errors.name.message}</span>
-                    )}
-                  </div>
-
-                  {/* Email Input */}
-                  <div className="space-y-2">
-                    <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300">
-                      Your Email *
-                    </label>
-                    <input
-                      type="email"
-                      {...register('email')}
-                      placeholder="jane@example.com"
-                      className="w-full px-4 py-3 rounded-2xl bg-white/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 text-sm"
-                    />
-                    {errors.email && (
-                      <span className="text-xs text-rose-500">{errors.email.message}</span>
-                    )}
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  {/* Subject Input */}
-                  <div className="space-y-2">
-                    <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300">
-                      Subject *
-                    </label>
-                    <input
-                      type="text"
-                      {...register('subject')}
-                      placeholder="Project Inquiry / Lead Role"
-                      className="w-full px-4 py-3 rounded-2xl bg-white/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 text-sm"
-                    />
-                    {errors.subject && (
-                      <span className="text-xs text-rose-500">{errors.subject.message}</span>
-                    )}
-                  </div>
-
-                  {/* Budget Dropdown */}
-                  <div className="space-y-2">
-                    <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300">
-                      Estimated Budget
-                    </label>
-                    <select
-                      {...register('budget')}
-                      className="w-full px-4 py-3 rounded-2xl bg-white/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500/50 text-sm"
-                    >
-                      <option value="< $5,000">&lt; $5,000</option>
-                      <option value="$5,000 - $10,000">$5,000 - $10,000</option>
-                      <option value="$10,000 - $25,000">$10,000 - $25,000</option>
-                      <option value="$25,000+">$25,000+</option>
-                    </select>
-                  </div>
-                </div>
-
-                {/* Message Textarea */}
+                {/* Name Input */}
                 <div className="space-y-2">
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300">
-                    Project Details & Message *
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+                    {t('contact.form.nameLabel')}
                   </label>
-                  <textarea
-                    rows={5}
-                    {...register('message')}
-                    placeholder="Tell me about your product goals, timeline, and requirements..."
-                    className="w-full px-4 py-3 rounded-2xl bg-white/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 text-sm resize-none"
+                  <input
+                    {...register('name')}
+                    type="text"
+                    placeholder={t('contact.form.namePlaceholder')}
+                    className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
-                  {errors.message && (
-                    <span className="text-xs text-rose-500">{errors.message.message}</span>
-                  )}
+                  {errors.name && <p className="text-xs text-rose-500 font-medium">{errors.name.message}</p>}
                 </div>
 
-                {/* Submit Button */}
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full py-4 px-6 rounded-2xl text-base font-semibold text-white bg-gradient-to-r from-blue-600 via-violet-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 shadow-xl shadow-blue-500/25 transition-all flex items-center justify-center gap-2 group hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50"
-                >
-                  {isSubmitting ? (
-                    <span>Sending Message...</span>
-                  ) : (
-                    <>
-                      <span>Send Message</span>
-                      <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </>
-                  )}
-                </button>
+                {/* Email Input */}
+                <div className="space-y-2">
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+                    {t('contact.form.emailLabel')}
+                  </label>
+                  <input
+                    {...register('email')}
+                    type="email"
+                    placeholder={t('contact.form.emailPlaceholder')}
+                    className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                  {errors.email && <p className="text-xs text-rose-500 font-medium">{errors.email.message}</p>}
+                </div>
 
-              </form>
-            </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                
+                {/* Subject Input */}
+                <div className="space-y-2">
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+                    {t('contact.form.subjectLabel')}
+                  </label>
+                  <input
+                    {...register('subject')}
+                    type="text"
+                    placeholder={t('contact.form.subjectPlaceholder')}
+                    className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                  {errors.subject && <p className="text-xs text-rose-500 font-medium">{errors.subject.message}</p>}
+                </div>
+
+                {/* Budget Select */}
+                <div className="space-y-2">
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+                    {t('contact.form.budgetLabel')}
+                  </label>
+                  <select
+                    {...register('budget')}
+                    className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  >
+                    <option value="">Select range...</option>
+                    <option value="< $3k">&lt; $3,000</option>
+                    <option value="$3k - $6k">$3,000 - $6,000</option>
+                    <option value="$6k - $12k">$6,000 - $12,000</option>
+                    <option value="> $12k">&gt; $12,000+</option>
+                  </select>
+                </div>
+
+              </div>
+
+              {/* Message Textarea */}
+              <div className="space-y-2">
+                <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+                  {t('contact.form.messageLabel')}
+                </label>
+                <textarea
+                  {...register('message')}
+                  rows={5}
+                  placeholder={t('contact.form.messagePlaceholder')}
+                  className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+                />
+                {errors.message && <p className="text-xs text-rose-500 font-medium">{errors.message.message}</p>}
+              </div>
+
+              {/* Submit Button */}
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full py-4 rounded-2xl font-heading font-bold text-base text-white bg-gradient-to-r from-blue-600 via-violet-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 shadow-xl shadow-blue-500/25 flex items-center justify-center gap-2 transition-all hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50"
+              >
+                {isSubmitting ? (
+                  <>
+                    <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                    <span>{t('common:buttons.sending', 'Sending Message...')}</span>
+                  </>
+                ) : (
+                  <>
+                    <Send className="w-5 h-5" />
+                    <span>{t('common:buttons.sendMessage', 'Send Message')}</span>
+                  </>
+                )}
+              </button>
+            </form>
           </div>
 
         </div>

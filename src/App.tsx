@@ -28,14 +28,12 @@ import { Footer } from './components/common/Footer';
 import { DEVELOPER_PROFILE } from './lib/constants';
 
 export function App() {
-  const { theme, setTheme, incrementVisitorCount } = usePortfolioStore();
+  const { incrementVisitorCount } = usePortfolioStore();
 
   useEffect(() => {
-    // Sync theme class on mount
-    setTheme(theme);
     // Track visitor
     incrementVisitorCount();
-  }, []);
+  }, [incrementVisitorCount]);
 
   return (
     <HelmetProvider>

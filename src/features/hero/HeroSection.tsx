@@ -11,10 +11,13 @@ import {
   ChevronDown
 } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaXTwitter } from 'react-icons/fa6';
+import { useTranslation } from 'react-i18next';
 import { DEVELOPER_PROFILE } from '../../lib/constants';
 import { fadeIn, staggerContainer } from '../../lib/framer-variants';
 
 export const HeroSection: React.FC = () => {
+  const { t } = useTranslation(['portfolio', 'common']);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -47,7 +50,7 @@ export const HeroSection: React.FC = () => {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                 </span>
-                Available for New Projects & Lead Roles
+                {t('hero.status')}
               </span>
             </motion.div>
 
@@ -56,7 +59,7 @@ export const HeroSection: React.FC = () => {
               variants={fadeIn('up', 0.2)}
               className="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-[1.1]"
             >
-              Hi, I'm{' '}
+              {t('hero.greeting')}{' '}
               <span className="gradient-text-primary">
                 {DEVELOPER_PROFILE.name}
               </span>
@@ -70,13 +73,13 @@ export const HeroSection: React.FC = () => {
               <Sparkles className="w-5 h-5 text-violet-500 shrink-0 hidden sm:inline" />
               <TypeAnimation
                 sequence={[
-                  'Senior Full Stack Architect',
+                  t('hero.role1'),
                   2000,
-                  'Building React 19 & Next.js Apps',
+                  t('hero.role2'),
                   2000,
-                  'Designing Glassmorphic UI Systems',
+                  t('hero.role3'),
                   2000,
-                  'Integrating Generative AI & LLMs',
+                  t('hero.role4'),
                   2000,
                 ]}
                 wrapper="span"
@@ -91,7 +94,7 @@ export const HeroSection: React.FC = () => {
               variants={fadeIn('up', 0.4)}
               className="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
             >
-              {DEVELOPER_PROFILE.tagline}
+              {t('hero.tagline')}
             </motion.p>
 
             {/* CTA Buttons */}
@@ -103,7 +106,7 @@ export const HeroSection: React.FC = () => {
                 onClick={() => scrollToSection('projects')}
                 className="px-6 py-3.5 text-base font-semibold text-white bg-gradient-to-r from-blue-600 via-violet-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 rounded-2xl shadow-xl shadow-blue-500/25 flex items-center gap-2 group transition-all hover:scale-[1.02] active:scale-[0.98]"
               >
-                View Projects
+                {t('common:buttons.viewProjects', 'View Projects')}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
 
@@ -112,7 +115,7 @@ export const HeroSection: React.FC = () => {
                 className="px-6 py-3.5 text-base font-semibold text-slate-800 dark:text-slate-200 bg-white/90 dark:bg-slate-900/80 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-800 backdrop-blur-md shadow-md flex items-center gap-2 transition-all hover:scale-[1.02]"
               >
                 <Download className="w-5 h-5 text-blue-600 dark:text-violet-400" />
-                Contact Me
+                {t('common:buttons.contactMe', 'Contact Me')}
               </button>
             </motion.div>
 
@@ -121,7 +124,7 @@ export const HeroSection: React.FC = () => {
               variants={fadeIn('up', 0.6)}
               className="flex items-center justify-center lg:justify-start gap-4 pt-4 text-slate-600 dark:text-slate-400"
             >
-              <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">Connect:</span>
+              <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">{t('hero.connect')}</span>
               <a
                 href={DEVELOPER_PROFILE.github}
                 target="_blank"
@@ -181,10 +184,10 @@ export const HeroSection: React.FC = () => {
                 <div className="absolute bottom-6 inset-x-8 p-3 rounded-xl glass-card bg-white/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-700/50 backdrop-blur-md flex items-center justify-between shadow-lg">
                   <div>
                     <h3 className="font-heading font-bold text-sm text-slate-900 dark:text-white">
-                      Phnom Penh, Cambodia
+                      {t('hero.location')}
                     </h3>
                     <p className="text-xs text-slate-500 dark:text-slate-400">
-                      UTC+7 (Indochina Time)
+                      {t('hero.timeZone')}
                     </p>
                   </div>
                   <CheckCircle2 className="w-5 h-5 text-emerald-500" />
@@ -202,10 +205,10 @@ export const HeroSection: React.FC = () => {
                 </div>
                 <div>
                   <span className="block font-heading font-bold text-base text-slate-900 dark:text-white">
-                    {DEVELOPER_PROFILE.yearsExperience}+ Years
+                    {DEVELOPER_PROFILE.yearsExperience}+ {t('hero.yearsExp')}
                   </span>
                   <span className="text-xs text-slate-600 dark:text-slate-400 font-medium">
-                    Senior Experience
+                    {t('hero.seniorExp')}
                   </span>
                 </div>
               </motion.div>
@@ -221,10 +224,10 @@ export const HeroSection: React.FC = () => {
                 </div>
                 <div>
                   <span className="block font-heading font-bold text-base text-slate-900 dark:text-white">
-                    {DEVELOPER_PROFILE.completedProjects}+ Projects
+                    {DEVELOPER_PROFILE.completedProjects}+ {t('hero.completedProjects')}
                   </span>
                   <span className="text-xs text-slate-600 dark:text-slate-400 font-medium">
-                    Shipped to Production
+                    {t('hero.shippedProduction')}
                   </span>
                 </div>
               </motion.div>
@@ -240,7 +243,7 @@ export const HeroSection: React.FC = () => {
             onClick={() => scrollToSection('about')}
             className="flex flex-col items-center gap-2 text-xs font-semibold text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-violet-400 transition-colors group"
           >
-            <span>Scroll Down</span>
+            <span>{t('hero.scrollDown')}</span>
             <ChevronDown className="w-4 h-4 animate-bounce group-hover:translate-y-1 transition-transform" />
           </button>
         </div>

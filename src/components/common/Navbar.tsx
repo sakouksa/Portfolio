@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Sun, 
-  Moon, 
   Command, 
   Menu, 
   X, 
@@ -14,26 +12,31 @@ import {
   Sparkles
 } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa6';
+import { useTranslation } from 'react-i18next';
 import { usePortfolioStore } from '../../store/usePortfolioStore';
 import { useActiveSection } from '../../hooks/useActiveSection';
 import { useScrollProgress } from '../../hooks/useScrollProgress';
-
-const NAV_ITEMS = [
-  { id: 'hero', label: 'Home', icon: Sparkles },
-  { id: 'about', label: 'About', icon: User },
-  { id: 'skills', label: 'Skills', icon: Code2 },
-  { id: 'projects', label: 'Projects', icon: Briefcase },
-  { id: 'services', label: 'Services', icon: Sparkles },
-  { id: 'experience', label: 'Experience', icon: Briefcase },
-  { id: 'github', label: 'Open Source', icon: FolderGit2 },
-  { id: 'contact', label: 'Contact', icon: Mail },
-];
+import { ThemeToggle } from './ThemeToggle';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 export const Navbar: React.FC = () => {
-  const { theme, toggleTheme, toggleCommandPalette } = usePortfolioStore();
-  const activeSection = useActiveSection(NAV_ITEMS.map((item) => item.id));
+  const { toggleCommandPalette } = usePortfolioStore();
   const scrollProgress = useScrollProgress();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useTranslation(['common']);
+
+  const NAV_ITEMS = [
+    { id: 'hero', label: t('nav.home', 'Home'), icon: Sparkles },
+    { id: 'about', label: t('nav.about', 'About'), icon: User },
+    { id: 'skills', label: t('nav.skills', 'Skills'), icon: Code2 },
+    { id: 'projects', label: t('nav.projects', 'Projects'), icon: Briefcase },
+    { id: 'services', label: t('nav.services', 'Services'), icon: Sparkles },
+    { id: 'experience', label: t('nav.experience', 'Experience'), icon: Briefcase },
+    { id: 'github', label: t('nav.openSource', 'Open Source'), icon: FolderGit2 },
+    { id: 'contact', label: t('nav.contact', 'Contact'), icon: Mail },
+  ];
+
+  const activeSection = useActiveSection(NAV_ITEMS.map((item) => item.id));
 
   const scrollToSection = (id: string) => {
     setMobileMenuOpen(false);
@@ -113,26 +116,19 @@ export const Navbar: React.FC = () => {
               title="Open Command Palette (Cmd + K)"
             >
               <Command className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">Search</span>
+              <span className="hidden sm:inline">{t('nav.search', 'Search')}</span>
               <kbd className="hidden sm:inline bg-slate-200 dark:bg-slate-900 px-1.5 py-0.5 rounded text-[10px] font-mono text-slate-500 dark:text-slate-400">
                 ⌘K
               </kbd>
             </button>
 
-            {/* Dark / Light Mode Switcher */}
-            <button
-              onClick={toggleTheme}
-              className="p-2.5 text-slate-700 dark:text-slate-300 hover:bg-slate-200/80 dark:hover:bg-slate-800/80 rounded-xl transition-colors"
-              aria-label="Toggle Theme"
-            >
-              {theme === 'dark' ? (
-                <Sun className="w-5 h-5 text-amber-400 transition-transform duration-300 rotate-0 hover:rotate-90" />
-              ) : (
-                <Moon className="w-5 h-5 text-slate-700 transition-transform duration-300 hover:-rotate-12" />
-              )}
-            </button>
+            {/* Language Switcher Dropdown */}
+            <LanguageSwitcher />
 
-            {/* Resume Button */}
+            {/* Dark / Light / System Theme Toggle Dropdown */}
+            <ThemeToggle />
+
+            {/* Resume / Hire Me Button */}
             <a
               href="#contact"
               onClick={(e) => {
@@ -141,7 +137,7 @@ export const Navbar: React.FC = () => {
               }}
               className="hidden sm:inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-500 hover:to-violet-500 rounded-xl shadow-lg shadow-blue-500/25 transition-all hover:scale-[1.02] active:scale-[0.98]"
             >
-              Hire Me
+              {t('nav.hireMe', 'Hire Me')}
             </a>
 
             {/* Mobile Hamburger Toggle */}
@@ -210,7 +206,7 @@ export const Navbar: React.FC = () => {
                 onClick={() => scrollToSection('contact')}
                 className="w-full py-2.5 text-center text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-violet-600 rounded-xl shadow-md"
               >
-                Hire Me
+                {t('nav.hireMe', 'Hire Me')}
               </button>
             </div>
           </motion.div>

@@ -5,38 +5,38 @@ import {
   Code2, 
   Zap, 
   ShieldCheck, 
-  Sparkles, 
-  GraduationCap, 
-  Award,
-  Globe2
+  Sparkles
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { DEVELOPER_PROFILE } from '../../lib/constants';
 import { fadeIn, staggerContainer } from '../../lib/framer-variants';
 
-const CORE_VALUES = [
-  {
-    icon: Code2,
-    title: 'Clean & Scalable Code',
-    description: 'Adhering strictly to SOLID, DRY, and modular architectural principles with strict TypeScript typings.'
-  },
-  {
-    icon: Zap,
-    title: '100/100 Performance',
-    description: 'Optimized asset pipelines, code splitting, memoization, and dynamic lazy loading for sub-second speeds.'
-  },
-  {
-    icon: ShieldCheck,
-    title: 'WCAG AA Accessibility',
-    description: 'Building fully accessible interfaces with complete ARIA support and fluid keyboard navigation.'
-  },
-  {
-    icon: Sparkles,
-    title: 'Apple & Vercel Aesthetics',
-    description: 'Crafting pixel-perfect layouts with smooth Framer Motion gestures, glassmorphism, and micro-interactions.'
-  }
-];
-
 export const AboutSection: React.FC = () => {
+  const { t } = useTranslation(['portfolio']);
+
+  const CORE_VALUES = [
+    {
+      icon: Code2,
+      title: t('about.val1Title'),
+      description: t('about.val1Desc')
+    },
+    {
+      icon: Zap,
+      title: t('about.val2Title'),
+      description: t('about.val2Desc')
+    },
+    {
+      icon: ShieldCheck,
+      title: t('about.val3Title'),
+      description: t('about.val3Desc')
+    },
+    {
+      icon: Sparkles,
+      title: t('about.val4Title'),
+      description: t('about.val4Desc')
+    }
+  ];
+
   return (
     <section id="about" className="py-24 relative bg-slate-50/50 dark:bg-slate-900/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -45,14 +45,14 @@ export const AboutSection: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-blue-600/10 text-blue-600 dark:text-violet-400 border border-blue-600/20">
             <User className="w-3.5 h-3.5" />
-            <span>About Me</span>
+            <span>{t('about.sectionTitle')}</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight">
-            Architecting the Future of{' '}
-            <span className="gradient-text-primary">Digital Experiences</span>
+            {t('about.mainHeading')}{' '}
+            <span className="gradient-text-primary">{t('about.highlight')}</span>
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg">
-            A passionate engineer dedicated to building modern software that combines powerful backend architecture with beautiful, accessible interfaces.
+            {t('about.subtitle')}
           </p>
         </div>
 
@@ -67,29 +67,29 @@ export const AboutSection: React.FC = () => {
           {/* Left Text Narrative */}
           <motion.div variants={fadeIn('right', 0.2)} className="lg:col-span-7 space-y-6">
             <h3 className="text-2xl font-heading font-bold text-slate-900 dark:text-white">
-              Passionate Software Architect with {DEVELOPER_PROFILE.yearsExperience}+ Years of Field Mastery
+              {t('about.bioTitle')}
             </h3>
             
             <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-base">
-              {DEVELOPER_PROFILE.bio}
+              {t('about.bioParagraph1')}
             </p>
 
             <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-base">
-              Throughout my career, I've had the privilege of collaborating with high-growth startups and global enterprises. From engineering real-time generative AI workbenches to building high-throughput microservices, my focus is always on delivering measurable business impact and user delight.
+              {t('about.bioParagraph2')}
             </p>
 
             {/* Quick Details Grid */}
             <div className="grid grid-cols-2 gap-4 pt-4">
               <div className="p-4 rounded-2xl glass-card border border-slate-200 dark:border-slate-800">
-                <span className="block text-xs text-slate-400 font-semibold uppercase">Location</span>
+                <span className="block text-xs text-slate-400 font-semibold uppercase">{t('about.locationLabel')}</span>
                 <span className="font-semibold text-slate-800 dark:text-slate-200 text-sm">
-                  {DEVELOPER_PROFILE.location}
+                  {t('hero.location')}
                 </span>
               </div>
               <div className="p-4 rounded-2xl glass-card border border-slate-200 dark:border-slate-800">
-                <span className="block text-xs text-slate-400 font-semibold uppercase">Degree</span>
+                <span className="block text-xs text-slate-400 font-semibold uppercase">{t('about.degreeLabel')}</span>
                 <span className="font-semibold text-slate-800 dark:text-slate-200 text-sm">
-                  B.S. CS & HCI (UC Berkeley)
+                  {t('about.degreeValue')}
                 </span>
               </div>
             </div>
@@ -99,7 +99,7 @@ export const AboutSection: React.FC = () => {
           <motion.div variants={fadeIn('left', 0.3)} className="lg:col-span-5">
             <div className="glass-card p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl space-y-6 gradient-border">
               <h4 className="font-heading font-bold text-xl text-slate-900 dark:text-white pb-4 border-b border-slate-200 dark:border-slate-800">
-                Key Performance Metrics
+                {t('about.metricsTitle')}
               </h4>
 
               <div className="grid grid-cols-2 gap-6">
@@ -108,7 +108,7 @@ export const AboutSection: React.FC = () => {
                     {DEVELOPER_PROFILE.yearsExperience}+
                   </span>
                   <span className="block text-xs text-slate-500 dark:text-slate-400 mt-1 font-semibold">
-                    Years Experience
+                    {t('about.metricYears')}
                   </span>
                 </div>
 
@@ -117,7 +117,7 @@ export const AboutSection: React.FC = () => {
                     {DEVELOPER_PROFILE.completedProjects}+
                   </span>
                   <span className="block text-xs text-slate-500 dark:text-slate-400 mt-1 font-semibold">
-                    Completed Projects
+                    {t('about.metricProjects')}
                   </span>
                 </div>
 
@@ -126,7 +126,7 @@ export const AboutSection: React.FC = () => {
                     {DEVELOPER_PROFILE.happyClients}+
                   </span>
                   <span className="block text-xs text-slate-500 dark:text-slate-400 mt-1 font-semibold">
-                    Satisfied Clients
+                    {t('about.metricClients')}
                   </span>
                 </div>
 
@@ -135,7 +135,7 @@ export const AboutSection: React.FC = () => {
                     {DEVELOPER_PROFILE.githubStars}+
                   </span>
                   <span className="block text-xs text-slate-500 dark:text-slate-400 mt-1 font-semibold">
-                    GitHub Stars
+                    {t('about.metricStars')}
                   </span>
                 </div>
               </div>
@@ -146,7 +146,7 @@ export const AboutSection: React.FC = () => {
         {/* Core Engineering Values Cards */}
         <div className="mt-16">
           <h3 className="text-2xl font-heading font-bold text-slate-900 dark:text-white mb-8 text-center">
-            Core Engineering Principles
+            {t('about.principlesTitle')}
           </h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
