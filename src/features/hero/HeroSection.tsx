@@ -181,12 +181,12 @@ export const HeroSection: React.FC = () => {
                 />
 
                 {/* Bottom Overlay Label */}
-                <div className="absolute bottom-6 inset-x-8 p-3 rounded-xl glass-card bg-white/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-700/50 backdrop-blur-md flex items-center justify-between shadow-lg">
+                <div className="absolute bottom-6 inset-x-8 p-3.5 rounded-xl glass-card bg-white/95 dark:bg-slate-900/95 border border-slate-200 dark:border-slate-700/80 backdrop-blur-md flex items-center justify-between shadow-xl">
                   <div>
                     <h3 className="font-heading font-bold text-sm text-slate-900 dark:text-white whitespace-nowrap">
                       {t('hero.location')}
                     </h3>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 whitespace-nowrap">
+                    <p className="text-xs text-slate-600 dark:text-slate-400 font-medium whitespace-nowrap">
                       {t('hero.timeZone')}
                     </p>
                   </div>
@@ -198,7 +198,7 @@ export const HeroSection: React.FC = () => {
               <motion.div 
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute -top-6 -left-6 glass-card bg-white/90 dark:bg-slate-900/90 p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl flex items-center gap-3"
+                className="absolute -top-6 -left-6 glass-card bg-white/95 dark:bg-slate-900/95 p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl flex items-center gap-3"
               >
                 <div className="w-10 h-10 rounded-xl bg-blue-600/10 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold shrink-0">
                   <Award className="w-5 h-5" />
@@ -217,7 +217,7 @@ export const HeroSection: React.FC = () => {
               <motion.div 
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-                className="absolute -bottom-6 -right-6 glass-card bg-white/90 dark:bg-slate-900/90 p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl flex items-center gap-3"
+                className="absolute -bottom-6 -right-6 glass-card bg-white/95 dark:bg-slate-900/95 p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl flex items-center gap-3"
               >
                 <div className="w-10 h-10 rounded-xl bg-violet-600/10 text-violet-600 dark:text-violet-400 flex items-center justify-center font-bold shrink-0">
                   <Sparkles className="w-5 h-5" />

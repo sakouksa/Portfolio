@@ -40,7 +40,7 @@ export const FloatingDock: React.FC = () => {
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.5, type: 'spring', damping: 20 }}
-        className="glass-dock px-3 py-2 rounded-2xl flex items-center gap-2 border border-slate-200/50 dark:border-slate-800/80 shadow-2xl"
+        className="glass-dock px-3 py-2 rounded-2xl flex items-center gap-2 border border-slate-200/80 dark:border-slate-800/80 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-2xl"
       >
         {DOCK_ITEMS.map((item) => {
           const Icon = item.icon;
