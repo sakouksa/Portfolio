@@ -85,26 +85,34 @@ export const SKILL_ITEMS: SkillItem[] = [
 export const PROJECT_ITEMS: ProjectItem[] = [
   {
     id: "project-1",
-    title: "LinearFlow SaaS Analytics",
-    subtitle: "High-Performance Cloud Monitoring Dashboard",
-    description: "A sleek, linear-style observability platform giving developers deep metrics into cloud infrastructure, microservices latency, error tracebacks, and automated deployment pipelines.",
+    title: "Enterprise E-Commerce + POS System",
+    subtitle: "All-in-One E-Commerce & Multi-Branch POS Platform",
+    description: "An enterprise-grade, multi-branch management platform integrating online e-commerce sales with physical POS terminal operations, inventory tracking, financial analytics, HRM, and real-time cash register control.",
     category: "Full Stack",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "Prisma", "Framer Motion", "Recharts"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200",
+    tags: ["Laravel 12/13", "React 19", "Tailwind CSS v4", "TypeScript", "PostgreSQL", "Zustand", "REST API"],
+    image: "/images/pos-dashboard.png",
     gallery: [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200"
+      "/images/pos-dashboard.png",
+      "/images/pos-terminal.png",
+      "/images/pos-login.png"
     ],
-    demoUrl: "https://github.com/sakouksa",
-    githubUrl: "https://github.com/sakouksa/Portfolio",
+    demoUrl: "#",
+    githubUrl: "https://github.com/sakouksa/Project-Enterprise-E-Commerce-POS-System",
     featured: true,
-    date: "2024",
-    architecture: "Next.js App Router with Server Actions, Prisma ORM querying PostgreSQL with TimescaleDB extension for time-series metrics visualization.",
-    challenges: ["Rendering 50,000+ data points smoothly at 60 FPS without frame drops."],
-    solutions: ["Built custom WebGL/Canvas rendering pipeline integrated with Recharts."],
+    date: "2025 - Present",
+    architecture: "Monolithic Laravel backend acting as a REST API server connected to a reactive React 19 single-page application (SPA). Features multi-warehouse inventory isolation, real-time POS cash drawer tracking, and role-based permissions (RBAC).",
+    challenges: [
+      "Synchronizing real-time inventory levels between high-volume web orders and active physical POS cashier terminals without race conditions.",
+      "Designing a high-speed cashier POS interface supporting barcode/IMEI scanning, discount calculations, and instant receipt generation."
+    ],
+    solutions: [
+      "Implemented optimistic concurrency control and database transaction locks during cart checkout.",
+      "Built keyboard-first shortcuts and local caching for lightning-fast item lookups in the POS terminal."
+    ],
     metrics: [
-      { label: "Lighthouse Score", value: "100/100" },
-      { label: "Data Throughput", value: "1.5GB/s" }
+      { label: "Inventory Managed", value: "14K+ Items" },
+      { label: "Uptime", value: "99.98%" },
+      { label: "Tech Stack", value: "Laravel + React" }
     ]
   },
   {
@@ -141,26 +149,6 @@ export const PROJECT_ITEMS: ProjectItem[] = [
       { label: "Deploy", value: "Vercel" }
     ]
   },
-  {
-    id: "project-3",
-    title: "Apex Mobile FinTech",
-    subtitle: "Cross-Platform Crypto & Banking Mobile App",
-    description: "A secure, biometric-enabled mobile wallet and banking app built for iOS and Android, allowing users to send peer-to-peer payments, manage investment portfolios, and trade assets effortlessly.",
-    category: "Mobile",
-    tags: ["React Native", "TypeScript", "Expo", "Zustand", "Node.js", "Tailwind Native"],
-    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1200",
-    demoUrl: "https://github.com/sakouksa",
-    githubUrl: "https://github.com/sakouksa/Portfolio",
-    featured: true,
-    date: "2024",
-    architecture: "React Native with TurboModules, secure enclave biometrics, and GraphQL subscriptions for real-time asset pricing.",
-    challenges: ["Ensuring bank-grade encryption with offline transaction queuing."],
-    solutions: ["Integrated SQLite encrypted local store with automatic sync resolution."],
-    metrics: [
-      { label: "App Store Rating", value: "4.9/5" },
-      { label: "Downloads", value: "500K+" }
-    ]
-  }
 ];
 
 export const SERVICE_ITEMS: ServiceItem[] = [

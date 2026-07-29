@@ -80,6 +80,20 @@
     "solutionsTitle": "Architectural Solutions",
     "techUsed": "Technologies & Tools Used:",
     "items": {
+      "project-1": {
+        "title": "Enterprise E-Commerce + POS System",
+        "subtitle": "All-in-One E-Commerce & Multi-Branch POS Platform",
+        "description": "An enterprise-grade, multi-branch management platform integrating online e-commerce sales with physical POS terminal operations, inventory tracking, financial analytics, HRM, and real-time cash register control.",
+        "architecture": "Monolithic Laravel backend acting as a REST API server connected to a reactive React 19 single-page application (SPA). Features multi-warehouse inventory isolation, real-time POS cash drawer tracking, and role-based permissions (RBAC).",
+        "challenges": [
+          "Synchronizing real-time inventory levels between high-volume web orders and active physical POS cashier terminals without race conditions.",
+          "Designing a high-speed cashier POS interface supporting barcode/IMEI scanning, discount calculations, and instant receipt generation."
+        ],
+        "solutions": [
+          "Implemented optimistic concurrency control and database transaction locks during cart checkout.",
+          "Built keyboard-first shortcuts and local caching for lightning-fast item lookups in the POS terminal."
+        ]
+      },
       "project-2": {
         "title": "Betheme Shop (Cara E-Commerce)",
         "subtitle": "Full-Featured E-Commerce Fashion Store",

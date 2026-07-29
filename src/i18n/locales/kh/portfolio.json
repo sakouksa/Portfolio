@@ -80,6 +80,20 @@
     "solutionsTitle": "ដំណោះស្រាយស្ថាបត្យកម្ម",
     "techUsed": "បច្ចេកវិទ្យា និងឧបករណ៍ដែលបានប្រើ៖",
     "items": {
+      "project-1": {
+        "title": "Enterprise E-Commerce + POS System",
+        "subtitle": "ប្រព័ន្ធគ្រប់គ្រង E-Commerce & POS សហគ្រាសពេញលេញ",
+        "description": "ប្រព័ន្ធគ្រប់គ្រងអាជីវកម្មកម្រិតសហគ្រាស ដែលតភ្ជាប់ការលក់ E-Commerce តាមអនឡាញ ជាមួយប្រព័ន្ធគិតប្រាក់ POS តាមសាខាជាក់ស្តែង, ការតាមដានស្តុកទំនិញ, របាយការណ៍ហិរញ្ញវត្ថុ, គ្រប់គ្រងបុគ្គលិក និងការគ្រប់គ្រងសាច់ប្រាក់ Real-time។",
+        "architecture": "Laravel Backend ដើរតួជា REST API ភ្ជាប់ជាមួយ React 19 SPA Frontend។ មានប្រព័ន្ធបែងចែកស្តុកតាមឃ្លាំង, ការតាមដាន Cash Drawer របស់បេឡាអនឡាញ Real-time, និងប្រព័ន្ធសិទ្ធិបុគ្គលិក (RBAC)។",
+        "challenges": [
+          "ការធ្វើបច្ចុប្បន្នភាពស្តុកទំនិញ Real-time រវាងការបញ្ជាទិញតាមវេបសាយ និងការលក់នៅកន្លែងគិតប្រាក់ POS ដោយមិនឱ្យមានទិន្នន័យជាន់គ្នា (Race condition)។",
+          "ការរចនាផ្ទាំង POS បេឡាដែលមានល្បឿនលឿន គាំទ្រការស្កេន បារកូដ/IMEI, គណនាបញ្ចុះតម្លៃ និងចេញវិក្កយបត្រភ្លាមៗ។"
+        ],
+        "solutions": [
+          "បានអនុវត្តប្រព័ន្ធ Concurrency Control និង Database Transaction Locks ពេលគិតប្រាក់។",
+          "បានបង្កើត Shortcut លើ Keyboards និង Local Cache សម្រាប់ការស្វែងរកទំនិញល្បឿនលឿនលើ POS Terminal។"
+        ]
+      },
       "project-2": {
         "title": "Betheme Shop (ហាងទំនិញ Cara)",
         "subtitle": "កម្មវិធីហាងទំនិញសម្លៀកបំពាក់ E-Commerce ពេញលេញ",
