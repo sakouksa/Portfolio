@@ -25,10 +25,10 @@ export const HeroSection: React.FC = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen pt-28 pb-16 flex items-center justify-center bg-grid-pattern overflow-hidden">
+    <section id="hero" className="relative min-h-screen pt-28 pb-16 flex items-center justify-center bg-slate-50 dark:bg-slate-950 bg-grid-pattern text-slate-900 dark:text-white transition-colors duration-300 overflow-hidden">
       
       {/* Background Gradient Mesh Balls */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-gradient-to-tr from-blue-600/20 via-violet-600/20 to-cyan-400/20 rounded-full blur-3xl pointer-events-none animate-aurora" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-gradient-to-tr from-blue-600/15 via-violet-600/15 to-cyan-400/15 dark:from-blue-600/20 dark:via-violet-600/20 dark:to-cyan-400/20 rounded-full blur-3xl pointer-events-none animate-aurora" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
         <motion.div 
@@ -82,7 +82,7 @@ export const HeroSection: React.FC = () => {
                 wrapper="span"
                 speed={50}
                 repeat={Infinity}
-                className="text-blue-600 dark:text-violet-400"
+                className="text-blue-600 dark:text-violet-400 font-bold"
               />
             </motion.div>
 
@@ -109,7 +109,7 @@ export const HeroSection: React.FC = () => {
 
               <button
                 onClick={() => scrollToSection('contact')}
-                className="px-6 py-3.5 text-base font-semibold text-slate-800 dark:text-slate-200 bg-white/80 dark:bg-slate-900/80 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-800 backdrop-blur-md shadow-md flex items-center gap-2 transition-all hover:scale-[1.02]"
+                className="px-6 py-3.5 text-base font-semibold text-slate-800 dark:text-slate-200 bg-white/90 dark:bg-slate-900/80 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-800 backdrop-blur-md shadow-md flex items-center gap-2 transition-all hover:scale-[1.02]"
               >
                 <Download className="w-5 h-5 text-blue-600 dark:text-violet-400" />
                 Contact Me
@@ -126,7 +126,7 @@ export const HeroSection: React.FC = () => {
                 href={DEVELOPER_PROFILE.github}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800/80 hover:text-blue-600 dark:hover:text-violet-400 transition-colors shadow-sm"
+                className="p-2.5 rounded-xl bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:text-blue-600 dark:hover:text-violet-400 transition-colors shadow-sm"
                 aria-label="GitHub Profile"
               >
                 <FaGithub className="w-5 h-5" />
@@ -135,7 +135,7 @@ export const HeroSection: React.FC = () => {
                 href={DEVELOPER_PROFILE.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800/80 hover:text-blue-600 dark:hover:text-violet-400 transition-colors shadow-sm"
+                className="p-2.5 rounded-xl bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:text-blue-600 dark:hover:text-violet-400 transition-colors shadow-sm"
                 aria-label="LinkedIn Profile"
               >
                 <FaLinkedin className="w-5 h-5" />
@@ -144,14 +144,14 @@ export const HeroSection: React.FC = () => {
                 href={DEVELOPER_PROFILE.twitter}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800/80 hover:text-blue-600 dark:hover:text-violet-400 transition-colors shadow-sm"
+                className="p-2.5 rounded-xl bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:text-blue-600 dark:hover:text-violet-400 transition-colors shadow-sm"
                 aria-label="Twitter Profile"
               >
                 <FaXTwitter className="w-5 h-5" />
               </a>
               <a
                 href={`mailto:${DEVELOPER_PROFILE.email}`}
-                className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800/80 hover:text-blue-600 dark:hover:text-violet-400 transition-colors shadow-sm"
+                className="p-2.5 rounded-xl bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:text-blue-600 dark:hover:text-violet-400 transition-colors shadow-sm"
                 aria-label="Email"
               >
                 <Mail className="w-5 h-5" />
@@ -170,7 +170,7 @@ export const HeroSection: React.FC = () => {
               <div className="absolute -inset-1.5 bg-gradient-to-r from-blue-600 via-violet-600 to-cyan-500 rounded-3xl blur-xl opacity-75 animate-pulse" />
 
               {/* Profile Card Box */}
-              <div className="relative glass-card p-4 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden group">
+              <div className="relative glass-card p-4 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden group bg-white/80 dark:bg-slate-900/80">
                 <img
                   src={DEVELOPER_PROFILE.avatarUrl}
                   alt={DEVELOPER_PROFILE.name}
@@ -178,7 +178,7 @@ export const HeroSection: React.FC = () => {
                 />
 
                 {/* Bottom Overlay Label */}
-                <div className="absolute bottom-6 inset-x-8 p-3 rounded-xl glass-card border border-white/20 dark:border-slate-700/50 backdrop-blur-md flex items-center justify-between">
+                <div className="absolute bottom-6 inset-x-8 p-3 rounded-xl glass-card bg-white/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-700/50 backdrop-blur-md flex items-center justify-between shadow-lg">
                   <div>
                     <h3 className="font-heading font-bold text-sm text-slate-900 dark:text-white">
                       San Francisco, CA
@@ -195,7 +195,7 @@ export const HeroSection: React.FC = () => {
               <motion.div 
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute -top-6 -left-6 glass-card p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl flex items-center gap-3"
+                className="absolute -top-6 -left-6 glass-card bg-white/90 dark:bg-slate-900/90 p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl flex items-center gap-3"
               >
                 <div className="w-10 h-10 rounded-xl bg-blue-600/10 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold">
                   <Award className="w-5 h-5" />
@@ -204,7 +204,7 @@ export const HeroSection: React.FC = () => {
                   <span className="block font-heading font-bold text-base text-slate-900 dark:text-white">
                     {DEVELOPER_PROFILE.yearsExperience}+ Years
                   </span>
-                  <span className="text-xs text-slate-500 dark:text-slate-400">
+                  <span className="text-xs text-slate-600 dark:text-slate-400 font-medium">
                     Senior Experience
                   </span>
                 </div>
@@ -214,7 +214,7 @@ export const HeroSection: React.FC = () => {
               <motion.div 
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-                className="absolute -bottom-6 -right-6 glass-card p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl flex items-center gap-3"
+                className="absolute -bottom-6 -right-6 glass-card bg-white/90 dark:bg-slate-900/90 p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl flex items-center gap-3"
               >
                 <div className="w-10 h-10 rounded-xl bg-violet-600/10 text-violet-600 dark:text-violet-400 flex items-center justify-center font-bold">
                   <Sparkles className="w-5 h-5" />
@@ -223,7 +223,7 @@ export const HeroSection: React.FC = () => {
                   <span className="block font-heading font-bold text-base text-slate-900 dark:text-white">
                     {DEVELOPER_PROFILE.completedProjects}+ Projects
                   </span>
-                  <span className="text-xs text-slate-500 dark:text-slate-400">
+                  <span className="text-xs text-slate-600 dark:text-slate-400 font-medium">
                     Shipped to Production
                   </span>
                 </div>
