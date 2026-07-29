@@ -113,6 +113,13 @@ const pageVariants = {
   exit: { opacity: 0, y: -10 },
 };
 
+// Format years: < 1 year → show months (e.g. "6m", "2m"), >= 1 → "1y", "2y"
+const formatYears = (years: number): string => {
+  if (years >= 1) return `${Math.round(years)}y`;
+  const months = Math.round(years * 12);
+  return `${months}m`;
+};
+
 export const SkillsSection: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<SkillCategory | 'All'>('All');
   const [currentPage, setCurrentPage] = useState(1);
@@ -305,7 +312,7 @@ export const SkillsSection: React.FC = () => {
 
                     {/* Footer */}
                     <div className="pt-4 mt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 font-medium">
-                      <span className="whitespace-nowrap">{skill.years}+ {t('skills.yrsExp')}</span>
+                      <span className="whitespace-nowrap">{formatYears(skill.years)} {t('skills.yrsExp')}</span>
                       <span className="font-semibold text-slate-700 dark:text-slate-300 whitespace-nowrap">
                         {skill.level >= 90 ? t('skills.mastery') : t('skills.coreStack')}
                       </span>

@@ -35,51 +35,52 @@ export const DEVELOPER_PROFILE: DeveloperProfile = {
 export const SKILL_ITEMS: SkillItem[] = [
   // Frontend & UI Ecosystem
   { name: "JAVASCRIPT", category: "Frontend & UI Ecosystem", level: 98, bgColor: "#F7DF1E", textColor: "#000000", years: 3, featured: true },
-  { name: "TYPESCRIPT", category: "Frontend & UI Ecosystem", level: 95, bgColor: "#007ACC", textColor: "#FFFFFF", years: 3, featured: true },
-  { name: "REACT", category: "Frontend & UI Ecosystem", level: 96, bgColor: "#20232A", textColor: "#61DAFB", years: 3, featured: true },
+  { name: "TYPESCRIPT", category: "Frontend & UI Ecosystem", level: 95, bgColor: "#007ACC", textColor: "#FFFFFF", years: 0.5, featured: true },
+  { name: "REACT", category: "Frontend & UI Ecosystem", level: 96, bgColor: "#20232A", textColor: "#61DAFB", years: 1, featured: true },
   { name: "HTML5", category: "Frontend & UI Ecosystem", level: 99, bgColor: "#E34F26", textColor: "#FFFFFF", years: 3 },
   { name: "CSS", category: "Frontend & UI Ecosystem", level: 98, bgColor: "#1572B6", textColor: "#FFFFFF", years: 3 },
-  { name: "TAILWIND CSS", category: "Frontend & UI Ecosystem", level: 96, bgColor: "#06B6D4", textColor: "#FFFFFF", years: 3, featured: true },
+  { name: "TAILWIND CSS", category: "Frontend & UI Ecosystem", level: 96, bgColor: "#06B6D4", textColor: "#FFFFFF", years: 0.5, featured: true },
   { name: "BOOTSTRAP", category: "Frontend & UI Ecosystem", level: 90, bgColor: "#7952B3", textColor: "#FFFFFF", years: 3 },
-  { name: "ANT DESIGN", category: "Frontend & UI Ecosystem", level: 88, bgColor: "#0170FE", textColor: "#FFFFFF", years: 2 },
-  { name: "VITE", category: "Frontend & UI Ecosystem", level: 95, bgColor: "#646CFF", textColor: "#FFFFFF", years: 3, featured: true },
-  { name: "JQUERY", category: "Frontend & UI Ecosystem", level: 85, bgColor: "#0769AD", textColor: "#FFFFFF", years: 3 },
+  { name: "ANT DESIGN", category: "Frontend & UI Ecosystem", level: 88, bgColor: "#0170FE", textColor: "#FFFFFF", years: 0.5 },
+  { name: "VITE", category: "Frontend & UI Ecosystem", level: 95, bgColor: "#646CFF", textColor: "#FFFFFF", years: 0.5, featured: true },
+  { name: "JQUERY", category: "Frontend & UI Ecosystem", level: 85, bgColor: "#0769AD", textColor: "#FFFFFF", years: 2 },
 
   // Backend Frameworks & Systems
-  { name: "SPRING BOOT", category: "Backend Frameworks & Systems", level: 90, bgColor: "#6DB33F", textColor: "#FFFFFF", years: 3, featured: true },
-  { name: "SPRING FRAMEWORK", category: "Backend Frameworks & Systems", level: 88, bgColor: "#6DB33F", textColor: "#FFFFFF", years: 3 },
-  { name: "LARAVEL", category: "Backend Frameworks & Systems", level: 92, bgColor: "#FF2D20", textColor: "#FFFFFF", years: 3, featured: true },
-  { name: "NODE.JS", category: "Backend Frameworks & Systems", level: 95, bgColor: "#339933", textColor: "#FFFFFF", years: 3, featured: true },
-  { name: "ASP.NET CORE", category: "Backend Frameworks & Systems", level: 88, bgColor: "#512BD4", textColor: "#FFFFFF", years: 2 },
-  { name: "ASP.NET", category: "Backend Frameworks & Systems", level: 85, bgColor: "#512BD4", textColor: "#FFFFFF", years: 2 },
-  { name: "DJANGO", category: "Backend Frameworks & Systems", level: 86, bgColor: "#092E20", textColor: "#FFFFFF", years: 2 },
+  { name: "SPRING BOOT", category: "Backend Frameworks & Systems", level: 90, bgColor: "#6DB33F", textColor: "#FFFFFF", years: 0.17, featured: true },
+  { name: "SPRING FRAMEWORK", category: "Backend Frameworks & Systems", level: 88, bgColor: "#6DB33F", textColor: "#FFFFFF", years: 0.25 },
+  { name: "LARAVEL", category: "Backend Frameworks & Systems", level: 92, bgColor: "#FF2D20", textColor: "#FFFFFF", years: 2, featured: true },
+  { name: "NODE.JS", category: "Backend Frameworks & Systems", level: 95, bgColor: "#339933", textColor: "#FFFFFF", years: 1, featured: true },
+  { name: "ASP.NET CORE", category: "Backend Frameworks & Systems", level: 88, bgColor: "#512BD4", textColor: "#FFFFFF", years: 1 },
+  { name: "ASP.NET", category: "Backend Frameworks & Systems", level: 85, bgColor: "#512BD4", textColor: "#FFFFFF", years: 1 },
+  { name: "DJANGO", category: "Backend Frameworks & Systems", level: 86, bgColor: "#092E20", textColor: "#FFFFFF", years: 1 },
 
   // Mobile Development
-  { name: "FLUTTER", category: "Mobile Development", level: 90, bgColor: "#02569B", textColor: "#FFFFFF", years: 3, featured: true },
-  { name: "DART", category: "Mobile Development", level: 88, bgColor: "#0175C2", textColor: "#FFFFFF", years: 3, featured: true },
+  { name: "FLUTTER", category: "Mobile Development", level: 90, bgColor: "#02569B", textColor: "#FFFFFF", years: 0.5, featured: true },
+  { name: "DART", category: "Mobile Development", level: 88, bgColor: "#0175C2", textColor: "#FFFFFF", years: 0.58, featured: true },
 
   // Programming Languages & Desktop
-  { name: "JAVA", category: "Programming Languages & Desktop", level: 92, bgColor: "#ED8B00", textColor: "#FFFFFF", years: 3, featured: true },
-  { name: "C#", category: "Programming Languages & Desktop", level: 90, bgColor: "#239120", textColor: "#FFFFFF", years: 3 },
-  { name: "PYTHON", category: "Programming Languages & Desktop", level: 92, bgColor: "#3776AB", textColor: "#FFFFFF", years: 3, featured: true },
-  { name: "PHP", category: "Programming Languages & Desktop", level: 90, bgColor: "#777BB4", textColor: "#FFFFFF", years: 3 },
+  { name: "JAVA", category: "Programming Languages & Desktop", level: 92, bgColor: "#ED8B00", textColor: "#FFFFFF", years: 1, featured: true },
+  { name: "C#", category: "Programming Languages & Desktop", level: 90, bgColor: "#239120", textColor: "#FFFFFF", years: 2 },
+  { name: "PYTHON", category: "Programming Languages & Desktop", level: 92, bgColor: "#3776AB", textColor: "#FFFFFF", years: 1, featured: true },
+  { name: "PHP", category: "Programming Languages & Desktop", level: 90, bgColor: "#777BB4", textColor: "#FFFFFF", years: 2 },
   { name: "C", category: "Programming Languages & Desktop", level: 82, bgColor: "#A8B9CC", textColor: "#FFFFFF", years: 2 },
   { name: "C++", category: "Programming Languages & Desktop", level: 85, bgColor: "#00599C", textColor: "#FFFFFF", years: 2 },
 
   // Databases
-  { name: "MYSQL", category: "Databases", level: 94, bgColor: "#4479A1", textColor: "#FFFFFF", years: 3, featured: true },
-  { name: "POSTGRESQL", category: "Databases", level: 95, bgColor: "#4169E1", textColor: "#FFFFFF", years: 3, featured: true },
+  { name: "MYSQL", category: "Databases", level: 94, bgColor: "#4479A1", textColor: "#FFFFFF", years: 2, featured: true },
+  { name: "POSTGRESQL", category: "Databases", level: 95, bgColor: "#4169E1", textColor: "#FFFFFF", years: 1, featured: true },
   { name: "SQL SERVER", category: "Databases", level: 88, bgColor: "#CC292B", textColor: "#FFFFFF", years: 2 },
 
   // DevTools & Platforms
-  { name: "GIT", category: "DevTools & Platforms", level: 96, bgColor: "#F05032", textColor: "#FFFFFF", years: 3, featured: true },
+  { name: "GIT", category: "DevTools & Platforms", level: 96, bgColor: "#F05032", textColor: "#FFFFFF", years: 2, featured: true },
   { name: "VS CODE", category: "DevTools & Platforms", level: 98, bgColor: "#007ACC", textColor: "#FFFFFF", years: 3, featured: true },
-  { name: "INTELLIJ IDEA", category: "DevTools & Platforms", level: 92, bgColor: "#1D1D1D", textColor: "#FE315D", years: 3 },
-  { name: "PHPSTORM", category: "DevTools & Platforms", level: 90, bgColor: "#1D1D1D", textColor: "#9A63EB", years: 2 },
-  { name: "ANDROID STUDIO", category: "DevTools & Platforms", level: 88, bgColor: "#3DDC84", textColor: "#000000", years: 2 },
-  { name: "POSTMAN", category: "DevTools & Platforms", level: 95, bgColor: "#FF6C37", textColor: "#FFFFFF", years: 3, featured: true },
-  { name: "VERCEL", category: "DevTools & Platforms", level: 96, bgColor: "#000000", textColor: "#FFFFFF", years: 3, featured: true },
+  { name: "INTELLIJ IDEA", category: "DevTools & Platforms", level: 92, bgColor: "#1D1D1D", textColor: "#FE315D", years: 1 },
+  { name: "PHPSTORM", category: "DevTools & Platforms", level: 90, bgColor: "#1D1D1D", textColor: "#9A63EB", years: 1 },
+  { name: "ANDROID STUDIO", category: "DevTools & Platforms", level: 88, bgColor: "#3DDC84", textColor: "#000000", years: 0.5 },
+  { name: "POSTMAN", category: "DevTools & Platforms", level: 95, bgColor: "#FF6C37", textColor: "#FFFFFF", years: 1, featured: true },
+  { name: "VERCEL", category: "DevTools & Platforms", level: 96, bgColor: "#000000", textColor: "#FFFFFF", years: 2, featured: true },
 ];
+
 
 export const PROJECT_ITEMS: ProjectItem[] = [
   {
