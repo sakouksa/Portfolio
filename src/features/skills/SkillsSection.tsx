@@ -122,6 +122,26 @@ const formatYears = (years: number, t: (key: string) => string): string => {
   return `${months} ${t('skills.monthUnit')}`;
 };
 
+// Detect dark brand colors (luminance < 50) — cannot be used as-is for icon color on dark cards
+const isDarkBrand = (hex: string): boolean => {
+  try {
+    const r = parseInt(hex.slice(1, 3), 16);
+    const g = parseInt(hex.slice(3, 5), 16);
+    const b = parseInt(hex.slice(5, 7), 16);
+    return r * 0.299 + g * 0.587 + b * 0.114 < 50;
+  } catch {
+    return false;
+  }
+};
+
+// Get resolved icon color: for dark brands use textColor (brand accent), else use bgColor
+const getIconColor = (bgColor: string, textColor: string): string => {
+  if (!isDarkBrand(bgColor)) return bgColor;
+  // textColor is the brand's accent on dark bg
+  if (textColor === '#FFFFFF' || textColor === '#000000') return '#8b5cf6'; // fallback violet
+  return textColor;
+};
+
 export const SkillsSection: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<SkillCategory | 'All'>('All');
   const [currentPage, setCurrentPage] = useState(1);
@@ -266,13 +286,20 @@ export const SkillsSection: React.FC = () => {
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
                           <div 
-                            className="w-10 h-10 rounded-xl flex items-center justify-center text-xl shadow-md transition-transform group-hover:scale-110 shrink-0"
-                            style={{ 
-                              backgroundColor: `${skill.bgColor}20`,
-                              color: skill.bgColor === '#000000' ? '#3B82F6' : skill.bgColor
+                            className={`w-11 h-11 rounded-xl flex items-center justify-center shadow-md transition-transform group-hover:scale-110 shrink-0 ${
+                              isDarkBrand(skill.bgColor)
+                                ? 'bg-slate-200/60 dark:bg-slate-700/50 border border-slate-300/50 dark:border-slate-600/50'
+                                : ''
+                            }`}
+                            style={{
+                              ...(isDarkBrand(skill.bgColor)
+                                ? {}
+                                : { backgroundColor: `${skill.bgColor}18` }
+                              ),
+                              color: getIconColor(skill.bgColor, skill.textColor)
                             }}
                           >
-                            <BrandIcon className="w-5 h-5 shrink-0" />
+                            <BrandIcon className="w-6 h-6 shrink-0" />
                           </div>
                           <div>
                             <h3 className="font-heading font-bold text-base text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-violet-400 transition-colors whitespace-nowrap">
