@@ -123,10 +123,10 @@ export const AboutSection: React.FC = () => {
                 {/* Metric 1 */}
                 <div className="flex flex-col gap-1.5 p-6 group hover:bg-slate-50/80 dark:hover:bg-slate-800/30 transition-colors">
                   <div className="flex items-center justify-between">
-                    <span className="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white leading-none group-hover:text-blue-600 dark:group-hover:text-violet-400 transition-colors">
+                    <span className="text-3xl sm:text-4xl font-extrabold font-heading text-blue-600 dark:text-blue-400 leading-none">
                       {DEVELOPER_PROFILE.yearsExperience}+
                     </span>
-                    <Clock className="w-4 h-4 text-blue-600 dark:text-violet-400 opacity-60 group-hover:opacity-100 transition-opacity" />
+                    <Clock className="w-4 h-4 text-blue-600 dark:text-blue-400 opacity-60 group-hover:opacity-100 transition-opacity" />
                   </div>
                   <span className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium leading-snug">
                     {t('about.metricYears')}
@@ -136,10 +136,10 @@ export const AboutSection: React.FC = () => {
                 {/* Metric 2 */}
                 <div className="flex flex-col gap-1.5 p-6 group hover:bg-slate-50/80 dark:hover:bg-slate-800/30 transition-colors">
                   <div className="flex items-center justify-between">
-                    <span className="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white leading-none group-hover:text-blue-600 dark:group-hover:text-violet-400 transition-colors">
+                    <span className="text-3xl sm:text-4xl font-extrabold font-heading text-violet-600 dark:text-violet-400 leading-none">
                       {DEVELOPER_PROFILE.completedProjects}+
                     </span>
-                    <Briefcase className="w-4 h-4 text-violet-600 dark:text-cyan-400 opacity-60 group-hover:opacity-100 transition-opacity" />
+                    <Briefcase className="w-4 h-4 text-violet-600 dark:text-violet-400 opacity-60 group-hover:opacity-100 transition-opacity" />
                   </div>
                   <span className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium leading-snug">
                     {t('about.metricProjects')}
@@ -149,10 +149,10 @@ export const AboutSection: React.FC = () => {
                 {/* Metric 3 */}
                 <div className="flex flex-col gap-1.5 p-6 group hover:bg-slate-50/80 dark:hover:bg-slate-800/30 transition-colors">
                   <div className="flex items-center justify-between">
-                    <span className="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white leading-none group-hover:text-blue-600 dark:group-hover:text-violet-400 transition-colors">
+                    <span className="text-3xl sm:text-4xl font-extrabold font-heading text-cyan-600 dark:text-cyan-400 leading-none">
                       {DEVELOPER_PROFILE.happyClients}+
                     </span>
-                    <Users className="w-4 h-4 text-cyan-600 dark:text-emerald-400 opacity-60 group-hover:opacity-100 transition-opacity" />
+                    <Users className="w-4 h-4 text-cyan-600 dark:text-cyan-400 opacity-60 group-hover:opacity-100 transition-opacity" />
                   </div>
                   <span className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium leading-snug">
                     {t('about.metricClients')}
@@ -162,10 +162,10 @@ export const AboutSection: React.FC = () => {
                 {/* Metric 4 */}
                 <div className="flex flex-col gap-1.5 p-6 group hover:bg-slate-50/80 dark:hover:bg-slate-800/30 transition-colors">
                   <div className="flex items-center justify-between">
-                    <span className="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white leading-none group-hover:text-blue-600 dark:group-hover:text-violet-400 transition-colors">
+                    <span className="text-3xl sm:text-4xl font-extrabold font-heading text-emerald-600 dark:text-emerald-400 leading-none">
                       {DEVELOPER_PROFILE.githubStars}+
                     </span>
-                    <Star className="w-4 h-4 text-amber-500 opacity-60 group-hover:opacity-100 transition-opacity" />
+                    <Star className="w-4 h-4 text-emerald-600 dark:text-emerald-400 opacity-60 group-hover:opacity-100 transition-opacity" />
                   </div>
                   <span className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium leading-snug">
                     {t('about.metricStars')}
