@@ -14,8 +14,8 @@ export const DEVELOPER_PROFILE: DeveloperProfile = {
   name: "Sak Ousa",
   role: "Senior Full Stack Architect & UI/UX Engineer",
   tagline: "Crafting world-class digital experiences, scalable cloud systems, and intuitive interfaces with modern technologies.",
-  bio: "Passionate Senior Software Architect with 8+ years of expertise in building enterprise web applications, high-performance distributed systems, and sleek interactive frontends. Specialized in React 19, Next.js, Node.js, TypeScript, Cloud Architecture, and AI integration. Dedicated to clean code, WCAG accessibility, and seamless user experiences.",
-  location: "Phnom Penh, Cambodia (Available Remote Worldwide)",
+  bio: "Passionate Senior Software Architect with 3+ years of expertise in building enterprise web applications, high-performance distributed systems, and sleek interactive frontends. Specialized in React 19, Next.js, Node.js, TypeScript, Cloud Architecture, and AI integration. Dedicated to clean code, WCAG accessibility, and seamless user experiences.",
+  location: "Kampong Thom, Cambodia",
   email: "sakousa.dev@gmail.com",
   phone: "+855 (0) 96 123 4567",
   github: "https://github.com/sakouksa",
@@ -25,8 +25,8 @@ export const DEVELOPER_PROFILE: DeveloperProfile = {
   leetcode: "https://leetcode.com/sakousa",
   resumeUrl: "#",
   avatarUrl: "/profile.jpg",
-  yearsExperience: 8,
-  completedProjects: 45,
+  yearsExperience: 3,
+  completedProjects: 35,
   happyClients: 32,
   githubStars: 1420,
   totalCommits: 3850
@@ -34,51 +34,51 @@ export const DEVELOPER_PROFILE: DeveloperProfile = {
 
 export const SKILL_ITEMS: SkillItem[] = [
   // Frontend & UI Ecosystem
-  { name: "JAVASCRIPT", category: "Frontend & UI Ecosystem", level: 98, bgColor: "#F7DF1E", textColor: "#000000", years: 8, featured: true },
-  { name: "TYPESCRIPT", category: "Frontend & UI Ecosystem", level: 95, bgColor: "#007ACC", textColor: "#FFFFFF", years: 7, featured: true },
-  { name: "REACT", category: "Frontend & UI Ecosystem", level: 96, bgColor: "#20232A", textColor: "#61DAFB", years: 7, featured: true },
-  { name: "HTML5", category: "Frontend & UI Ecosystem", level: 99, bgColor: "#E34F26", textColor: "#FFFFFF", years: 8 },
-  { name: "CSS", category: "Frontend & UI Ecosystem", level: 98, bgColor: "#1572B6", textColor: "#FFFFFF", years: 8 },
-  { name: "TAILWIND CSS", category: "Frontend & UI Ecosystem", level: 96, bgColor: "#06B6D4", textColor: "#FFFFFF", years: 5, featured: true },
-  { name: "BOOTSTRAP", category: "Frontend & UI Ecosystem", level: 90, bgColor: "#7952B3", textColor: "#FFFFFF", years: 6 },
-  { name: "ANT DESIGN", category: "Frontend & UI Ecosystem", level: 88, bgColor: "#0170FE", textColor: "#FFFFFF", years: 4 },
-  { name: "VITE", category: "Frontend & UI Ecosystem", level: 95, bgColor: "#646CFF", textColor: "#FFFFFF", years: 4, featured: true },
-  { name: "JQUERY", category: "Frontend & UI Ecosystem", level: 85, bgColor: "#0769AD", textColor: "#FFFFFF", years: 6 },
+  { name: "JAVASCRIPT", category: "Frontend & UI Ecosystem", level: 98, bgColor: "#F7DF1E", textColor: "#000000", years: 3, featured: true },
+  { name: "TYPESCRIPT", category: "Frontend & UI Ecosystem", level: 95, bgColor: "#007ACC", textColor: "#FFFFFF", years: 3, featured: true },
+  { name: "REACT", category: "Frontend & UI Ecosystem", level: 96, bgColor: "#20232A", textColor: "#61DAFB", years: 3, featured: true },
+  { name: "HTML5", category: "Frontend & UI Ecosystem", level: 99, bgColor: "#E34F26", textColor: "#FFFFFF", years: 3 },
+  { name: "CSS", category: "Frontend & UI Ecosystem", level: 98, bgColor: "#1572B6", textColor: "#FFFFFF", years: 3 },
+  { name: "TAILWIND CSS", category: "Frontend & UI Ecosystem", level: 96, bgColor: "#06B6D4", textColor: "#FFFFFF", years: 3, featured: true },
+  { name: "BOOTSTRAP", category: "Frontend & UI Ecosystem", level: 90, bgColor: "#7952B3", textColor: "#FFFFFF", years: 3 },
+  { name: "ANT DESIGN", category: "Frontend & UI Ecosystem", level: 88, bgColor: "#0170FE", textColor: "#FFFFFF", years: 2 },
+  { name: "VITE", category: "Frontend & UI Ecosystem", level: 95, bgColor: "#646CFF", textColor: "#FFFFFF", years: 3, featured: true },
+  { name: "JQUERY", category: "Frontend & UI Ecosystem", level: 85, bgColor: "#0769AD", textColor: "#FFFFFF", years: 3 },
 
   // Backend Frameworks & Systems
-  { name: "SPRING BOOT", category: "Backend Frameworks & Systems", level: 90, bgColor: "#6DB33F", textColor: "#FFFFFF", years: 5, featured: true },
-  { name: "SPRING FRAMEWORK", category: "Backend Frameworks & Systems", level: 88, bgColor: "#6DB33F", textColor: "#FFFFFF", years: 5 },
-  { name: "LARAVEL", category: "Backend Frameworks & Systems", level: 92, bgColor: "#FF2D20", textColor: "#FFFFFF", years: 6, featured: true },
-  { name: "NODE.JS", category: "Backend Frameworks & Systems", level: 95, bgColor: "#339933", textColor: "#FFFFFF", years: 7, featured: true },
-  { name: "ASP.NET CORE", category: "Backend Frameworks & Systems", level: 88, bgColor: "#512BD4", textColor: "#FFFFFF", years: 4 },
-  { name: "ASP.NET", category: "Backend Frameworks & Systems", level: 85, bgColor: "#512BD4", textColor: "#FFFFFF", years: 5 },
-  { name: "DJANGO", category: "Backend Frameworks & Systems", level: 86, bgColor: "#092E20", textColor: "#FFFFFF", years: 4 },
+  { name: "SPRING BOOT", category: "Backend Frameworks & Systems", level: 90, bgColor: "#6DB33F", textColor: "#FFFFFF", years: 3, featured: true },
+  { name: "SPRING FRAMEWORK", category: "Backend Frameworks & Systems", level: 88, bgColor: "#6DB33F", textColor: "#FFFFFF", years: 3 },
+  { name: "LARAVEL", category: "Backend Frameworks & Systems", level: 92, bgColor: "#FF2D20", textColor: "#FFFFFF", years: 3, featured: true },
+  { name: "NODE.JS", category: "Backend Frameworks & Systems", level: 95, bgColor: "#339933", textColor: "#FFFFFF", years: 3, featured: true },
+  { name: "ASP.NET CORE", category: "Backend Frameworks & Systems", level: 88, bgColor: "#512BD4", textColor: "#FFFFFF", years: 2 },
+  { name: "ASP.NET", category: "Backend Frameworks & Systems", level: 85, bgColor: "#512BD4", textColor: "#FFFFFF", years: 2 },
+  { name: "DJANGO", category: "Backend Frameworks & Systems", level: 86, bgColor: "#092E20", textColor: "#FFFFFF", years: 2 },
 
   // Mobile Development
-  { name: "FLUTTER", category: "Mobile Development", level: 90, bgColor: "#02569B", textColor: "#FFFFFF", years: 5, featured: true },
-  { name: "DART", category: "Mobile Development", level: 88, bgColor: "#0175C2", textColor: "#FFFFFF", years: 5, featured: true },
+  { name: "FLUTTER", category: "Mobile Development", level: 90, bgColor: "#02569B", textColor: "#FFFFFF", years: 3, featured: true },
+  { name: "DART", category: "Mobile Development", level: 88, bgColor: "#0175C2", textColor: "#FFFFFF", years: 3, featured: true },
 
   // Programming Languages & Desktop
-  { name: "JAVA", category: "Programming Languages & Desktop", level: 92, bgColor: "#ED8B00", textColor: "#FFFFFF", years: 6, featured: true },
-  { name: "C#", category: "Programming Languages & Desktop", level: 90, bgColor: "#239120", textColor: "#FFFFFF", years: 5 },
-  { name: "PYTHON", category: "Programming Languages & Desktop", level: 92, bgColor: "#3776AB", textColor: "#FFFFFF", years: 6, featured: true },
-  { name: "PHP", category: "Programming Languages & Desktop", level: 90, bgColor: "#777BB4", textColor: "#FFFFFF", years: 6 },
-  { name: "C", category: "Programming Languages & Desktop", level: 82, bgColor: "#A8B9CC", textColor: "#FFFFFF", years: 4 },
-  { name: "C++", category: "Programming Languages & Desktop", level: 85, bgColor: "#00599C", textColor: "#FFFFFF", years: 4 },
+  { name: "JAVA", category: "Programming Languages & Desktop", level: 92, bgColor: "#ED8B00", textColor: "#FFFFFF", years: 3, featured: true },
+  { name: "C#", category: "Programming Languages & Desktop", level: 90, bgColor: "#239120", textColor: "#FFFFFF", years: 3 },
+  { name: "PYTHON", category: "Programming Languages & Desktop", level: 92, bgColor: "#3776AB", textColor: "#FFFFFF", years: 3, featured: true },
+  { name: "PHP", category: "Programming Languages & Desktop", level: 90, bgColor: "#777BB4", textColor: "#FFFFFF", years: 3 },
+  { name: "C", category: "Programming Languages & Desktop", level: 82, bgColor: "#A8B9CC", textColor: "#FFFFFF", years: 2 },
+  { name: "C++", category: "Programming Languages & Desktop", level: 85, bgColor: "#00599C", textColor: "#FFFFFF", years: 2 },
 
   // Databases
-  { name: "MYSQL", category: "Databases", level: 94, bgColor: "#4479A1", textColor: "#FFFFFF", years: 7, featured: true },
-  { name: "POSTGRESQL", category: "Databases", level: 95, bgColor: "#4169E1", textColor: "#FFFFFF", years: 7, featured: true },
-  { name: "SQL SERVER", category: "Databases", level: 88, bgColor: "#CC292B", textColor: "#FFFFFF", years: 5 },
+  { name: "MYSQL", category: "Databases", level: 94, bgColor: "#4479A1", textColor: "#FFFFFF", years: 3, featured: true },
+  { name: "POSTGRESQL", category: "Databases", level: 95, bgColor: "#4169E1", textColor: "#FFFFFF", years: 3, featured: true },
+  { name: "SQL SERVER", category: "Databases", level: 88, bgColor: "#CC292B", textColor: "#FFFFFF", years: 2 },
 
   // DevTools & Platforms
-  { name: "GIT", category: "DevTools & Platforms", level: 96, bgColor: "#F05032", textColor: "#FFFFFF", years: 8, featured: true },
-  { name: "VS CODE", category: "DevTools & Platforms", level: 98, bgColor: "#007ACC", textColor: "#FFFFFF", years: 8, featured: true },
-  { name: "INTELLIJ IDEA", category: "DevTools & Platforms", level: 92, bgColor: "#1D1D1D", textColor: "#FE315D", years: 6 },
-  { name: "PHPSTORM", category: "DevTools & Platforms", level: 90, bgColor: "#1D1D1D", textColor: "#9A63EB", years: 5 },
-  { name: "ANDROID STUDIO", category: "DevTools & Platforms", level: 88, bgColor: "#3DDC84", textColor: "#000000", years: 5 },
-  { name: "POSTMAN", category: "DevTools & Platforms", level: 95, bgColor: "#FF6C37", textColor: "#FFFFFF", years: 7, featured: true },
-  { name: "VERCEL", category: "DevTools & Platforms", level: 96, bgColor: "#000000", textColor: "#FFFFFF", years: 6, featured: true },
+  { name: "GIT", category: "DevTools & Platforms", level: 96, bgColor: "#F05032", textColor: "#FFFFFF", years: 3, featured: true },
+  { name: "VS CODE", category: "DevTools & Platforms", level: 98, bgColor: "#007ACC", textColor: "#FFFFFF", years: 3, featured: true },
+  { name: "INTELLIJ IDEA", category: "DevTools & Platforms", level: 92, bgColor: "#1D1D1D", textColor: "#FE315D", years: 3 },
+  { name: "PHPSTORM", category: "DevTools & Platforms", level: 90, bgColor: "#1D1D1D", textColor: "#9A63EB", years: 2 },
+  { name: "ANDROID STUDIO", category: "DevTools & Platforms", level: 88, bgColor: "#3DDC84", textColor: "#000000", years: 2 },
+  { name: "POSTMAN", category: "DevTools & Platforms", level: 95, bgColor: "#FF6C37", textColor: "#FFFFFF", years: 3, featured: true },
+  { name: "VERCEL", category: "DevTools & Platforms", level: 96, bgColor: "#000000", textColor: "#FFFFFF", years: 3, featured: true },
 ];
 
 export const PROJECT_ITEMS: ProjectItem[] = [
@@ -261,12 +261,12 @@ export const TIMELINE_ITEMS: TimelineItem[] = [
     type: "experience",
     title: "Senior Lead Frontend Architect",
     organization: "Vanguard Tech Systems",
-    period: "2023 - Present",
-    location: "Phnom Penh, Cambodia",
+    period: "2024 - Present",
+    location: "Kampong Thom, Cambodia",
     description: "Leading the core frontend platform team building high-scale SaaS applications, design systems, and real-time AI dashboards.",
     achievements: [
       "Architected React 19 micro-frontend framework reducing page load time by 42%.",
-      "Mentored team of 12 engineers and standardized TypeScript & WCAG AA design system across 4 product suites.",
+      "Mentored team of engineers and standardized TypeScript & WCAG AA design system across 4 product suites.",
       "Spearheaded real-time streaming analytics engine processing 4M+ daily events."
     ],
     technologies: ["React 19", "TypeScript", "Tailwind CSS", "Zustand", "GraphQL", "WebSockets"]
@@ -274,10 +274,10 @@ export const TIMELINE_ITEMS: TimelineItem[] = [
   {
     id: "exp-2",
     type: "experience",
-    title: "Senior Full Stack Engineer",
+    title: "Full Stack Engineer",
     organization: "Apex Cloud Solutions",
-    period: "2021 - 2023",
-    location: "Phnom Penh, Cambodia",
+    period: "2023 - 2024",
+    location: "Kampong Thom, Cambodia",
     description: "Developed cloud management infrastructure tools, REST/GraphQL microservices, and mobile applications.",
     achievements: [
       "Engineered Next.js cloud monitoring dashboard handling 100K+ concurrent users.",
@@ -286,31 +286,17 @@ export const TIMELINE_ITEMS: TimelineItem[] = [
     technologies: ["Next.js", "Node.js", "Spring Boot", "PostgreSQL", "AWS", "Docker", "Flutter"]
   },
   {
-    id: "exp-3",
-    type: "experience",
-    title: "Full Stack Software Developer",
-    organization: "PixelCraft Interactive",
-    period: "2018 - 2021",
-    location: "Phnom Penh, Cambodia",
-    description: "Built interactive web applications, client e-commerce platforms, and custom UI components.",
-    achievements: [
-      "Created 30+ client web applications with 100/100 Lighthouse performance scores.",
-      "Implemented Framer Motion animation engine for high-converting marketing landing pages."
-    ],
-    technologies: ["React", "JavaScript (ES6+)", "Laravel", "PHP", "MySQL", "Vite"]
-  },
-  {
     id: "edu-1",
     type: "education",
     title: "B.S. in Computer Science & Software Engineering",
     organization: "Royal University of Phnom Penh (RUPP)",
-    period: "2014 - 2018",
+    period: "2020 - 2024",
     location: "Phnom Penh, Cambodia",
     description: "Graduated with High Honors. Specialized in Distributed Systems, Software Engineering, and Web Development.",
     achievements: [
       "Dean's Honor List (All Semesters)",
       "President of Web Developers Student Society",
-      "First Place in National Hackathon 2017"
+      "First Place in National Hackathon 2023"
     ]
   }
 ];
