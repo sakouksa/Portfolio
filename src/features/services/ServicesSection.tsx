@@ -10,6 +10,7 @@ import {
   Sparkles, 
   Wrench 
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { SERVICE_ITEMS } from '../../lib/constants';
 import { ServiceItem } from '../../types/portfolio.types';
 import { usePortfolioStore } from '../../store/usePortfolioStore';
@@ -22,6 +23,7 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 export const ServicesSection: React.FC = () => {
+  const { t } = useTranslation(['portfolio', 'common']);
   const setSelectedService = usePortfolioStore((state) => state.setSelectedService);
 
   const scrollToContact = (service: ServiceItem) => {
@@ -35,20 +37,21 @@ export const ServicesSection: React.FC = () => {
   };
 
   return (
-    <section id="services" className="py-24 relative bg-slate-50/50 dark:bg-slate-900/30">
+    <section id="services" className="scroll-mt-24 pt-28 pb-20 sm:pt-36 sm:pb-24 relative bg-slate-50/50 dark:bg-slate-900/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Title Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20">
             <Wrench className="w-3.5 h-3.5" />
-            <span>Services & Solutions</span>
+            <span>{t('services.badge', 'Services & Solutions')}</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight">
-            High-Impact Engineering <span className="gradient-text-primary">Services</span>
+            {t('services.title', 'High-Impact Engineering')}{' '}
+            <span className="gradient-text-primary">{t('services.highlight', 'Services')}</span>
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg">
-            From initial product MVP architecture to full-stack scaling, AI integration, and design systems.
+            {t('services.subtitle', 'From initial product MVP architecture to full-stack scaling, AI integration, and design systems.')}
           </p>
         </div>
 
@@ -56,6 +59,13 @@ export const ServicesSection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {SERVICE_ITEMS.map((service, idx) => {
             const Icon = ICON_MAP[service.iconName] || Globe;
+            const translatedTitle = t(`services.items.${service.id}.title`, { defaultValue: service.title });
+            const translatedDesc = t(`services.items.${service.id}.description`, { defaultValue: service.fullDesc });
+            
+            // Get translated features list or fallback
+            const rawFeatures = t(`services.items.${service.id}.features`, { returnObjects: true, defaultValue: service.features });
+            const featuresList = Array.isArray(rawFeatures) ? rawFeatures : service.features;
+
             return (
               <motion.div
                 key={service.id}
@@ -77,25 +87,25 @@ export const ServicesSection: React.FC = () => {
                     {service.popular && (
                       <span className="px-3 py-1 rounded-full text-xs font-semibold bg-violet-600/10 text-violet-600 dark:text-violet-400 border border-violet-600/20 flex items-center gap-1.5">
                         <Sparkles className="w-3.5 h-3.5" />
-                        Most Requested
+                        {t('services.mostRequested', 'Most Requested')}
                       </span>
                     )}
                   </div>
 
                   <h3 className="font-heading font-bold text-2xl text-slate-900 dark:text-white mb-3">
-                    {service.title}
+                    {translatedTitle}
                   </h3>
 
                   <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
-                    {service.fullDesc}
+                    {translatedDesc}
                   </p>
 
                   {/* Features Checklist */}
                   <div className="space-y-3 mb-8">
                     <span className="block text-xs font-semibold uppercase tracking-wider text-slate-400">
-                      Key Scope & Capabilities:
+                      {t('services.capabilities', 'Key Scope & Capabilities:')}
                     </span>
-                    {service.features.map((feature) => (
+                    {featuresList.map((feature: string) => (
                       <div key={feature} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
                         <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
                         <span>{feature}</span>
@@ -107,10 +117,10 @@ export const ServicesSection: React.FC = () => {
                 {/* Bottom Action Button */}
                 <button
                   onClick={() => scrollToContact(service)}
-                  className="w-full py-3.5 px-4 rounded-2xl text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 dark:bg-white/10 dark:hover:bg-white/20 border border-slate-800 dark:border-white/10 transition-colors flex items-center justify-center gap-2 group"
+                  className="w-full py-3.5 px-4 rounded-2xl text-xs sm:text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 dark:bg-white/10 dark:hover:bg-white/20 border border-slate-800 dark:border-white/10 transition-colors flex items-center justify-center gap-2 group text-center"
                 >
-                  Inquire About {service.title}
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <span className="truncate">{t('services.inquireBtn', 'Inquire About This Service')}</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform shrink-0" />
                 </button>
               </motion.div>
             );

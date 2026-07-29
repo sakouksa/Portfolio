@@ -13,6 +13,7 @@ import { FaGithub } from 'react-icons/fa6';
 import { useTranslation } from 'react-i18next';
 import { usePortfolioStore } from '../../store/usePortfolioStore';
 import { modalVariants } from '../../lib/framer-variants';
+import { TechTagBadge } from '../../components/common/TechTagBadge';
 
 export const ProjectDetailModal: React.FC = () => {
   const { selectedProject, setSelectedProject } = usePortfolioStore();
@@ -262,12 +263,7 @@ export const ProjectDetailModal: React.FC = () => {
               </span>
               <div className="flex flex-wrap gap-2">
                 {selectedProject.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-3 py-1 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700"
-                  >
-                    {tag}
-                  </span>
+                  <TechTagBadge key={tag} tag={tag} size="md" />
                 ))}
               </div>
             </div>

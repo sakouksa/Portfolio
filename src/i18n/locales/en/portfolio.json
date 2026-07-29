@@ -118,7 +118,51 @@
     "subtitle": "From initial product MVP architecture to full-stack scaling, AI integration, and design systems.",
     "mostRequested": "Most Requested",
     "capabilities": "Key Scope & Capabilities:",
-    "inquire": "Inquire About"
+    "inquire": "Inquire About",
+    "inquireBtn": "Inquire About This Service",
+    "items": {
+      "service-1": {
+        "title": "Full-Stack Web Application",
+        "description": "I architect and build enterprise-grade full-stack web applications tailored for speed, scalability, SEO optimization, and exceptional user experience.",
+        "features": [
+          "Custom React 19 & Next.js App Architecture",
+          "Type-safe Backend APIs (Node.js, Express, FastAPI, Spring)",
+          "Database Schema Design (PostgreSQL, MySQL, Prisma)",
+          "Dark / Light Mode & Glassmorphic UI Aesthetics",
+          "Full SEO & Performance Optimization (100 Lighthouse Score)"
+        ]
+      },
+      "service-2": {
+        "title": "Mobile App Development",
+        "description": "Deliver native-feeling mobile applications with smooth 60 FPS animations, offline capabilities, secure authentication, and push notifications.",
+        "features": [
+          "Cross-Platform iOS & Android Codebase (Flutter / React Native)",
+          "Smooth Framer / Reanimated Gestures & Motion",
+          "Offline Storage & Real-Time Sync",
+          "App Store & Google Play Submission Ready"
+        ]
+      },
+      "service-3": {
+        "title": "AI Integration & LLM Apps",
+        "description": "Supercharge your business with generative AI capabilities, custom prompt engineering pipelines, autonomous agents, and vector database embeddings.",
+        "features": [
+          "OpenAI & Claude API Integration",
+          "RAG (Retrieval-Augmented Generation) Systems",
+          "Vector Database Setup (Pinecone, Qdrant)",
+          "Interactive AI Chat & Automation UIs"
+        ]
+      },
+      "service-4": {
+        "title": "UI/UX & Design Systems",
+        "description": "Create cohesive, accessible, and scalable design systems that streamline product development and elevate brand aesthetic across all platforms.",
+        "features": [
+          "Figma UI/UX Mockups & Interactive Prototypes",
+          "Reusable Tailwind CSS & React Component Library",
+          "WCAG AA Accessibility Compliance",
+          "Design Token System & Dark Mode Foundations"
+        ]
+      }
+    }
   },
   "experience": {
     "badge": "Career History & Education",

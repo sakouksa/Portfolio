@@ -14,6 +14,7 @@ import { useTranslation } from 'react-i18next';
 import { PROJECT_ITEMS } from '../../lib/constants';
 import { ProjectCategory } from '../../types/portfolio.types';
 import { usePortfolioStore } from '../../store/usePortfolioStore';
+import { TechTagBadge } from '../../components/common/TechTagBadge';
 
 const CATEGORIES: ProjectCategory[] = ['All', 'Full Stack', 'Mobile', 'Frontend'];
 const ITEMS_PER_PAGE = 3;
@@ -228,18 +229,13 @@ export const ProjectsSection: React.FC = () => {
                       </div>
                     </div>
 
-                    {/* Card Footer Tech Tags */}
-                    <div className="px-6 pb-6 pt-2 space-y-4">
-                      <div className="flex flex-wrap gap-1.5">
-                        {project.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="px-2.5 py-1 rounded-lg text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
+                      {/* Card Footer Tech Tags */}
+                      <div className="px-6 pb-6 pt-2 space-y-4">
+                        <div className="flex flex-wrap gap-1.5">
+                          {project.tags.map((tag) => (
+                            <TechTagBadge key={tag} tag={tag} size="sm" />
+                          ))}
+                        </div>
 
                       <button
                         onClick={() => setSelectedProject(project)}

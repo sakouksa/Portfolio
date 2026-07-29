@@ -29,8 +29,11 @@ export const HeroSection: React.FC = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen pt-28 pb-16 flex items-center justify-center bg-slate-50 dark:bg-slate-950 bg-grid-pattern text-slate-900 dark:text-white transition-colors duration-300 overflow-hidden">
+    <section id="hero" className="relative min-h-screen pt-28 pb-16 flex items-center justify-center bg-slate-50/80 dark:bg-slate-950 bg-grid-pattern text-slate-900 dark:text-white transition-colors duration-300 overflow-hidden">
       
+      {/* Soft Vignette Background Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-50/40 to-slate-50 dark:via-slate-950/40 dark:to-slate-950 pointer-events-none" />
+
       {/* Background Gradient Mesh Balls */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-gradient-to-tr from-blue-600/15 via-violet-600/15 to-cyan-400/15 dark:from-blue-600/20 dark:via-violet-600/20 dark:to-cyan-400/20 rounded-full blur-3xl pointer-events-none animate-aurora" />
 
@@ -185,15 +188,22 @@ export const HeroSection: React.FC = () => {
               <div className="absolute -inset-1.5 bg-gradient-to-r from-blue-600 via-violet-600 to-cyan-500 rounded-3xl blur-xl opacity-75 animate-pulse" />
 
               {/* Profile Card Box */}
-              <div className="relative glass-card p-4 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden group bg-white/80 dark:bg-slate-900/80">
-                <img
-                  src={DEVELOPER_PROFILE.avatarUrl}
-                  alt={DEVELOPER_PROFILE.name}
-                  className="w-full h-80 object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500"
-                />
+              <div className="relative glass-card p-3.5 sm:p-4 rounded-3xl border border-slate-200/90 dark:border-slate-800/90 shadow-2xl overflow-hidden group bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl">
+                <div className="relative overflow-hidden rounded-2xl bg-gradient-to-tr from-slate-900 via-blue-950 to-violet-950">
+                  {/* Subtle Brand Color Tint Overlay so the photo harmonizes perfectly with the blue/violet project theme */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/25 via-violet-600/15 to-cyan-500/25 mix-blend-color z-10 pointer-events-none opacity-85" />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 via-transparent to-cyan-400/20 mix-blend-soft-light z-10 pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent z-10 opacity-75 pointer-events-none" />
+
+                  <img
+                    src={DEVELOPER_PROFILE.avatarUrl}
+                    alt={DEVELOPER_PROFILE.name}
+                    className="w-full h-80 sm:h-96 object-cover object-top rounded-2xl group-hover:scale-105 transition-transform duration-700 brightness-[1.05] contrast-[1.08] relative z-0"
+                  />
+                </div>
 
                 {/* Bottom Overlay Label */}
-                <div className="absolute bottom-6 inset-x-8 p-3.5 rounded-xl glass-card bg-white/95 dark:bg-slate-900/95 border border-slate-200 dark:border-slate-700/80 backdrop-blur-md flex items-center justify-between shadow-xl">
+                <div className="absolute bottom-6 inset-x-8 p-3.5 rounded-xl glass-card bg-white/95 dark:bg-slate-900/95 border border-slate-200/90 dark:border-slate-700/80 backdrop-blur-md flex items-center justify-between shadow-xl z-20">
                   <div>
                     <h3 className="font-heading font-bold text-sm text-slate-900 dark:text-white whitespace-nowrap">
                       {t('hero.location')}

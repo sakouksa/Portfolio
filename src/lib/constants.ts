@@ -89,7 +89,7 @@ export const PROJECT_ITEMS: ProjectItem[] = [
     subtitle: "All-in-One E-Commerce & Multi-Branch POS Platform",
     description: "An enterprise-grade, multi-branch management platform integrating online e-commerce sales with physical POS terminal operations, inventory tracking, financial analytics, HRM, and real-time cash register control.",
     category: "Full Stack",
-    tags: ["Laravel 12/13", "React 19", "Tailwind CSS v4", "TypeScript", "PostgreSQL", "Zustand", "REST API"],
+    tags: ["Laravel 12/13", "React 19", "Tailwind CSS v4", "TypeScript", "PostgreSQL", "Zustand"],
     image: "/images/pos-dashboard.png",
     gallery: [
       "/images/pos-dashboard.png",
@@ -121,7 +121,7 @@ export const PROJECT_ITEMS: ProjectItem[] = [
     subtitle: "Full-Featured E-Commerce Fashion Store",
     description: "A complete multi-page e-commerce web application for a fashion retail store built with pure HTML5, CSS3, and JavaScript. Features a product catalogue, shopping cart, user authentication, contact form, and promotional landing pages — deployed live on Vercel.",
     category: "Frontend",
-    tags: ["HTML5", "CSS3", "JavaScript", "Vercel", "Responsive Design", "FontAwesome"],
+    tags: ["HTML5", "CSS3", "JavaScript", "Vercel", "FontAwesome"],
     image: "/images/ecommerce-home.png",
     gallery: [
       "/images/ecommerce-home.png",

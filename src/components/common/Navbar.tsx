@@ -60,64 +60,68 @@ export const Navbar: React.FC = () => {
 
       {/* Main Glass Navbar */}
       <header className="fixed top-0 left-0 right-0 z-40 glass-navbar bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-b border-slate-200/80 dark:border-slate-800 transition-all duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4 xl:gap-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-2 xl:gap-4">
           
           {/* Logo */}
-          <button 
-            onClick={() => scrollToSection('hero')}
-            className="flex items-center gap-3 group text-left shrink-0"
-          >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-violet-600 flex items-center justify-center text-white font-bold font-heading text-lg shadow-lg shadow-blue-500/25 group-hover:scale-105 transition-transform shrink-0">
-              SO
-            </div>
-            <div className="whitespace-nowrap">
-              <span className="font-heading font-bold text-base sm:text-lg text-slate-900 dark:text-white tracking-tight group-hover:text-blue-600 dark:group-hover:text-violet-400 transition-colors">
-                {t('devName', 'Mr. Sak Ousa')}
-              </span>
-              <span className="block text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 font-medium">
-                Software Architect
-              </span>
-            </div>
-          </button>
+          <div className="flex items-center shrink-0">
+            <button 
+              onClick={() => scrollToSection('hero')}
+              className="flex items-center gap-2.5 group text-left shrink-0"
+            >
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-violet-600 flex items-center justify-center text-white font-bold font-heading text-base sm:text-lg shadow-lg shadow-blue-500/25 group-hover:scale-105 transition-transform shrink-0">
+                SO
+              </div>
+              <div className="whitespace-nowrap">
+                <span className="font-heading font-bold text-sm sm:text-base xl:text-lg text-slate-900 dark:text-white tracking-tight group-hover:text-blue-600 dark:group-hover:text-violet-400 transition-colors">
+                  {t('devName', 'Mr. Sak Ousa')}
+                </span>
+                <span className="block text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 font-medium">
+                  Software Architect
+                </span>
+              </div>
+            </button>
+          </div>
 
-          {/* Desktop Nav Items */}
-          <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1 bg-white/90 dark:bg-slate-900/80 p-1 xl:p-1.5 rounded-full border border-slate-200 dark:border-slate-800 backdrop-blur-md shadow-sm">
-            {NAV_ITEMS.map((item) => {
-              const isActive = activeSection === item.id;
-              return (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`relative px-2.5 xl:px-3.5 py-1.5 xl:py-2 rounded-full text-xs xl:text-sm font-semibold transition-all duration-200 whitespace-nowrap ${
-                    isActive
-                      ? 'text-white'
-                      : 'text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
-                  }`}
-                >
-                  {isActive && (
-                    <motion.div
-                      layoutId="activeTab"
-                      className="absolute inset-0 bg-gradient-to-r from-blue-600 to-violet-600 rounded-full shadow-md shadow-blue-500/20"
-                      transition={{ type: 'spring', duration: 0.5, bounce: 0.2 }}
-                    />
-                  )}
-                  <span className="relative z-10">{item.label}</span>
-                </button>
-              );
-            })}
-          </nav>
+          {/* Desktop Nav Items - Bounded Flex Center (Never collides with left or right elements) */}
+          <div className="hidden lg:flex items-center justify-center flex-1 mx-2 xl:mx-4">
+            <nav className="flex items-center gap-0.5 xl:gap-1 bg-white/90 dark:bg-slate-900/80 p-1 xl:p-1.5 rounded-full border border-slate-200 dark:border-slate-800 backdrop-blur-md shadow-sm">
+              {NAV_ITEMS.map((item) => {
+                const isActive = activeSection === item.id;
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className={`relative px-2 xl:px-3.5 py-1.5 xl:py-2 rounded-full text-xs xl:text-sm font-semibold transition-all duration-200 whitespace-nowrap ${
+                      isActive
+                        ? 'text-white'
+                        : 'text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                    }`}
+                  >
+                    {isActive && (
+                      <motion.div
+                        layoutId="activeTab"
+                        className="absolute inset-0 bg-gradient-to-r from-blue-600 to-violet-600 rounded-full shadow-md shadow-blue-500/20"
+                        transition={{ type: 'spring', duration: 0.5, bounce: 0.2 }}
+                      />
+                    )}
+                    <span className="relative z-10">{item.label}</span>
+                  </button>
+                );
+              })}
+            </nav>
+          </div>
 
           {/* Right Action Icons & Controls */}
-          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+          <div className="flex items-center gap-1.5 sm:gap-2 xl:gap-3 shrink-0">
             {/* Cmd + K Command Palette Trigger */}
             <button
               onClick={toggleCommandPalette}
-              className="flex items-center gap-2 px-3 py-2 text-xs font-medium text-slate-700 dark:text-slate-400 bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700/80 rounded-xl border border-slate-200 dark:border-slate-700 transition-colors shadow-sm whitespace-nowrap"
+              className="flex items-center gap-1.5 px-2.5 xl:px-3 py-2 text-xs font-medium text-slate-700 dark:text-slate-400 bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700/80 rounded-xl border border-slate-200 dark:border-slate-700 transition-colors shadow-sm whitespace-nowrap"
               title="Open Command Palette (Cmd + K)"
             >
               <Command className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">{t('nav.search', 'Search')}</span>
-              <kbd className="hidden sm:inline bg-slate-200 dark:bg-slate-900 px-1.5 py-0.5 rounded text-[10px] font-mono text-slate-500 dark:text-slate-400">
+              <span className="hidden xl:inline">{t('nav.search', 'Search')}</span>
+              <kbd className="hidden xl:inline bg-slate-200 dark:bg-slate-900 px-1.5 py-0.5 rounded text-[10px] font-mono text-slate-500 dark:text-slate-400">
                 ⌘K
               </kbd>
             </button>
@@ -135,7 +139,7 @@ export const Navbar: React.FC = () => {
                 e.preventDefault();
                 scrollToSection('contact');
               }}
-              className="hidden sm:inline-flex items-center justify-center px-4 sm:px-5 py-2 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-500 hover:to-violet-500 rounded-xl shadow-lg shadow-blue-500/25 transition-all hover:scale-[1.02] active:scale-[0.98] whitespace-nowrap shrink-0 min-w-fit"
+              className="hidden sm:inline-flex items-center justify-center px-3.5 xl:px-5 py-2 text-xs xl:text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-500 hover:to-violet-500 rounded-xl shadow-lg shadow-blue-500/25 transition-all hover:scale-[1.02] active:scale-[0.98] whitespace-nowrap shrink-0 min-w-fit"
             >
               {t('nav.hireMe', 'Hire Me')}
             </a>

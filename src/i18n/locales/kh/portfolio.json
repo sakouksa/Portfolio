@@ -118,7 +118,51 @@
     "subtitle": "ចាប់ពីស្ថាបត្យកម្ម MVP ដំបូង រហូតដល់ Full-Stack Scaling, AI Integration, និង Design Systems។",
     "mostRequested": "ទទួលបានការស្នើសុំច្រើនជាងគេ",
     "capabilities": "សមត្ថភាព និងវិសាលភាពសំខាន់ៗ៖",
-    "inquire": "សាកសួរអំពីសេវាកម្ម"
+    "inquire": "សាកសួរអំពីសេវាកម្ម",
+    "inquireBtn": "សាកសួរអំពីសេវាកម្មនេះ",
+    "items": {
+      "service-1": {
+        "title": "កម្មវិធីវេបសាយ Full-Stack",
+        "description": "ខ្ញុំរចនា និងបង្កើតកម្មវិធីវេបសាយកម្រិតសហគ្រាស ដែលមានល្បឿនលឿន ភាពងាយស្រួលក្នុងការពង្រីក ការស្វែងរកតាម SEO និងបទពិសោធន៍ប្រើប្រាស់ដ៏អស្ចារ្យ។",
+        "features": [
+          "រចនាសម្ព័ន្ធកម្មវិធី React 19 & Next.js",
+          "Backend APIs ដែលមានសុវត្ថិភាព Type-safe (Node.js, Express, FastAPI, Spring)",
+          "ការរចនាតារាងទិន្នន័យ (PostgreSQL, MySQL, Prisma)",
+          "រចនាបថ UI Glassmorphic គាំទ្រ Dark / Light Mode",
+          "ការបង្កើនល្បឿន និង SEO កម្រិតខ្ពស់ (100 Lighthouse Score)"
+        ]
+      },
+      "service-2": {
+        "title": "ការអភិវឌ្ឍកម្មវិធីទូរស័ព្ទដៃ",
+        "description": "បង្កើតកម្មវិធីទូរស័ព្ទដៃដើមដែលមាន Movement 60 FPS រលូន គាំទ្រការប្រើប្រាស់ Offline ប្រព័ន្ធសុវត្ថិភាព និង Push Notifications។",
+        "features": [
+          "កូដរួមសម្រាប់ iOS & Android (Flutter / React Native)",
+          "ចលនា Gesture & Motion រលូន",
+          "ការរក្សាទុក Offline & ធ្វើបច្ចុប្បន្នភាពទិន្នន័យភ្លាមៗ",
+          "ត្រៀមរួចរាល់សម្រាប់ការដាក់លើ App Store & Google Play"
+        ]
+      },
+      "service-3": {
+        "title": "ការបញ្ចូល AI & កម្មវិធី LLM",
+        "description": "ពង្រឹងអាជីវកម្មរបស់អ្នកជាមួយសមត្ថភាព Generative AI, ប្រព័ន្ធ Prompt Engineering, Autonomous Agents និង Vector Database Embeddings។",
+        "features": [
+          "ការតភ្ជាប់ OpenAI & Claude API",
+          "ប្រព័ន្ធ RAG (Retrieval-Augmented Generation)",
+          "ការរៀបចំ Vector Database (Pinecone, Qdrant)",
+          "ចំណុចប្រទាក់ AI Chat & ប្រព័ន្ធស្វ័យប្រវត្តិកម្ម"
+        ]
+      },
+      "service-4": {
+        "title": "ការរចនា UI/UX & Design Systems",
+        "description": "បង្កើតប្រព័ន្ធរចនាដែលមានភាពស៊ីសង្វាក់គ្នា ងាយស្រួលប្រើប្រាស់ និងអាចពង្រីកបាន ដើម្បីពន្លឿនការអភិវឌ្ឍផលិតផល និងលើកកម្ពស់ប្រព័ន្ធ Brand។",
+        "features": [
+          "ការរចនា Figma UI/UX & Interactive Prototypes",
+          "បណ្ណាល័យ Component React & Tailwind CSS",
+          "ការអនុវត្តតាមស្តង់ដារ WCAG AA Accessibility",
+          "ប្រព័ន្ធ Design Token & គ្រឹះ Dark Mode"
+        ]
+      }
+    }
   },
   "experience": {
     "badge": "ប្រវត្តិការងារ & ការអប់រំ",
