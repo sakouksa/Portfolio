@@ -1,0 +1,209 @@
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  X, 
+  ExternalLink, 
+  Layers, 
+  CheckCircle2, 
+  AlertCircle
+} from 'lucide-react';
+import { FaGithub } from 'react-icons/fa6';
+import { usePortfolioStore } from '../../store/usePortfolioStore';
+import { modalVariants } from '../../lib/framer-variants';
+
+export const ProjectDetailModal: React.FC = () => {
+  const { selectedProject, setSelectedProject } = usePortfolioStore();
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+
+  if (!selectedProject) return null;
+
+  const galleryImages = selectedProject.gallery && selectedProject.gallery.length > 0
+    ? selectedProject.gallery
+    : [selectedProject.image];
+
+  return (
+    <AnimatePresence>
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-950/80 backdrop-blur-md overflow-y-auto">
+        
+        {/* Backdrop click to dismiss */}
+        <div 
+          className="fixed inset-0"
+          onClick={() => setSelectedProject(null)} 
+        />
+
+        <motion.div
+          variants={modalVariants}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          className="relative w-full max-w-4xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl shadow-2xl overflow-hidden z-10 my-8 max-h-[90vh] flex flex-col"
+        >
+          {/* Header */}
+          <div className="p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between sticky top-0 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md z-20">
+            <div>
+              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-blue-600/10 text-blue-600 dark:text-violet-400 border border-blue-600/20">
+                {selectedProject.category}
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold font-heading text-slate-900 dark:text-white mt-1">
+                {selectedProject.title}
+              </h2>
+            </div>
+
+            <button
+              onClick={() => setSelectedProject(null)}
+              className="p-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 rounded-xl bg-slate-100 dark:bg-slate-800 transition-colors"
+            >
+              <X className="w-6 h-6" />
+            </button>
+          </div>
+
+          {/* Modal Scrollable Body */}
+          <div className="p-6 space-y-8 overflow-y-auto">
+            
+            {/* Gallery Image Display */}
+            <div className="space-y-3">
+              <div className="relative h-64 sm:h-96 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-md">
+                <img
+                  src={galleryImages[activeImageIndex]}
+                  alt={selectedProject.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {galleryImages.length > 1 && (
+                <div className="flex gap-3 overflow-x-auto pb-2">
+                  {galleryImages.map((img, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setActiveImageIndex(idx)}
+                      className={`relative w-24 h-16 rounded-xl overflow-hidden border-2 transition-all shrink-0 ${
+                        activeImageIndex === idx
+                          ? 'border-blue-600 dark:border-violet-500 scale-105'
+                          : 'border-transparent opacity-60 hover:opacity-100'
+                      }`}
+                    >
+                      <img src={img} alt="" className="w-full h-full object-cover" />
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Description & Action Links */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-heading font-bold text-slate-900 dark:text-white">
+                Overview & Value Proposition
+              </h3>
+              <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-base">
+                {selectedProject.description}
+              </p>
+
+              {/* Action Buttons */}
+              <div className="flex flex-wrap gap-4 pt-2">
+                {selectedProject.demoUrl && (
+                  <a
+                    href={selectedProject.demoUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-violet-600 rounded-xl shadow-lg shadow-blue-500/25 flex items-center gap-2 hover:scale-[1.02] transition-transform"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    Live Demo
+                  </a>
+                )}
+                {selectedProject.githubUrl && (
+                  <a
+                    href={selectedProject.githubUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="px-5 py-2.5 text-sm font-semibold text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-xl flex items-center gap-2 transition-colors"
+                  >
+                    <FaGithub className="w-4 h-4" />
+                    Source Code
+                  </a>
+                )}
+              </div>
+            </div>
+
+            {/* Performance Metrics Badges */}
+            {selectedProject.metrics && selectedProject.metrics.length > 0 && (
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                {selectedProject.metrics.map((metric) => (
+                  <div key={metric.label} className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 text-center">
+                    <span className="block text-2xl font-extrabold font-heading text-blue-600 dark:text-violet-400">
+                      {metric.value}
+                    </span>
+                    <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                      {metric.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* Architecture Details */}
+            {selectedProject.architecture && (
+              <div className="p-5 rounded-2xl bg-blue-50/50 dark:bg-slate-800/40 border border-blue-200/50 dark:border-slate-800 space-y-2">
+                <div className="flex items-center gap-2 text-blue-600 dark:text-violet-400 font-heading font-bold text-base">
+                  <Layers className="w-5 h-5" />
+                  <span>Technical Architecture</span>
+                </div>
+                <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                  {selectedProject.architecture}
+                </p>
+              </div>
+            )}
+
+            {/* Engineering Challenges & Solutions */}
+            {selectedProject.challenges && selectedProject.solutions && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="p-5 rounded-2xl bg-rose-50/50 dark:bg-rose-950/20 border border-rose-200/50 dark:border-rose-900/30 space-y-2">
+                  <div className="flex items-center gap-2 text-rose-600 dark:text-rose-400 font-heading font-bold text-sm">
+                    <AlertCircle className="w-4 h-4" />
+                    <span>Key Engineering Challenges</span>
+                  </div>
+                  <ul className="space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300 list-disc list-inside">
+                    {selectedProject.challenges.map((c, i) => (
+                      <li key={i}>{c}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="p-5 rounded-2xl bg-emerald-50/50 dark:bg-emerald-950/20 border border-emerald-200/50 dark:border-emerald-900/30 space-y-2">
+                  <div className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-heading font-bold text-sm">
+                    <CheckCircle2 className="w-4 h-4" />
+                    <span>Architectural Solutions</span>
+                  </div>
+                  <ul className="space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300 list-disc list-inside">
+                    {selectedProject.solutions.map((s, i) => (
+                      <li key={i}>{s}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            )}
+
+            {/* Tech Stack Tags */}
+            <div className="space-y-3 pt-2">
+              <span className="block text-xs font-semibold uppercase tracking-wider text-slate-400">
+                Technologies & Tools Used:
+              </span>
+              <div className="flex flex-wrap gap-2">
+                {selectedProject.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-3 py-1 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+          </div>
+
+        </motion.div>
+      </div>
+    </AnimatePresence>
+  );
+};
