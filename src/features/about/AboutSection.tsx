@@ -5,7 +5,12 @@ import {
   Code2, 
   Zap, 
   ShieldCheck, 
-  Sparkles
+  Sparkles,
+  BarChart3,
+  Clock,
+  Briefcase,
+  Users,
+  Star
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { DEVELOPER_PROFILE } from '../../lib/constants';
@@ -97,52 +102,72 @@ export const AboutSection: React.FC = () => {
 
           {/* Right Statistics Counter Card */}
           <motion.div variants={fadeIn('left', 0.3)} className="lg:col-span-5">
-            <div className="glass-card rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl gradient-border overflow-hidden">
+            <div className="bg-white/90 dark:bg-slate-900/90 rounded-3xl border border-slate-200/90 dark:border-slate-800 shadow-xl dark:shadow-2xl overflow-hidden backdrop-blur-xl transition-all duration-300">
               {/* Card Header */}
-              <div className="px-8 py-5 border-b border-slate-200 dark:border-slate-700/60 bg-slate-100/50 dark:bg-slate-800/30">
-                <h4 className="font-heading font-bold text-base tracking-wide text-slate-900 dark:text-white">
-                  {t('about.metricsTitle')}
-                </h4>
+              <div className="px-6 py-4 border-b border-slate-200/80 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-800/40 flex items-center justify-between">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-lg bg-blue-600/10 text-blue-600 dark:text-violet-400 flex items-center justify-center font-bold">
+                    <BarChart3 className="w-4 h-4" />
+                  </div>
+                  <h4 className="font-heading font-bold text-sm sm:text-base text-slate-900 dark:text-white tracking-wide">
+                    {t('about.metricsTitle')}
+                  </h4>
+                </div>
+                <span className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-blue-600/10 text-blue-600 dark:text-violet-400 border border-blue-600/20">
+                  Verified Stats
+                </span>
               </div>
 
               {/* Metrics Grid */}
-              <div className="grid grid-cols-2 divide-x divide-y divide-slate-200 dark:divide-slate-700/60">
+              <div className="grid grid-cols-2 divide-x divide-y divide-slate-100 dark:divide-slate-800/80">
                 {/* Metric 1 */}
-                <div className="flex flex-col gap-2 p-7">
-                  <span className="text-4xl font-extrabold font-heading text-blue-600 dark:text-violet-400 leading-none">
-                    {DEVELOPER_PROFILE.yearsExperience}+
-                  </span>
-                  <span className="text-sm text-slate-500 dark:text-slate-400 font-medium leading-snug">
+                <div className="flex flex-col gap-1.5 p-6 group hover:bg-slate-50/80 dark:hover:bg-slate-800/30 transition-colors">
+                  <div className="flex items-center justify-between">
+                    <span className="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white leading-none group-hover:text-blue-600 dark:group-hover:text-violet-400 transition-colors">
+                      {DEVELOPER_PROFILE.yearsExperience}+
+                    </span>
+                    <Clock className="w-4 h-4 text-blue-600 dark:text-violet-400 opacity-60 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                  <span className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium leading-snug">
                     {t('about.metricYears')}
                   </span>
                 </div>
 
                 {/* Metric 2 */}
-                <div className="flex flex-col gap-2 p-7">
-                  <span className="text-4xl font-extrabold font-heading text-violet-600 dark:text-cyan-400 leading-none">
-                    {DEVELOPER_PROFILE.completedProjects}+
-                  </span>
-                  <span className="text-sm text-slate-500 dark:text-slate-400 font-medium leading-snug">
+                <div className="flex flex-col gap-1.5 p-6 group hover:bg-slate-50/80 dark:hover:bg-slate-800/30 transition-colors">
+                  <div className="flex items-center justify-between">
+                    <span className="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white leading-none group-hover:text-blue-600 dark:group-hover:text-violet-400 transition-colors">
+                      {DEVELOPER_PROFILE.completedProjects}+
+                    </span>
+                    <Briefcase className="w-4 h-4 text-violet-600 dark:text-cyan-400 opacity-60 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                  <span className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium leading-snug">
                     {t('about.metricProjects')}
                   </span>
                 </div>
 
                 {/* Metric 3 */}
-                <div className="flex flex-col gap-2 p-7">
-                  <span className="text-4xl font-extrabold font-heading text-cyan-500 dark:text-emerald-400 leading-none">
-                    {DEVELOPER_PROFILE.happyClients}+
-                  </span>
-                  <span className="text-sm text-slate-500 dark:text-slate-400 font-medium leading-snug">
+                <div className="flex flex-col gap-1.5 p-6 group hover:bg-slate-50/80 dark:hover:bg-slate-800/30 transition-colors">
+                  <div className="flex items-center justify-between">
+                    <span className="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white leading-none group-hover:text-blue-600 dark:group-hover:text-violet-400 transition-colors">
+                      {DEVELOPER_PROFILE.happyClients}+
+                    </span>
+                    <Users className="w-4 h-4 text-cyan-600 dark:text-emerald-400 opacity-60 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                  <span className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium leading-snug">
                     {t('about.metricClients')}
                   </span>
                 </div>
 
                 {/* Metric 4 */}
-                <div className="flex flex-col gap-2 p-7">
-                  <span className="text-4xl font-extrabold font-heading text-emerald-500 dark:text-blue-400 leading-none">
-                    {DEVELOPER_PROFILE.githubStars}+
-                  </span>
-                  <span className="text-sm text-slate-500 dark:text-slate-400 font-medium leading-snug">
+                <div className="flex flex-col gap-1.5 p-6 group hover:bg-slate-50/80 dark:hover:bg-slate-800/30 transition-colors">
+                  <div className="flex items-center justify-between">
+                    <span className="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white leading-none group-hover:text-blue-600 dark:group-hover:text-violet-400 transition-colors">
+                      {DEVELOPER_PROFILE.githubStars}+
+                    </span>
+                    <Star className="w-4 h-4 text-amber-500 opacity-60 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                  <span className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium leading-snug">
                     {t('about.metricStars')}
                   </span>
                 </div>
