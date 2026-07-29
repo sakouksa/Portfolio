@@ -161,6 +161,38 @@ export const PROJECT_ITEMS: ProjectItem[] = [
   },
   {
     id: "project-4",
+    title: "Betheme Shop",
+    subtitle: "Full-Featured E-Commerce Fashion Store",
+    description: "A complete multi-page e-commerce web application for a fashion retail store built with pure HTML5, CSS3, and JavaScript. Features a product catalogue, shopping cart, user authentication, contact form, and promotional landing pages — deployed live on Vercel.",
+    category: "Frontend",
+    tags: ["HTML5", "CSS3", "JavaScript", "Vercel", "Responsive Design", "FontAwesome"],
+    image: "/images/ecommerce-preview.png",
+    gallery: [
+      "/images/ecommerce-preview.png",
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=1200",
+      "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&q=80&w=1200"
+    ],
+    demoUrl: "https://e-commerce-shoping-five.vercel.app/index.html",
+    githubUrl: "https://github.com/sakouksa/Portfolio",
+    featured: true,
+    date: "2024",
+    architecture: "Multi-page static website architecture with HTML5 semantic structure, responsive CSS Grid & Flexbox layouts, and vanilla JavaScript for cart logic, form validation, and interactive UI components. Hosted on Vercel with automatic HTTPS and global CDN.",
+    challenges: [
+      "Building a fully functional shopping cart using only vanilla JavaScript without any framework or state management library.",
+      "Ensuring consistent responsive layout across all pages from mobile (320px) to 4K desktop."
+    ],
+    solutions: [
+      "Implemented a localStorage-based cart system for persistent session data across page navigation.",
+      "Used CSS custom properties and a mobile-first approach with media queries for seamless multi-device support."
+    ],
+    metrics: [
+      { label: "Pages", value: "6+" },
+      { label: "Lighthouse", value: "95/100" },
+      { label: "Deploy", value: "Vercel" }
+    ]
+  },
+  {
+    id: "project-5",
     title: "Pulse Design System",
     subtitle: "Accessible React & Tailwind UI Component Library",
     description: "An open-source, WCAG AA compliant design system featuring 60+ customizable glassmorphism and modern brutalist components, dark mode primitives, and full keyboard navigation support.",
@@ -176,8 +208,9 @@ export const PROJECT_ITEMS: ProjectItem[] = [
       { label: "GitHub Stars", value: "1.2K" }
     ]
   },
+
   {
-    id: "project-5",
+    id: "project-6",
     title: "Aura Cloud Mesh",
     subtitle: "Kubernetes Orchestration & Infra Visualizer",
     description: "Cloud-native web dashboard for visualizing distributed microservices nodes, traffic routing, pod health, and automated Canary deployment rollouts.",
