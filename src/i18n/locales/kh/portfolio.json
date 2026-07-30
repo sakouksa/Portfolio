@@ -174,11 +174,50 @@
     }
   },
   "experience": {
-    "badge": "ប្រវត្តិការងារ & ការអប់រំ",
-    "title": "ប្រវត្តិរូបនៃ",
-    "highlight": "ការដឹកនាំ",
-    "subtitle": "តួនាទី Senior សមិទ្ធផលបច្ចេកទេស និងជំនាញឯកទេសអប់រំ។",
-    "accomplishments": "សមិទ្ធផលសំខាន់ៗ៖"
+    "badge": "ប្រវត្តិអភិវឌ្ឍន៍ប្រព័ន្ធ & ការអប់រំ",
+    "title": "ប្រវត្តិអភិវឌ្ឍន៍",
+    "highlight": "ប្រព័ន្ធ & ស្ថាបត្យកម្ម",
+    "subtitle": "បទពិសោធន៍អភិវឌ្ឍន៍ប្រព័ន្ធដោយខ្លួនឯង សមិទ្ធផលបច្ចេកទេស និងជំនាញឯកទេសអប់រំ។",
+    "accomplishments": "សមិទ្ធផលសំខាន់ៗ៖",
+    "tabs": {
+      "all": "ប្រវត្តិតាមឆ្នាំ",
+      "work": "បទពិសោធន៍អភិវឌ្ឍន៍ប្រព័ន្ធ",
+      "education": "ការអប់រំ"
+    },
+    "items": {
+      "exp-1": {
+        "title": "អ្នកអភិវឌ្ឍប្រព័ន្ធ Full Stack (Full Stack System Architect)",
+        "organization": "គម្រោងអភិវឌ្ឍន៍ប្រព័ន្ធផ្ទាល់ខ្លួន (Independent SaaS Projects)",
+        "location": "កំពង់ធំ, កម្ពុជា",
+        "description": "បង្កើត និងអភិវឌ្ឍប្រព័ន្ធគ្រប់គ្រង Real-time, កម្មវិធី SaaS កម្រិតខ្ពស់ និង Design Systems ដោយខ្លួនឯងផ្ទាល់។",
+        "achievements": [
+          "បានរចនា និងបង្កើត React 19 & TypeScript System Platform ដែលជួយកាត់បន្ថយរយៈពេល Load ទំព័របាន 42%។",
+          "បានបង្កើត REST API Services ជាមួយ Clean Architecture និង Zustand State Management។",
+          "បានបង្កើត Real-time Analytics Dashboard ដំណើរការទិន្នន័យទំហំធំ។"
+        ]
+      },
+      "exp-2": {
+        "title": "វិស្វករ Full Stack (Full Stack System Engineer)",
+        "organization": "គម្រោងប្រព័ន្ធកែឆ្នៃ & Web Applications",
+        "location": "កំពង់ធំ, កម្ពុជា",
+        "description": "បានអភិវឌ្ឍឧបករណ៍ស្ថាបត្យកម្ម Cloud Management, REST API Services និងប្រព័ន្ធគ្រប់គ្រងវេបសាយ។",
+        "achievements": [
+          "បានបង្កើត Laravel Cloud Monitoring Dashboard គាំទ្រអ្នកប្រើប្រាស់ 100K+ ក្នុងពេលដំណាលគ្នា។",
+          "បានកាត់បន្ថយចំណាយស្ថាបត្យកម្ម Cloud 30% តាមរយៈការប្រើប្រាស់ Docker Containerization និង Serverless Optimization។"
+        ]
+      },
+      "edu-1": {
+        "title": "បរិញ្ញាបត្រវិទ្យាសាស្ត្រកុំព្យូទ័រ & វិស្វកម្មសូហ្វវែរ (និស្សិតឆ្នាំទី ៤)",
+        "organization": "សាកលវិទ្យាល័យ ហេង សំរិន ត្បូងឃ្មុំ (HSTU)",
+        "location": "ត្បូងឃ្មុំ, កម្ពុជា",
+        "description": "បច្ចុប្បន្នជានិស្សិតឆ្នាំទី ៤ ដែលទើបបញ្ចប់ការសិក្សាឆ្នាំទី ៣ ដោយទទួលបានលទ្ធផលសិក្សាល្អប្រសើរ។ ឯកទេសលើ វិស្វកម្មសូហ្វវែរ និងការអភិវឌ្ឍវេបសាយ។",
+        "achievements": [
+          "ទទួលបានឈ្មោះក្នុងបញ្ជី Dean's Honor List (គ្រប់ឆមាស)",
+          "ប្រធានសមាគមនិស្សិតអ្នកអភិវឌ្ឍវេបសាយ (Web Developers Student Society)",
+          "ជ័យលាភីលេខ ១ ក្នុងកម្មវិធីប្រកួតប្រជែង National Hackathon 2023"
+        ]
+      }
+    }
   },
   "github": {
     "badge": "កូដចំហ & GitHub",
@@ -187,7 +226,18 @@
     "subtitle": "ការចូលរួមចំណែកជួយដល់សហគមន៍អ្នកអភិវឌ្ឍន៍ជាមួយ Repositories និងឧបករណ៍សាធារណៈ។",
     "breakdown": "ការបែងចែកភាសាកូដ",
     "publicCodebase": "កូដសាធារណៈ",
-    "featuredRepos": "Repositories សាធារណៈលេចធ្លោ"
+    "featuredRepos": "Repositories សាធារណៈលេចធ្លោ",
+    "repos": {
+      "repo1": {
+        "desc": "ប្រព័ន្ធគ្រប់គ្រងសាលារៀន ERP & ការលក់ POS ពេញលេញបង្កើតដោយ PHP Laravel និង PostgreSQL។"
+      },
+      "repo2": {
+        "desc": "កម្មវិធីគ្រប់គ្រងស្តុកទំនិញ និងការលក់នៅលើ Desktop បង្កើតដោយ C# .NET និង SQL Server។"
+      },
+      "repo3": {
+        "desc": "ប្រព័ន្ធដំណើរការទិន្នន័យស្វ័យប្រវត្តិ និង Web Scraping បង្កើតដោយ Python, Pandas និង FastAPI។"
+      }
+    }
   },
   "dashboard": {
     "badge": "ទិន្នន័យអភិវឌ្ឍន៍ផ្ទាល់",
@@ -207,29 +257,127 @@
     "badge": "ការណែនាំពីអតិថិជន",
     "title": "ទទួលបានការទុកចិត្តពី",
     "highlight": "ថ្នាក់ដឹកនាំ & ស្ថាបនិក",
-    "subtitle": "អ្វីដែលប្រធានផលិតផល CTOs និងអ្នករចនាបាននិយាយអំពីប្រសិទ្ធភាពការងាររបស់ខ្ញុំ។"
+    "subtitle": "អ្វីដែលប្រធានផលិតផល CTOs និងអ្នករចនាបាននិយាយអំពីប្រសិទ្ធភាពការងាររបស់ខ្ញុំ។",
+    "items": {
+      "test-1": {
+        "content": "សាក់ ឧស្សាហ៍ គឺជាវិស្វករដ៏ប៉ិនប្រសប់លើផ្នែក Frontend Architecture និងការរចនា UI។ គាត់បានបំប្លែង AI Platform របស់យើងឲ្យទៅជាប្រព័ន្ធដែលមានល្បឿនលឿន និងបទពិសោធន៍ដ៏ស្រស់ស្អាតបំផុត។",
+        "role": "អនុប្រធានផ្នែកផលិតផល (VP of Product)"
+      },
+      "test-2": {
+        "content": "ការធ្វើការជាមួយ សាក់ ឧស្សាហ៍ គឺជាជម្រើសដ៏ល្អបំផុតសម្រាប់ SaaS របស់យើង។ ជំនាញយ៉ាងស្ទាត់ជំនាញលើ React, TypeScript និង Tailwind CSS ធ្វើឲ្យ MVP របស់យើងរួចរាល់មុនកាលកំណត់ ៣ សប្តាហ៍។",
+        "role": "នាយកបច្ចេកវិទ្យា & ស្ថាបនិក (CTO & Co-Founder)"
+      },
+      "test-3": {
+        "content": "សាក់ ឧស្សាហ៍ ផ្សារភ្ជាប់គម្លាតរវាងការរចនា (Design) និងវិស្វកម្ម (Engineering) បានយ៉ាងអស្ចារ្យ។ គាត់បានយក Figma Design ដ៏ស្មុគស្មាញរបស់យើង មកបង្កើតជា Real-world UI មាន Animations រលូន 60 FPS។",
+        "role": "ប្រធានផ្នែករចនា (Head of Design)"
+      }
+    }
   },
   "blog": {
     "badge": "អត្ថបទ & ចំណេះដឹង",
     "title": "អត្ថបទស្ថាបត្យកម្ម",
     "highlight": "ថ្មីៗ",
-    "subtitle": "ការចែករំលែកអំពី React 19, ប្រសិទ្ធភាពវេប, សោភ័ណភាព UI, និង Generative AI។"
+    "subtitle": "ការចែករំលែកអំពី React 19, ប្រសិទ្ធភាពវេប, សោភ័ណភាព UI, និង Generative AI។",
+    "readArticle": "អានអត្ថបទ",
+    "items": {
+      "blog-1": {
+        "title": "ស្ទាត់ជំនាញ React 19: Server Components, Actions និង Patterns ទើបៗ",
+        "summary": "ការសិក្សាស៊ីជម្រៅអំពីសមត្ថភាពថ្មីៗរបស់ React 19, Compiler Optimizations, useActionState, និងការបង្កើនល្បឿនសម្រាប់កម្មវិធី Production។",
+        "content": "React 19 នាំមកនូវការផ្លាស់ប្តូរស្ថាបត្យកម្មដ៏រំភើបបំផុតសម្រាប់ Frontend Web Development។ នៅក្នុងមគ្គុទ្ទេសក៍ដ៏ទូលំទូលាយនេះ យើងស្វែងយល់អំពីរបៀបដែល React Server Components (RSC) និង Actions ផ្លាស់ប្តូររបៀបដែលយើងគ្រប់គ្រង State និង Fetch Data ដោយរលូន និងលឿនបំផុត...",
+        "readTime": "អាន ៦ នាទី",
+        "date": "កក្កដា ២០២៦"
+      },
+      "blog-2": {
+        "title": "ការបង្កើត Glassmorphic UIs ជាមួយ Tailwind CSS v4 & Framer Motion",
+        "summary": "រៀនពីរបៀបបង្កើត Interface ដ៏ប្រណីតបែប Apple & Vercel ដោយប្រើ CSS backdrop blur filters, design tokens ផ្ទាល់ខ្លួន និង Motion រលូន។",
+        "content": "Glassmorphism បន្តគ្របដណ្តប់លើការរចនា UI បែប Modern កម្រិតខ្ពស់។ ជាមួយ Tailwind CSS v4 CSS Variable Engine ថ្មី និង Framer Motion physics, ការបង្កើត Frosted Glass Cards ឆ្លើយតបលឿនបំផុតគឺកាន់តែងាយស្រួល និងស្អាតឥតខ្ចោះ...",
+        "readTime": "អាន ៥ នាទី",
+        "date": "មិថុនា ២០២៦"
+      },
+      "blog-3": {
+        "title": "ការរៀបចំស្ថាបត្យកម្ម Generative AI ជាមួយ LangChain & Vector DBs",
+        "summary": "ការវិភាគស្ថាបត្យកម្មជំហានៗសម្រាប់ការផ្តល់ LLM Stream Responses ដែលមាន Latency ទាប ជាមួយ Hybrid Search ក្នុង Pinecone។",
+        "content": "ការបង្កើតកម្មវិធី Production AI តម្រូវឲ្យមានច្រើនជាងការហៅ OpenAI API។ នៅក្នុងអត្ថបទនេះ យើងបង្ហាញពី Prompt Caching, Streaming Chunks តាម WebSockets និងការធ្វើ Index ឯកសារទៅក្នុង Pinecone យ៉ាងមានប្រសិទ្ធភាព...",
+        "readTime": "អាន ៨ នាទី",
+        "date": "ឧសភា ២០២៦"
+      }
+    }
   },
   "pricing": {
     "badge": "តម្លៃគម្រោងច្បាស់លាស់",
     "title": "កញ្ចប់តម្លៃ Freelance &",
-    "highlight": "ការប្រឹក្សា",
-    "subtitle": "កញ្ចប់តម្លៃថេរដែលត្រូវបានបង្កើតឡើងសម្រាប់ល្បឿន ស្ថាបត្យកម្មស្អាត និងតម្លាភាព។",
-    "popularChoice": "ជម្រើសពេញនិយមបំផុត",
-    "included": "អ្វីដែលរួមបញ្ចូល៖"
+    "highlight": "ពិគ្រោះយោបល់",
+    "subtitle": "កញ្ចប់តម្លៃថេរច្បាស់លាស់ រចនាឡើងសម្រាប់ល្បឿន ស្ថាបត្យកម្មស្អាត និងភាពស្មោះត្រង់។",
+    "mostPopular": "ជម្រើសពេញនិយមបំផុត",
+    "whatsIncluded": "អ្វីដែលរួមបញ្ចូលក្នុងកញ្ចប់៖",
+    "perProject": "ក្នុងមួយគម្រោង",
+    "items": {
+      "price-starter": {
+        "name": "Starter MVP",
+        "description": "សមស្របសម្រាប់អាជីវកម្មថ្មីថ្មោង (Startups) ដែលត្រូវការ Landing Page ឬ MVP ដំបូងដែលមានល្បឿនលឿន។",
+        "ctaText": "ជ្រើសរើស Starter",
+        "features": [
+          "គេហទំព័រ Single Page ឬ 3-Page ផ្ទាល់ខ្លួន",
+          "ការរៀបចំ React 19 + Vite / Next.js",
+          "ការរចនា Tailwind CSS Glassmorphism",
+          "គាំទ្រ Mobile Responsive & Dark Mode",
+          "ការរៀបចំ SEO ដំបូង & ទម្រង់ទំនាក់ទំនង",
+          "ការប្រគល់ជូនក្នុងរយៈពេល 2 សប្តាហ៍ & ការគាំទ្រ"
+        ]
+      },
+      "price-pro": {
+        "name": "Professional Product",
+        "description": "ស្ថាបត្យកម្មផលិតផល SaaS ពេញលេញជាមួយ Backend APIs, Database និងប្រព័ន្ធប្រមាណសិទ្ធិ។",
+        "ctaText": "ចាប់ផ្តើមគម្រោង Pro",
+        "features": [
+          "កម្មវិធី Full-Stack Application ពេញលេញ",
+          "React 19 + TypeScript + Node.js / Spring / Laravel",
+          "ប្រព័ន្ធទិន្នន័យ & ការចូលប្រើប្រព័ន្ធ (PostgreSQL/MySQL)",
+          "Dashboard ផ្ទាល់ខ្លួន & ក្រាហ្វិកអន្តរកម្ម",
+          "ប្រសិទ្ធភាព 100 Lighthouse Performance & Accessibility",
+          "ការតភ្ជាប់ AI API (OpenAI / Claude)",
+          "ប្រគល់ជូនក្នុងរយៈពេល 4 សប្តាហ៍ & ការពារ 30 ថ្ងៃ"
+        ]
+      },
+      "price-enterprise": {
+        "name": "Enterprise Architecture",
+        "description": "វិស្វកម្ម Full-stack កម្រិតខ្ពស់, Cloud Architecture ស្មុគស្មាញ, Design Systems និងការគាំទ្រក្រុមការងារ។",
+        "ctaText": "ទាក់ទងគម្រោង Enterprise",
+        "features": [
+          "ស្ថាបត្យកម្ម Enterprise Micro-Frontend",
+          "Design System ផ្ទាល់ខ្លួន & Figma Kit",
+          "កម្មវិធីទូរស័ព្ទ (Flutter / React Native)",
+          "ប្រព័ន្ធ Cloud Infra (AWS/Kubernetes & Docker)",
+          "ការពិនិត្យសុវត្ថិភាព & ប្រព័ន្ធស្វ័យប្រវត្តិ CI/CD",
+          "ការគាំទ្រផ្ទាល់លើ Slack & ការថែទាំ"
+        ]
+      }
+    }
   },
   "faq": {
     "badge": "សំណួរដែលសួរញឹកញាប់",
-    "title": "មានសំណួរ?",
-    "highlight": "ចម្លើយ",
-    "titleEnd": "នៅទីនេះ",
-    "subtitle": "អ្វីគ្រប់យ៉ាងដែលអ្នកត្រូវដឹងអំពីការធ្វើការជាមួយខ្ញុំ។",
-    "searchPlaceholder": "ស្វែងរកសំណួរ..."
+    "title": "តើអ្នកមានសំណួរដែរឬទេ?",
+    "highlight": "ចម្លើយច្បាស់លាស់",
+    "subtitle": "អ្វីៗទាំងអស់ដែលអ្នកត្រូវដឹងអំពីការធ្វើការជាមួយរូបខ្ញុំ។",
+    "searchPlaceholder": "ស្វែងរកសំណួរ...",
+    "items": {
+      "faq-1": {
+        "question": "តើជំនាញបច្ចេកវិទ្យាចម្បង (Tech Stack) របស់អ្នកសម្រាប់បង្កើត Web & Mobile គឺជាអ្វី?",
+        "answer": "ខ្ញុំមានជំនាញយ៉ាងស្ទាត់ជំនាញលើការអភិវឌ្ឍន៍ទំនើបដោយប្រើ React 19, TypeScript, Tailwind CSS v4, PHP Laravel, C#, Python, Spring Boot, Flutter, និង MySQL/PostgreSQL。"
+      },
+      "faq-2": {
+        "question": "តើរយៈពេល និងដំណើរការអភិវឌ្ឍន៍គម្រោងរបស់អ្នកមានទម្រង់បែបណា?",
+        "answer": "គម្រោង MVP តូចៗជាទូទៅចំណាយពេល 2-3 សប្តាហ៍ ខណៈពេលដែលកម្មវិធី SaaS ពេញលេញចំណាយពេលពី 4 ទៅ 8 សប្តាហ៍។ ខ្ញុំអនុវត្តតាមដំណើរការ Agile ជាមួយការបង្ហាញ Demo ផ្ទាល់ប្រចាំសប្តាហ៍ និងការទាក់ទងជាប្រចាំ។"
+      },
+      "faq-3": {
+        "question": "តើអ្នកធានាពិន្ទុ 100 Lighthouse Performance និង WCAG Accessibility ដែរឬទេ?",
+        "answer": "ពិតប្រាកដណាស់! រាល់គម្រោង Web ទាំងអស់ត្រូវបាបង្កើតឡើងដោយប្រើ Semantic HTML5, Aria labels, Assets ដែលបានបង្កើនល្បឿន និង Code splitting ដើម្បីធានាពិន្ទុ 100 លើ Performance, Accessibility, Best Practices និង SEO。"
+      },
+      "faq-4": {
+        "question": "តើអ្នកមានទទួលការងារពេញម៉ោង (Full-Time) ឬការងារកិច្ចសន្យា (Contract Work) ដែរឬទេ?",
+        "answer": "បាទ/ចាស ខ្ញុំបើកចំហរទទួលតួនាទី Senior/Lead Full Stack Architect, ការពិគ្រោះយោបល់បច្ចេកទេស និងគម្រោង Freelance ពីជុំវិញពិភពលោក។"
+      }
+    }
   },
   "contact": {
     "badge": "ទាក់ទងមកខ្ញុំ",

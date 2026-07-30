@@ -10,45 +10,51 @@ import {
   BookOpen 
 } from 'lucide-react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
+import { useTranslation } from 'react-i18next';
 
 const TOP_REPOS = [
   {
-    name: "nova-ai-studio",
-    description: "Enterprise multi-modal LLM prompt studio and streaming workspace for creative teams.",
-    stars: 840,
-    forks: 142,
-    language: "TypeScript",
-    color: "#3B82F6",
+    name: "laravel-school-pos-system",
+    descKey: "github.repos.repo1.desc",
+    defaultDesc: "Full-featured School ERP & Enterprise POS management system built with PHP Laravel and PostgreSQL.",
+    stars: 480,
+    forks: 92,
+    language: "PHP",
+    color: "#777BB4",
     url: "https://github.com"
   },
   {
-    name: "pulse-design-system",
-    description: "WCAG AA compliant React 19 & Tailwind CSS v4 glassmorphic component library.",
-    stars: 310,
-    forks: 58,
-    language: "TypeScript",
-    color: "#8B5CF6",
+    name: "csharp-inventory-core",
+    descKey: "github.repos.repo2.desc",
+    defaultDesc: "Desktop Inventory & Sales Management application developed using C# .NET and SQL Server.",
+    stars: 350,
+    forks: 64,
+    language: "C#",
+    color: "#512BD4",
     url: "https://github.com"
   },
   {
-    name: "fast-vector-mesh",
-    description: "Low-latency Rust & Node.js binding for Pinecone & Qdrant hybrid vector indexing.",
-    stars: 270,
-    forks: 39,
-    language: "Rust / C++",
-    color: "#F59E0B",
+    name: "python-data-automation",
+    descKey: "github.repos.repo3.desc",
+    defaultDesc: "Automated Data Processing Engine & Web Scraper built with Python, Pandas, and FastAPI.",
+    stars: 290,
+    forks: 48,
+    language: "Python",
+    color: "#3776AB",
     url: "https://github.com"
   }
 ];
 
 const LANGUAGE_DATA = [
-  { name: "TypeScript", value: 55, color: "#3B82F6" },
-  { name: "Python", value: 20, color: "#10B981" },
-  { name: "React / JS", value: 15, color: "#8B5CF6" },
-  { name: "Go & Rust", value: 10, color: "#F59E0B" }
+  { name: "PHP / Laravel", value: 45, color: "#777BB4" },
+  { name: "C# / .NET", value: 30, color: "#512BD4" },
+  { name: "Python", value: 15, color: "#3776AB" },
+  { name: "JavaScript / HTML", value: 10, color: "#F7DF1E" }
 ];
 
 export const GitHubSection: React.FC = () => {
+  const { t } = useTranslation(['portfolio', 'common']);
+
   return (
     <section id="github" className="py-24 relative bg-slate-50/50 dark:bg-slate-900/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -57,13 +63,14 @@ export const GitHubSection: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
             <FolderGit2 className="w-3.5 h-3.5" />
-            <span>Open Source & GitHub</span>
+            <span>{t('github.badge', 'Open Source & GitHub')}</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight">
-            Building in Public & <span className="gradient-text-primary">Open Source</span>
+            {t('github.title', 'Building in Public &')}{' '}
+            <span className="gradient-text-primary">{t('github.highlight', 'Open Source')}</span>
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg">
-            Contributing back to the developer ecosystem with public repositories and tools.
+            {t('github.subtitle', 'Contributing back to the developer ecosystem with public repositories and tools.')}
           </p>
         </div>
 
@@ -72,8 +79,8 @@ export const GitHubSection: React.FC = () => {
           {/* Left Chart Stats */}
           <div className="lg:col-span-5 glass-card p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-slate-800 space-y-6">
             <h3 className="font-heading font-bold text-xl text-slate-900 dark:text-white flex items-center justify-between">
-              <span>Language Breakdown</span>
-              <span className="text-xs text-slate-400 font-normal">Public Codebase</span>
+              <span>{t('github.breakdown', 'Language Breakdown')}</span>
+              <span className="text-xs text-slate-400 font-normal">{t('github.publicCodebase', 'Public Codebase')}</span>
             </h3>
 
             <div className="h-64 w-full">
@@ -118,7 +125,7 @@ export const GitHubSection: React.FC = () => {
           {/* Right Pinned Repos Grid */}
           <div className="lg:col-span-7 space-y-4">
             <h3 className="font-heading font-bold text-xl text-slate-900 dark:text-white">
-              Featured Public Repositories
+              {t('github.featuredRepos', 'Featured Public Repositories')}
             </h3>
 
             <div className="space-y-4">
@@ -141,7 +148,7 @@ export const GitHubSection: React.FC = () => {
                   </div>
 
                   <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
-                    {repo.description}
+                    {t(repo.descKey, repo.defaultDesc)}
                   </p>
 
                   <div className="flex items-center gap-6 text-xs text-slate-500 dark:text-slate-400">

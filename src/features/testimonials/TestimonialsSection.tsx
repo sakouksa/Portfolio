@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, ChevronLeft, ChevronRight, Quote, MessageSquare } from 'lucide-react';
 import { TESTIMONIAL_ITEMS } from '../../lib/constants';
+import { useTranslation } from 'react-i18next';
 
 export const TestimonialsSection: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { t } = useTranslation(['portfolio', 'common']);
 
   const prevTestimonial = () => {
     setCurrentIndex((prev) => (prev === 0 ? TESTIMONIAL_ITEMS.length - 1 : prev - 1));
@@ -17,25 +19,26 @@ export const TestimonialsSection: React.FC = () => {
   const current = TESTIMONIAL_ITEMS[currentIndex];
 
   return (
-    <section id="testimonials" className="py-24 relative bg-grid-pattern overflow-hidden">
+    <section id="testimonials" className="py-20 pb-32 sm:pb-36 relative bg-grid-pattern overflow-hidden">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
             <MessageSquare className="w-3.5 h-3.5" />
-            <span>Client Recommendations</span>
+            <span>{t('testimonials.badge', 'Client Recommendations')}</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight">
-            Trusted by Leaders & <span className="gradient-text-primary">Founders</span>
+          <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-slate-900 dark:text-white tracking-normal leading-tight">
+            {t('testimonials.title', 'Trusted by Leaders &')}{' '}
+            <span className="gradient-text-primary">{t('testimonials.highlight', 'Founders')}</span>
           </h2>
-          <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg">
-            What product leaders, CTOs, and designers say about my engineering impact.
+          <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-snug sm:leading-normal">
+            {t('testimonials.subtitle', 'What product leaders, CTOs, and designers say about my engineering impact.')}
           </p>
         </div>
 
         {/* Carousel Container */}
-        <div className="relative glass-card p-8 sm:p-12 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden gradient-border">
+        <div className="relative glass-card p-8 sm:p-12 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl overflow-hidden">
           
           <Quote className="absolute top-6 right-8 w-24 h-24 text-blue-600/10 dark:text-violet-500/10 pointer-events-none" />
 
@@ -45,7 +48,7 @@ export const TestimonialsSection: React.FC = () => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.4 }}
+              transition={{ duration: 0.35 }}
               className="space-y-6 relative z-10"
             >
               {/* Rating Stars */}
@@ -56,30 +59,30 @@ export const TestimonialsSection: React.FC = () => {
               </div>
 
               {/* Quote Content */}
-              <p className="text-lg sm:text-2xl font-medium text-slate-800 dark:text-slate-200 italic leading-relaxed">
-                "{current.content}"
+              <p className="text-lg sm:text-2xl font-medium font-heading text-slate-800 dark:text-slate-200 italic leading-relaxed">
+                "{t(`testimonials.items.${current.id}.content`, current.content)}"
               </p>
 
               {/* Client Info */}
-              <div className="flex items-center gap-4 pt-4">
+              <div className="flex items-center gap-4 pt-4 border-t border-slate-200/80 dark:border-slate-800">
                 <img
                   src={current.avatar}
                   alt={current.name}
-                  className="w-14 h-14 rounded-2xl object-cover border-2 border-blue-600 dark:border-violet-500"
+                  className="w-14 h-14 rounded-2xl object-cover border-2 border-blue-600 dark:border-violet-500 shrink-0"
                 />
                 <div>
                   <h4 className="font-heading font-bold text-lg text-slate-900 dark:text-white">
                     {current.name}
                   </h4>
                   <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
-                    {current.role} at <span className="font-semibold text-blue-600 dark:text-violet-400">{current.company}</span>
+                    {t(`testimonials.items.${current.id}.role`, current.role)} at <span className="font-semibold text-blue-600 dark:text-violet-400">{current.company}</span>
                   </p>
                 </div>
               </div>
             </motion.div>
           </AnimatePresence>
 
-          {/* Navigation Arrows */}
+          {/* Navigation Controls */}
           <div className="flex items-center justify-between mt-8 pt-6 border-t border-slate-200 dark:border-slate-800">
             
             {/* Indicators */}

@@ -5,14 +5,14 @@ import {
   GraduationCap, 
   MapPin, 
   Calendar, 
-  CheckCircle2, 
-  Award,
-  Sparkles
+  CheckCircle2
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { TIMELINE_ITEMS } from '../../lib/constants';
-import { fadeIn, staggerContainer } from '../../lib/framer-variants';
+import { TechTagBadge } from '../../components/common/TechTagBadge';
 
 export const ExperienceSection: React.FC = () => {
+  const { t } = useTranslation(['portfolio', 'common']);
   const [activeTab, setActiveTab] = useState<'all' | 'experience' | 'education'>('all');
 
   const filteredItems = TIMELINE_ITEMS.filter((item) => {
@@ -28,13 +28,14 @@ export const ExperienceSection: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-violet-600/10 text-violet-600 dark:text-violet-400 border border-violet-600/20">
             <Briefcase className="w-3.5 h-3.5" />
-            <span>Career History & Education</span>
+            <span>{t('experience.badge', 'Career History & Education')}</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight">
-            Track Record of <span className="gradient-text-primary">Leadership</span>
+            {t('experience.title', 'Track Record of')}{' '}
+            <span className="gradient-text-primary">{t('experience.highlight', 'Leadership')}</span>
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg">
-            Senior roles, technical accomplishments, and academic specialization.
+            {t('experience.subtitle', 'Senior roles, technical accomplishments, and academic specialization.')}
           </p>
         </div>
 
@@ -49,7 +50,7 @@ export const ExperienceSection: React.FC = () => {
                   : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
-              All Timeline
+              {t('experience.tabs.all', 'All Timeline')}
             </button>
             <button
               onClick={() => setActiveTab('experience')}
@@ -60,7 +61,7 @@ export const ExperienceSection: React.FC = () => {
               }`}
             >
               <Briefcase className="w-4 h-4" />
-              Work Experience
+              {t('experience.tabs.work', 'Work Experience')}
             </button>
             <button
               onClick={() => setActiveTab('education')}
@@ -71,7 +72,7 @@ export const ExperienceSection: React.FC = () => {
               }`}
             >
               <GraduationCap className="w-4 h-4" />
-              Education
+              {t('experience.tabs.education', 'Education')}
             </button>
           </div>
         </div>
@@ -86,6 +87,14 @@ export const ExperienceSection: React.FC = () => {
             {filteredItems.map((item, idx) => {
               const isEven = idx % 2 === 0;
               const Icon = item.type === 'experience' ? Briefcase : GraduationCap;
+
+              const translatedTitle = t(`experience.items.${item.id}.title`, { defaultValue: item.title });
+              const translatedOrg = t(`experience.items.${item.id}.organization`, { defaultValue: item.organization });
+              const translatedDesc = t(`experience.items.${item.id}.description`, { defaultValue: item.description });
+              const translatedLocation = t(`experience.items.${item.id}.location`, { defaultValue: item.location });
+
+              const rawAchievements = t(`experience.items.${item.id}.achievements`, { returnObjects: true, defaultValue: item.achievements });
+              const achievementsList = Array.isArray(rawAchievements) ? rawAchievements : item.achievements;
 
               return (
                 <motion.div
@@ -120,32 +129,32 @@ export const ExperienceSection: React.FC = () => {
                         </span>
                         <span className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1">
                           <MapPin className="w-3.5 h-3.5" />
-                          {item.location}
+                          {translatedLocation}
                         </span>
                       </div>
 
                       {/* Title & Organization */}
                       <div>
                         <h3 className="font-heading font-bold text-xl text-slate-900 dark:text-white">
-                          {item.title}
+                          {translatedTitle}
                         </h3>
                         <p className="text-sm font-semibold text-blue-600 dark:text-violet-400">
-                          {item.organization}
+                          {translatedOrg}
                         </p>
                       </div>
 
                       {/* Description */}
                       <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed">
-                        {item.description}
+                        {translatedDesc}
                       </p>
 
                       {/* Achievements List */}
-                      {item.achievements && item.achievements.length > 0 && (
+                      {achievementsList && achievementsList.length > 0 && (
                         <div className="space-y-2 pt-2 text-left">
                           <span className="block text-xs font-semibold uppercase tracking-wider text-slate-400">
-                            Key Accomplishments:
+                            {t('experience.accomplishments', 'Key Accomplishments:')}
                           </span>
-                          {item.achievements.map((ach, i) => (
+                          {achievementsList.map((ach: string, i: number) => (
                             <div key={i} className="flex items-start gap-2 text-xs text-slate-700 dark:text-slate-300">
                               <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0 mt-0.5" />
                               <span>{ach}</span>
@@ -160,12 +169,7 @@ export const ExperienceSection: React.FC = () => {
                           isEven ? 'sm:justify-end' : 'justify-start'
                         }`}>
                           {item.technologies.map((tech) => (
-                            <span
-                              key={tech}
-                              className="px-2.5 py-0.5 rounded-lg text-[10px] font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700"
-                            >
-                              {tech}
-                            </span>
+                            <TechTagBadge key={tech} tag={tech} size="sm" />
                           ))}
                         </div>
                       )}

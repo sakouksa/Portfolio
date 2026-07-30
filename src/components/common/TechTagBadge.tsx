@@ -23,7 +23,10 @@ import {
   SiVite, 
   SiAntdesign,
   SiExpress,
-  SiSocketdotio
+  SiSocketdotio,
+  SiPhp,
+  SiSharp,
+  SiPython
 } from 'react-icons/si';
 import { 
   Code2, 
@@ -46,6 +49,9 @@ export const TechTagBadge: React.FC<TechTagBadgeProps> = ({ tag, size = 'sm' }) 
   const getIcon = () => {
     if (normalized.includes('react')) return <FaReact className="text-[#61DAFB] shrink-0" />;
     if (normalized.includes('laravel')) return <FaLaravel className="text-[#FF2D20] shrink-0" />;
+    if (normalized.includes('php')) return <SiPhp className="text-[#777BB4] shrink-0" />;
+    if (normalized.includes('c#') || normalized.includes('csharp')) return <SiSharp className="text-[#512BD4] shrink-0" />;
+    if (normalized.includes('python')) return <SiPython className="text-[#3776AB] shrink-0" />;
     if (normalized.includes('tailwind')) return <SiTailwindcss className="text-[#06B6D4] shrink-0" />;
     if (normalized.includes('typescript')) return <SiTypescript className="text-[#3178C6] shrink-0" />;
     if (normalized.includes('postgresql') || normalized.includes('postgres')) return <SiPostgresql className="text-[#4169E1] shrink-0" />;

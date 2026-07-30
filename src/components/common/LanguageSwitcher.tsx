@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Check } from 'lucide-react';
+import { Check, Languages } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const LANGUAGES = [
@@ -51,6 +51,7 @@ export const LanguageSwitcher: React.FC = () => {
         className="flex items-center gap-2 px-3 py-2 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-200/80 dark:hover:bg-slate-800/80 rounded-xl border border-slate-200 dark:border-slate-800 transition-colors shadow-sm whitespace-nowrap"
         title="Switch Language"
       >
+        <Languages className="w-3.5 h-3.5 text-blue-600 dark:text-violet-400 shrink-0" />
         <img 
           src={currentLang.flagUrl} 
           alt={currentLang.alt} 

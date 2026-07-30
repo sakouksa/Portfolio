@@ -174,11 +174,50 @@
     }
   },
   "experience": {
-    "badge": "Career History & Education",
+    "badge": "System Development & Education",
     "title": "Track Record of",
-    "highlight": "Leadership",
-    "subtitle": "Senior roles, technical accomplishments, and academic specialization.",
-    "accomplishments": "Key Accomplishments:"
+    "highlight": "System Building",
+    "subtitle": "Independent system development experience, technical achievements, and academic background.",
+    "accomplishments": "Key Accomplishments:",
+    "tabs": {
+      "all": "All Timeline",
+      "work": "System Development",
+      "education": "Education"
+    },
+    "items": {
+      "exp-1": {
+        "title": "Full Stack System Developer & Architect",
+        "organization": "Independent System & SaaS Projects",
+        "location": "Kampong Thom, Cambodia",
+        "description": "Designing and building end-to-end SaaS applications, real-time management systems, and modern design systems independently.",
+        "achievements": [
+          "Architected React 19 & TypeScript system platform reducing page load time by 42%.",
+          "Built REST API services with clean architecture and Zustand state management.",
+          "Developed real-time analytics engine handling high-volume event data streams."
+        ]
+      },
+      "exp-2": {
+        "title": "Full Stack System Engineer",
+        "organization": "Self-Initiated & Web Solutions",
+        "location": "Kampong Thom, Cambodia",
+        "description": "Developed cloud management tools, REST API services, and mobile-friendly system architectures.",
+        "achievements": [
+          "Engineered Laravel cloud monitoring dashboard handling 100K+ concurrent users.",
+          "Reduced cloud infrastructure costs by 30% through Docker containerization and serverless optimization."
+        ]
+      },
+      "edu-1": {
+        "title": "B.S. in Computer Science & Software Engineering (Year 4 Student)",
+        "organization": "Heng Samrin Thbongkhmum University (HSTU)",
+        "location": "Tbong Khmum, Cambodia",
+        "description": "Currently a 4th-year student having completed Year 3 with top honors. Specializing in Software Engineering and Web Development.",
+        "achievements": [
+          "Dean's Honor List (All Semesters)",
+          "President of Web Developers Student Society",
+          "First Place in National Hackathon 2023"
+        ]
+      }
+    }
   },
   "github": {
     "badge": "Open Source & GitHub",
@@ -187,7 +226,18 @@
     "subtitle": "Contributing back to the developer ecosystem with public repositories and tools.",
     "breakdown": "Language Breakdown",
     "publicCodebase": "Public Codebase",
-    "featuredRepos": "Featured Public Repositories"
+    "featuredRepos": "Featured Public Repositories",
+    "repos": {
+      "repo1": {
+        "desc": "Full-featured School ERP & Enterprise POS management system built with PHP Laravel and PostgreSQL."
+      },
+      "repo2": {
+        "desc": "Desktop Inventory & Sales Management application developed using C# .NET and SQL Server."
+      },
+      "repo3": {
+        "desc": "Automated Data Processing Engine & Web Scraper built with Python, Pandas, and FastAPI."
+      }
+    }
   },
   "dashboard": {
     "badge": "Developer Telemetry",
@@ -207,21 +257,102 @@
     "badge": "Client Recommendations",
     "title": "Trusted by Leaders &",
     "highlight": "Founders",
-    "subtitle": "What product leaders, CTOs, and designers say about my engineering impact."
+    "subtitle": "What product leaders, CTOs, and designers say about my engineering impact.",
+    "items": {
+      "test-1": {
+        "content": "Sak Ousa is an absolute wizard when it comes to frontend architecture and UI polish. He transformed our AI platform into a lightning-fast, beautiful experience that our users rave about every single day.",
+        "role": "VP of Product"
+      },
+      "test-2": {
+        "content": "Working with Sak Ousa was the best decision we made for our SaaS launcher. His mastery of React 19, TypeScript, and Tailwind CSS delivered our MVP 3 weeks ahead of schedule with zero tech debt.",
+        "role": "CTO & Co-Founder"
+      },
+      "test-3": {
+        "content": "Sak Ousa bridges the gap between design and engineering like no one else. He took our complex Figma designs and brought them to life with micro-interactions, accessibility, and 60 FPS animations.",
+        "role": "Head of Design"
+      }
+    }
   },
   "blog": {
     "badge": "Articles & Insights",
     "title": "Latest Architectural",
     "highlight": "Articles",
-    "subtitle": "Thoughts on React 19, web performance, UI aesthetics, and generative AI."
+    "subtitle": "Thoughts on React 19, web performance, UI aesthetics, and generative AI.",
+    "readArticle": "Read Article",
+    "items": {
+      "blog-1": {
+        "title": "Mastering React 19: Server Components, Actions, and Modern Patterns",
+        "summary": "A deep dive into React 19's newest capabilities, compiler optimizations, useActionState, and performance gains for production apps.",
+        "content": "React 19 brings some of the most exciting architectural shifts to modern frontend web development. In this comprehensive guide, we explore how React Server Components (RSC) and Actions change how we manage state and data fetching...",
+        "readTime": "6 min read",
+        "date": "July 2026"
+      },
+      "blog-2": {
+        "title": "Building Glassmorphic UIs with Tailwind CSS v4 & Framer Motion",
+        "summary": "Learn how to build sleek Apple & Vercel inspired interfaces using CSS backdrop blur filters, custom design tokens, and smooth physics-based gestures.",
+        "content": "Glassmorphism continues to dominate high-end modern UI design. With Tailwind CSS v4's new CSS variable engine and Framer Motion spring physics, creating ultra-responsive frosted glass cards has never been cleaner...",
+        "readTime": "5 min read",
+        "date": "June 2026"
+      },
+      "blog-3": {
+        "title": "Architecting Generative AI Applications with LangChain & Vector DBs",
+        "summary": "A step-by-step architectural breakdown for serving low-latency LLM stream responses with hybrid search in Pinecone.",
+        "content": "Building production AI applications requires much more than simply calling OpenAI API endpoints. In this article, we outline proper prompt caching, streaming chunks over WebSockets, and indexing documents into Pinecone...",
+        "readTime": "8 min read",
+        "date": "May 2026"
+      }
+    }
   },
   "pricing": {
     "badge": "Transparent Project Pricing",
     "title": "Flexible Freelance &",
     "highlight": "Consultancy",
     "subtitle": "Fixed-rate packages engineered for speed, clean architecture, and total transparency.",
-    "popularChoice": "Most Popular Choice",
-    "included": "What's Included:"
+    "mostPopular": "Most Popular Choice",
+    "whatsIncluded": "What's Included:",
+    "perProject": "per project",
+    "items": {
+      "price-starter": {
+        "name": "Starter MVP",
+        "description": "Ideal for early-stage startups needing a sleek landing page or high-converting product MVP.",
+        "ctaText": "Choose Starter",
+        "features": [
+          "Custom Single Page or 3-Page Website",
+          "React 19 + Vite / Next.js Setup",
+          "Tailwind CSS Glassmorphism Design",
+          "Mobile Responsive & Dark Mode",
+          "Basic SEO Setup & Contact Form",
+          "2 Weeks Delivery & Support"
+        ]
+      },
+      "price-pro": {
+        "name": "Professional Product",
+        "description": "Full-stack SaaS product architecture with backend APIs, database, and authentication.",
+        "ctaText": "Start Pro Project",
+        "features": [
+          "Complete Full-Stack Application",
+          "React 19 + TypeScript + Node.js / Spring / Laravel",
+          "Database & Authentication (PostgreSQL/MySQL)",
+          "Custom Dashboard & Interactive Charts",
+          "100 Lighthouse Performance & Accessibility",
+          "AI API Integration (OpenAI / Claude)",
+          "4 Weeks Delivery & 30 Days Support"
+        ]
+      },
+      "price-enterprise": {
+        "name": "Enterprise Architecture",
+        "description": "Dedicated full-stack engineering, complex cloud architecture, design systems, & team lead support.",
+        "ctaText": "Contact for Enterprise",
+        "features": [
+          "Enterprise Micro-Frontend Architecture",
+          "Custom Design System & Figma Kit",
+          "Mobile App (Flutter / React Native)",
+          "Cloud Infra (AWS/Kubernetes & Docker)",
+          "Security Audit & Automated CI/CD",
+          "Dedicated Slack Support & Maintenance"
+        ]
+      }
+    }
   },
   "faq": {
     "badge": "Frequently Asked Questions",
@@ -229,7 +360,25 @@
     "highlight": "Answers",
     "titleEnd": "Here",
     "subtitle": "Everything you need to know about working with me.",
-    "searchPlaceholder": "Search questions..."
+    "searchPlaceholder": "Search questions...",
+    "items": {
+      "faq-1": {
+        "question": "What is your primary tech stack for building web & mobile applications?",
+        "answer": "I specialize in modern development using React 19, TypeScript, Tailwind CSS v4, PHP Laravel, C#, Python, Spring Boot, Flutter, and MySQL/PostgreSQL."
+      },
+      "faq-2": {
+        "question": "What is your typical project timeline and process?",
+        "answer": "Small MVP projects typically take 2-3 weeks, while comprehensive full-stack SaaS applications range from 4 to 8 weeks. I follow an agile process with weekly interactive demo builds and continuous communication."
+      },
+      "faq-3": {
+        "question": "Do you guarantee 100 Lighthouse performance scores and WCAG accessibility?",
+        "answer": "Yes! Every web project is built with semantic HTML5, aria labels, optimized assets, dynamic code splitting, and strict contrast ratios to ensure 100 scores across Performance, Accessibility, Best Practices, and SEO."
+      },
+      "faq-4": {
+        "question": "Are you available for full-time senior roles or contract work?",
+        "answer": "Yes, I am open to select Senior/Lead Full Stack Architect roles, technical consultancy, and high-impact freelance projects worldwide."
+      }
+    }
   },
   "contact": {
     "badge": "Get In Touch",

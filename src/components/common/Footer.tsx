@@ -25,7 +25,7 @@ export const Footer: React.FC = () => {
                 SO
               </div>
               <span className="font-heading font-bold text-xl tracking-tight text-slate-900 dark:text-white">
-                Sak Ousa
+                {t('devName', DEVELOPER_PROFILE.name)}
               </span>
             </div>
 
@@ -106,7 +106,7 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Rights Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-500">
-          <p>© {new Date().getFullYear()} Sak Ousa. {t('footer.rights')}</p>
+          <p>© {new Date().getFullYear()} {t('devName', DEVELOPER_PROFILE.name)}. {t('footer.rights')}</p>
           
           <button
             onClick={scrollToTop}

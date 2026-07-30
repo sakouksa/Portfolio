@@ -3,9 +3,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Calendar, Clock, Tag, Sparkles } from 'lucide-react';
 import { usePortfolioStore } from '../../store/usePortfolioStore';
 import { modalVariants } from '../../lib/framer-variants';
+import { useTranslation } from 'react-i18next';
 
 export const BlogDetailModal: React.FC = () => {
   const { selectedBlog, setSelectedBlog } = usePortfolioStore();
+  const { t } = useTranslation(['portfolio', 'common']);
 
   if (!selectedBlog) return null;
 
@@ -30,7 +32,7 @@ export const BlogDetailModal: React.FC = () => {
                 {selectedBlog.category}
               </span>
               <h2 className="text-xl sm:text-2xl font-bold font-heading text-slate-900 dark:text-white mt-1">
-                {selectedBlog.title}
+                {t(`blog.items.${selectedBlog.id}.title`, selectedBlog.title)}
               </h2>
             </div>
 
@@ -46,11 +48,11 @@ export const BlogDetailModal: React.FC = () => {
             <div className="flex items-center gap-4 text-xs text-slate-500 dark:text-slate-400">
               <span className="flex items-center gap-1">
                 <Calendar className="w-4 h-4" />
-                {selectedBlog.date}
+                {t(`blog.items.${selectedBlog.id}.date`, selectedBlog.date)}
               </span>
               <span className="flex items-center gap-1">
                 <Clock className="w-4 h-4" />
-                {selectedBlog.readTime}
+                {t(`blog.items.${selectedBlog.id}.readTime`, selectedBlog.readTime)}
               </span>
             </div>
 
@@ -60,10 +62,10 @@ export const BlogDetailModal: React.FC = () => {
 
             <div className="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 space-y-4">
               <p className="font-semibold text-lg leading-relaxed text-slate-900 dark:text-white">
-                {selectedBlog.summary}
+                {t(`blog.items.${selectedBlog.id}.summary`, selectedBlog.summary)}
               </p>
               <p className="leading-relaxed">
-                {selectedBlog.content}
+                {t(`blog.items.${selectedBlog.id}.content`, selectedBlog.content)}
               </p>
             </div>
 

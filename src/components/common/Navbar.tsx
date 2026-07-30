@@ -76,7 +76,7 @@ export const Navbar: React.FC = () => {
                   {t('devName', 'Mr. Sak Ousa')}
                 </span>
                 <span className="block text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 font-medium">
-                  Software Architect
+                  {t('roleShort', 'Software Architect')}
                 </span>
               </div>
             </button>

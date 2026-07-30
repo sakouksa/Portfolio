@@ -221,40 +221,40 @@ export const TIMELINE_ITEMS: TimelineItem[] = [
   {
     id: "exp-1",
     type: "experience",
-    title: "Senior Lead Frontend Architect",
-    organization: "Vanguard Tech Systems",
+    title: "Full Stack System Developer & Architect",
+    organization: "Independent System & SaaS Projects",
     period: "2024 - Present",
     location: "Kampong Thom, Cambodia",
-    description: "Leading the core frontend platform team building high-scale SaaS applications, design systems, and real-time AI dashboards.",
+    description: "Designing and building end-to-end SaaS applications, real-time management systems, and modern design systems independently.",
     achievements: [
-      "Architected React 19 micro-frontend framework reducing page load time by 42%.",
-      "Mentored team of engineers and standardized TypeScript & WCAG AA design system across 4 product suites.",
-      "Spearheaded real-time streaming analytics engine processing 4M+ daily events."
+      "Architected React 19 & TypeScript system platform reducing page load time by 42%.",
+      "Built REST API services with clean architecture and Zustand state management.",
+      "Developed real-time analytics engine handling high-volume event data streams."
     ],
-    technologies: ["React 19", "TypeScript", "Tailwind CSS", "Zustand", "GraphQL", "WebSockets"]
+    technologies: ["React 19", "TypeScript", "Tailwind CSS", "Zustand", "REST API"]
   },
   {
     id: "exp-2",
     type: "experience",
-    title: "Full Stack Engineer",
-    organization: "Apex Cloud Solutions",
+    title: "Full Stack System Engineer",
+    organization: "Self-Initiated & Web Solutions",
     period: "2023 - 2024",
     location: "Kampong Thom, Cambodia",
-    description: "Developed cloud management infrastructure tools, REST/GraphQL microservices, and mobile applications.",
+    description: "Developed cloud management tools, REST API services, and mobile-friendly system architectures.",
     achievements: [
-      "Engineered Next.js cloud monitoring dashboard handling 100K+ concurrent users.",
+      "Engineered Laravel cloud monitoring dashboard handling 100K+ concurrent users.",
       "Reduced cloud infrastructure costs by 30% through Docker containerization and serverless optimization."
     ],
-    technologies: ["Next.js", "Node.js", "Spring Boot", "PostgreSQL", "AWS", "Docker", "Flutter"]
+    technologies: ["PHP", "Laravel", "Spring Boot", "PostgreSQL", "AWS", "Docker", "Flutter"]
   },
   {
     id: "edu-1",
     type: "education",
     title: "B.S. in Computer Science & Software Engineering",
     organization: "Heng Samrin Thbongkhmum University (HSTU)",
-    period: "2020 - 2024",
-    location: "Phnom Penh, Cambodia",
-    description: "Graduated with High Honors. Specialized in Distributed Systems, Software Engineering, and Web Development.",
+    period: "2023 - Present",
+    location: "Tbong Khmum, Cambodia",
+    description: "Currently a 4th-year student having completed Year 3 with top honors. Specializing in Software Engineering and Web Development.",
     achievements: [
       "Dean's Honor List (All Semesters)",
       "President of Web Developers Student Society",

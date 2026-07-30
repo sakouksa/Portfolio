@@ -3,9 +3,11 @@ import { motion } from 'framer-motion';
 import { BookOpen, Clock, Calendar, ArrowRight } from 'lucide-react';
 import { BLOG_POSTS } from '../../lib/constants';
 import { usePortfolioStore } from '../../store/usePortfolioStore';
+import { useTranslation } from 'react-i18next';
 
 export const BlogSection: React.FC = () => {
   const setSelectedBlog = usePortfolioStore((state) => state.setSelectedBlog);
+  const { t } = useTranslation(['portfolio', 'common']);
 
   return (
     <section id="blog" className="py-24 relative bg-grid-pattern">
@@ -15,13 +17,14 @@ export const BlogSection: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-violet-600/10 text-violet-600 dark:text-violet-400 border border-violet-600/20">
             <BookOpen className="w-3.5 h-3.5" />
-            <span>Articles & Insights</span>
+            <span>{t('blog.badge', 'Articles & Insights')}</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight">
-            Latest Architectural <span className="gradient-text-primary">Articles</span>
+            {t('blog.title', 'Latest Architectural')}{' '}
+            <span className="gradient-text-primary">{t('blog.highlight', 'Articles')}</span>
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg">
-            Thoughts on React 19, web performance, UI aesthetics, and generative AI.
+            {t('blog.subtitle', 'Thoughts on React 19, web performance, UI aesthetics, and generative AI.')}
           </p>
         </div>
 
@@ -48,20 +51,20 @@ export const BlogSection: React.FC = () => {
                   <div className="flex items-center gap-4 text-xs text-slate-500 dark:text-slate-400">
                     <span className="flex items-center gap-1">
                       <Calendar className="w-3.5 h-3.5" />
-                      {post.date}
+                      {t(`blog.items.${post.id}.date`, post.date)}
                     </span>
                     <span className="flex items-center gap-1">
                       <Clock className="w-3.5 h-3.5" />
-                      {post.readTime}
+                      {t(`blog.items.${post.id}.readTime`, post.readTime)}
                     </span>
                   </div>
 
                   <h3 className="font-heading font-bold text-xl text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-violet-400 transition-colors line-clamp-2">
-                    {post.title}
+                    {t(`blog.items.${post.id}.title`, post.title)}
                   </h3>
 
                   <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm line-clamp-3 leading-relaxed">
-                    {post.summary}
+                    {t(`blog.items.${post.id}.summary`, post.summary)}
                   </p>
                 </div>
               </div>
@@ -71,7 +74,7 @@ export const BlogSection: React.FC = () => {
                   onClick={() => setSelectedBlog(post)}
                   className="w-full py-3 px-4 rounded-xl text-xs font-semibold text-blue-600 dark:text-violet-400 bg-blue-50 dark:bg-slate-800/80 hover:bg-blue-600 hover:text-white dark:hover:bg-violet-600 dark:hover:text-white transition-all flex items-center justify-center gap-2 group/btn"
                 >
-                  Read Article
+                  {t('blog.readArticle', 'Read Article')}
                   <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                 </button>
               </div>
